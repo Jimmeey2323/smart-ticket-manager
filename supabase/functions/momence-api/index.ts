@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
+// Momence API integration for client and session search
 const momenceToken = Deno.env.get("MOMENCE_API_TOKEN");
 const MOMENCE_BASE_URL = "https://api.momence.com/api/v2/host";
 
