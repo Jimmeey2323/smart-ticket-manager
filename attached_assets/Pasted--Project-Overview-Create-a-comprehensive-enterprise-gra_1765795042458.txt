@@ -1,0 +1,1550 @@
+ Project Overview
+Create a comprehensive, enterprise-grade ticket management and customer feedback system for Physique 57 India. This system will serve as a centralized platform for internal teams to record, track, and resolve customer issues efficiently while providing robust analytics and reporting capabilities.
+
+---
+
+ Core Objectives
+
+ Primary Goals
+1. Centralized Feedback Management: Single source of truth for all customer feedback, issues, and complaints across all Physique 57 India studios
+2. Intelligent Ticket Routing: Automatic assignment of tickets to appropriate teams based on category, severity, and studio location
+3. Proactive Resolution Tracking: Automated reminders, escalations, and SLA monitoring to ensure timely resolution
+4. Advanced Analytics & Reporting: Generate actionable insights, trends, and intelligence from feedback data
+5. User-Friendly Interface: Intuitive design for quick ticket creation and efficient management
+
+---
+
+ Technical Architecture
+
+ Backend: Supabase
+- Database: PostgreSQL via Supabase for all data storage
+- Authentication: Supabase Auth for user management and role-based access control
+- Storage: Supabase Storage for attachments, screenshots, and supporting documents
+- Real-time: Supabase Realtime for live dashboard updates and notifications
+- Edge Functions: For complex business logic, AI processing, and integrations
+
+ Frontend Framework
+- Technology: React with TypeScript for type safety
+- UI Library: Shadcn/ui with Tailwind CSS for professional, consistent design
+- State Management: React Query for server state and Zustand for client state
+- Forms: React Hook Form with Zod validation
+
+ AI & Intelligence Layer
+- Auto-tagging: Claude API for intelligent ticket categorization
+- Sentiment Analysis: Analyze feedback tone and urgency
+- Priority Scoring: ML-based priority assignment
+- Smart Routing: AI-powered team assignment recommendations
+- Trend Detection: Identify recurring issues and patterns
+
+---
+
+ Database Schema Design
+
+ Core Tables
+
+ 1. tickets
+```sql
+- id (uuid, primary key)
+- ticket_number (auto-generated, e.g., "P57-2024-001234")
+- studio_id (foreign key to studios)
+- customer_name (text)
+- customer_email (text)
+- customer_phone (text)
+- customer_membership_id (text, optional)
+- category (text, indexed)
+- subcategory (text, indexed)
+- priority (enum: low, medium, high, critical)
+- status (enum: new, assigned, in_progress, pending_customer, resolved, closed, reopened)
+- title (text)
+- description (text)
+- reported_by_user_id (foreign key to users)
+- assigned_to_user_id (foreign key to users)
+- assigned_team_id (foreign key to teams)
+- due_date (timestamp)
+- resolved_at (timestamp)
+- closed_at (timestamp)
+- resolution_notes (text)
+- ai_tags (text array)
+- sentiment_score (numeric)
+- auto_assigned (boolean)
+- escalation_level (integer, default 0)
+- sla_breached (boolean)
+- created_at (timestamp)
+- updated_at (timestamp)
+```
+
+ 2. ticket_comments
+```sql
+- id (uuid, primary key)
+- ticket_id (foreign key to tickets)
+- user_id (foreign key to users)
+- comment_text (text)
+- is_internal (boolean, for internal notes vs customer-visible)
+- attachments (jsonb, array of file references)
+- created_at (timestamp)
+```
+
+ 3. ticket_attachments
+```sql
+- id (uuid, primary key)
+- ticket_id (foreign key to tickets)
+- file_name (text)
+- file_path (text, Supabase Storage path)
+- file_type (text)
+- file_size (integer)
+- uploaded_by_user_id (foreign key to users)
+- created_at (timestamp)
+```
+
+ 4. ticket_history
+```sql
+- id (uuid, primary key)
+- ticket_id (foreign key to tickets)
+- changed_by_user_id (foreign key to users)
+- field_changed (text)
+- old_value (text)
+- new_value (text)
+- timestamp (timestamp)
+```
+
+ 5. users
+```sql
+- id (uuid, primary key, links to Supabase Auth)
+- email (text, unique)
+- full_name (text)
+- role (enum: admin, manager, team_lead, staff, viewer)
+- team_id (foreign key to teams)
+- studio_id (foreign key to studios)
+- notification_preferences (jsonb)
+- is_active (boolean)
+- created_at (timestamp)
+- updated_at (timestamp)
+```
+
+ 6. teams
+```sql
+- id (uuid, primary key)
+- name (text, e.g., "Operations", "Tech Support", "Maintenance")
+- description (text)
+- team_lead_id (foreign key to users)
+- email (text, team email)
+- escalation_email (text)
+- sla_hours (integer, default SLA in hours)
+- is_active (boolean)
+- created_at (timestamp)
+```
+
+ 7. studios
+```sql
+- id (uuid, primary key)
+- name (text, e.g., "Bandra Studio", "Lower Parel Studio")
+- location (text)
+- address (text)
+- city (text)
+- state (text)
+- manager_id (foreign key to users)
+- contact_email (text)
+- contact_phone (text)
+- is_active (boolean)
+- created_at (timestamp)
+```
+
+ 8. categories
+```sql
+- id (uuid, primary key)
+- name (text, main category)
+- description (text)
+- icon (text, for UI)
+- default_team_id (foreign key to teams)
+- default_priority (text)
+- default_sla_hours (integer)
+- is_active (boolean)
+- sort_order (integer)
+```
+
+ 9. subcategories
+```sql
+- id (uuid, primary key)
+- category_id (foreign key to categories)
+- name (text)
+- description (text)
+- required_fields (jsonb, dynamic form fields)
+- default_team_id (foreign key to teams)
+- default_priority (text)
+- sla_hours (integer)
+- resolution_template (text)
+- is_active (boolean)
+- sort_order (integer)
+```
+
+ 10. sla_configurations
+```sql
+- id (uuid, primary key)
+- category_id (foreign key to categories)
+- subcategory_id (foreign key to subcategories, nullable)
+- priority (text)
+- response_time_hours (integer)
+- resolution_time_hours (integer)
+- escalation_time_hours (integer)
+- escalation_levels (jsonb, array of escalation rules)
+```
+
+ 11. notifications
+```sql
+- id (uuid, primary key)
+- user_id (foreign key to users)
+- ticket_id (foreign key to tickets)
+- type (enum: assignment, comment, escalation, due_soon, overdue, resolved)
+- title (text)
+- message (text)
+- is_read (boolean)
+- sent_via_email (boolean)
+- created_at (timestamp)
+```
+
+ 12. escalations
+```sql
+- id (uuid, primary key)
+- ticket_id (foreign key to tickets)
+- escalation_level (integer)
+- escalated_from_user_id (foreign key to users)
+- escalated_to_user_id (foreign key to users)
+- reason (text)
+- escalated_at (timestamp)
+- resolved (boolean)
+```
+
+ 13. ticket_templates
+```sql
+- id (uuid, primary key)
+- name (text)
+- category_id (foreign key to categories)
+- subcategory_id (foreign key to subcategories)
+- template_content (text)
+- created_by_user_id (foreign key to users)
+- is_active (boolean)
+- created_at (timestamp)
+```
+
+ 14. analytics_snapshots
+```sql
+- id (uuid, primary key)
+- snapshot_date (date)
+- total_tickets (integer)
+- open_tickets (integer)
+- resolved_tickets (integer)
+- avg_resolution_time_hours (numeric)
+- sla_breach_count (integer)
+- by_category (jsonb)
+- by_studio (jsonb)
+- by_priority (jsonb)
+- created_at (timestamp)
+```
+
+---
+
+ Comprehensive Category & Subcategory Structure
+
+ 1. Scheduling → Default Team: Operations
+- Time Change
+- Level Change
+- Additional Classes
+- Trainer Preferences
+- Class Capacity Issues
+- Waitlist Concerns
+- Studio Timings
+- Session Length
+- Cancellation Policy
+- Booking Restrictions
+- Class Substitutions
+- Trainer Substitutions
+- Last-minute Cancellations
+- Late Arrival Policy
+- Special Request Accommodations
+- Early Morning/Late Night Class Availability
+- Weekend vs. Weekday Class Balance
+- Rescheduling Flexibility
+- Booking Confirmation Issues
+- Holiday and Festival Class Planning
+
+Dynamic Fields: Date of incident, Class time, Trainer name, Preferred alternative
+
+---
+
+ 2. Class Experience → Default Team: Operations
+- Bad Odour
+- Audio Issues
+- Studio Temperature Too Hot/Cold
+- Overcrowding in Class
+- Class Flow and Pacing
+- Modifications in Routine
+- Engagement with Clients
+- Hands-on Adjustments
+- Demonstration and Visual Cues
+- Knowledge and Competence
+- Brand Language Usage
+- Grooming and Appearance
+- Attendance for Workshops
+- Attendance for Meetings
+- Class Format Satisfaction
+- Class Duration Suitability
+- Instructor Energy and Motivation
+- Class Variety and Themes
+- Adjustments for Different Fitness Levels
+- Challenges in Following Instructor
+
+Dynamic Fields: Date of class, Trainer name, Class type, Specific issue details
+
+---
+
+ 3. Trainer Feedback → Default Team: HR/Training
+- Trainer Forgot Names
+- Class Intensity Too High/Low
+- Trainer Hygiene
+- Trainer Punctuality Issues
+- Trainer Behaviour
+- Pre and Post-Class Outreach
+- Trainer Availability
+- Feedback Handling
+- Emergency Preparedness
+- Trainer Focus on Individual Needs
+- Class Ending on Time
+- Trainer Encouragement
+- Injury Prevention and Safety
+- Too Many Corrections vs. Too Few
+
+Dynamic Fields: Trainer name, Date of incident, Class time, Witness names
+
+---
+
+ 4. Repair and Maintenance → Default Team: Facilities/Maintenance
+- AC and HVAC Issues
+- TFA Malfunction
+- Lighting Issues
+- Audio System Malfunction
+- Pest Control Needed
+- Staff Uniforms Not Clean
+- Toiletries and Supplies Low
+- Towel Availability Issues
+- Plumbing Leaks
+- General Maintenance Delays
+- Uncomfortable Lounge Seating
+- Air Fresheners Too Strong
+- Music System Too Loud/Low
+- Vending Machine Out of Stock
+- Door Lock Issues
+- Fire Safety Compliance
+- Water Dispenser Issues
+- Dust and Mold in Corners
+- Broken Equipment Not Repaired
+
+Dynamic Fields: Location in studio, Severity level, Equipment ID, Photos
+
+---
+
+ 5. Studio Amenities and Facilities → Default Team: Facilities
+- Studio Odour and Aroma
+- Cleanliness and Hygiene
+- Ventilation Poor
+- Air Quality Poor
+- Valet Issues
+- Locker Availability
+- Shower Water Pressure
+- Steam Room Not Working
+- Boutique Availability Issues
+- Wi-Fi Slow
+- Lost and Found Disorganization
+- Availability of Gym Accessories
+- Fitness Challenges and Rewards
+- Additional Waiting Area Seating
+- Smoothie Bar and Refreshments
+- Member Lounge Cleanliness
+- Community Events and Social Engagement
+- Holiday-Themed Classes
+- Sustainable and Eco-Friendly Practices
+- Coffee and Refreshments Options
+
+Dynamic Fields: Area affected, Time noticed, Preferred resolution
+
+---
+
+ 6. Operating Systems → Default Team: IT/Tech Support
+- Momence Issues
+- Stripe and Razorpay
+- Yellow Messenger
+- Website Glitches
+- Router Connectivity
+- iPad Functionality
+- Cash Counting Machine Issues
+- POS System Malfunctions
+- CRM System Errors
+- Data Security Issues
+- Integration Issues
+- System Delays
+- Software Bugs
+- Mobile App UI/UX Issues
+- Attendance Record Discrepancies
+- Missed Sessions Not Recorded
+- Mobile App Freezing
+- Delayed Notifications
+- Error in Class Listings
+
+Dynamic Fields: System name, Error message, Screenshot, Time of issue
+
+---
+
+ 7. Tech Issues → Default Team: IT/Tech Support
+- Laptops Not Functioning
+- Speakers Static Noise
+- Mic Not Working
+- Phones Not Working
+- App Performance Bugs
+- Booking System Errors
+- Password and Login Issues
+- Payment Processing Delays
+- Online Class Streaming Buffering
+- Notifications Not Received
+- Technical Assistance
+- Social Media Glitches
+- Wrong Class Bookings
+- Incorrect Charges on Account
+- Camera Surveillance Issues
+- Digital Receipts and Invoices
+- Website Navigation Difficulties
+- Virtual Class Video Quality
+- Studio Wi-Fi Not Working
+
+Dynamic Fields: Device/system affected, Error details, User affected
+
+---
+
+ 8. Pricing and Memberships → Default Team: Sales/Finance
+- Price Transparency
+- Membership Flexibility
+- Discounts and Offers Confusion
+- Refund and Cancellation Policy Issues
+- Auto-Renewal Concerns
+- Transparency in T&Cs
+- Add-on Services Pricing Clarity
+- Class Pack Expiry Confusion
+- Private Session Pricing
+- Membership Upgrade/Downgrade
+- Auto-Debit Incorrect Charges
+- Lack of Payment Plan Options
+- Referral Discount Issues
+- Holiday and Special Pricing Clarity
+- Corporate and Group Pricing
+- Studio Music Preferences
+- Misleading Promotion Details
+- Pricing for International Clients
+- Membership Pause and Freeze Policy
+- Special Group Discounts
+- Loyalty Program Issues
+- Corporate Wellness Program Pricing
+
+Dynamic Fields: Membership ID, Transaction details, Desired outcome
+
+---
+
+ 9. Customer Service and Communication → Default Team: Customer Service
+- Delay in Response
+- Unresolved Complaints
+- Front Desk Attitude
+- Miscommunication on Offers
+- Response Time to Queries
+- Follow-up Post Inquiry
+- Friendliness and Approachability
+- Call Handling Etiquette
+- Clarity in Policies
+- Late Response to Complaints
+- Handling of Complaints
+- Feedback Follow-up Process
+- Compensation for Service Issues
+- Customer Retention Strategies
+- Response to Negative Reviews
+- Training of Customer Service Team
+- Training of Sales Team
+- Knowledge of Membership Policies
+- Proactive Client Engagement
+
+Dynamic Fields: Date of interaction, Staff member name, Communication channel
+
+---
+
+ 10. Brand Feedback → Default Team: Marketing
+- Brand Positioning
+- Brand Identity Consistency
+- Marketing Message Accuracy
+- Brand Tone Consistency
+- Social Media Engagement
+- Advertising Consistency
+- Collaborations and Partnerships
+- Merchandise Quality
+- Member Recognition Efforts
+- Influencer Engagement
+- Staff Wearing Incorrect Branding
+- Handling of Complaints
+- Merchandise Display Issues
+- Branded Content Guidelines
+- Member Recognition Events
+- Newsletter Effectiveness
+- Brand Perception in Market
+- Perception of Pricing Value
+- Client Testimonials Management
+- Client Loyalty Recognition
+- Brand Event Participation
+
+Dynamic Fields: Feedback type, Channel observed, Suggestions
+
+---
+
+ 11. Safety and Security → Default Team: Security/Management
+- Emergency Exits Blocked
+- Panic Button Malfunction
+- Unlocked Doors
+- CCTV Malfunction
+- Security Guard Issues
+- Client Harassment Reports
+- Fire Drills Not Conducted
+- Suspicious Individuals Inside Studio
+- Front Desk Not Checking IDs
+- Unregistered Walk-Ins
+- Trespassing Concerns
+- Personal Safety Concerns
+- Harassment Reports
+- Data Breach Concerns
+- Employee Security Training
+- Reporting Suspicious Activity
+- Staff Security Concerns
+- Handling of Medical Emergencies
+- First Aid Kit Availability
+- Unauthorized Use of Equipment
+
+Dynamic Fields: Severity level, Time of incident, Witnesses, Photos/video
+
+---
+
+ 12. Theft and Lost Items → Default Team: Security/Management
+- Locker Theft
+- Stolen Personal Items
+- Misplaced Valuables
+- Items Taken from Boutique
+- Items Left Behind by Clients
+- Studio Lost and Found Management
+- Staff Theft
+- Reporting Stolen Items
+- Theft Prevention Measures
+- Theft Investigation Process
+- Personal Items Taken from Trainer Area
+- Issues with Valet Theft
+- Theft by Other Members
+- Lost Shoes/Workout Gear
+- Safe Storage for Client Bags
+- Clients Forgetting Items in Studio
+- Missing Towels
+- Theft During Busy Hours
+- Members Taking Extra Equipment
+
+Dynamic Fields: Item description, Last seen location, Value, Police report filed?
+
+---
+
+ 13. Miscellaneous → Default Team: Operations
+- Music Volume Issues
+- Studio Decor and Ambience
+- Mobile Charging Stations
+- Late-Night Class Safety
+- Noise Complaints from Neighbors
+- Misplaced Equipment
+- Temperature Control Inconsistency
+- Scent Sensitivities
+- Lighting Preferences
+- Cold Air Drafts
+- Overcrowding in Lobby
+- Construction Noise Nearby
+- Child-Friendly Facilities
+- Outdoor Signage Visibility
+- Feedback Fatigue
+- Personal Storage Lockers Needed
+- Background Music Selection
+- Social Media Response Time
+- Customer Flow Management
+
+Dynamic Fields: General feedback, Location, Suggestions
+
+---
+
+ Smart Features & AI Capabilities
+
+ 1. AI-Powered Auto-Tagging
+- Analyze ticket description using Claude API
+- Extract key entities: names, locations, products, services
+- Auto-assign relevant tags for filtering
+- Suggest category/subcategory if not selected
+- Detect multiple issues in single ticket
+
+ 2. Intelligent Priority Scoring
+```javascript
+Priority Algorithm:
+- Keywords: "urgent", "emergency", "safety", "theft" → HIGH/CRITICAL
+- Sentiment analysis: Very negative → Increase priority
+- Customer history: VIP members, repeat complainers → Increase priority
+- Category-based: Safety issues → CRITICAL, Amenities → LOW
+- Time sensitivity: Event-based issues → HIGH
+- Impact scope: Multiple customers affected → HIGH
+```
+
+ 3. Smart Team Routing
+```javascript
+Routing Logic:
+1. Check subcategory → assigned default team
+2. Check studio location → prefer local team
+3. Check team availability and current workload
+4. Check team expertise and past resolution success
+5. Fallback to general operations team
+```
+
+ 4. Sentiment Analysis
+- Analyze customer tone: Angry, Frustrated, Neutral, Happy
+- Score from -1 (very negative) to +1 (very positive)
+- Flag highly negative tickets for manager review
+- Track sentiment trends over time
+
+ 5. Predictive Analytics
+- Forecast ticket volume by time, day, studio
+- Identify recurring issues before they escalate
+- Predict resolution time based on historical data
+- Suggest preventive measures
+
+ 6. Smart Search & Filtering
+- Natural language search: "Show me all AC issues from Bandra last month"
+- Multi-criteria filters with AND/OR logic
+- Saved filter presets for quick access
+- Export filtered results to Excel/PDF
+
+ 7. Duplicate Detection
+- Check for similar open tickets when creating new
+- Suggest linking to existing ticket
+- Merge duplicate tickets with history preservation
+
+ 8. Auto-Response Suggestions
+- Based on ticket type, suggest resolution templates
+- AI-generated response drafts
+- Common solution knowledge base integration
+
+---
+
+ SLA Management & Escalation System
+
+ SLA Tiers by Priority
+
+CRITICAL Priority
+- Response Time: 15 minutes
+- Resolution Time: 2 hours
+- Escalation: Every 30 minutes
+- Examples: Safety issues, theft, system outage
+
+HIGH Priority
+- Response Time: 1 hour
+- Resolution Time: 8 hours
+- Escalation: Every 2 hours
+- Examples: AC failure, class cancellation, payment issues
+
+MEDIUM Priority
+- Response Time: 4 hours
+- Resolution Time: 24 hours
+- Escalation: Every 8 hours
+- Examples: Cleanliness, minor equipment issues
+
+LOW Priority
+- Response Time: 8 hours
+- Resolution Time: 72 hours
+- Escalation: Every 24 hours
+- Examples: Feedback, suggestions, ambience
+
+ Escalation Workflow
+```
+Level 0: Auto-assigned team member
+↓ (SLA breach warning at 75%)
+Level 1: Team Lead notified (automated reminder)
+↓ (SLA breach at 100%)
+Level 2: Department Manager (escalation email + notification)
+↓ (SLA breach at 150%)
+Level 3: Studio Manager / Regional Manager
+↓ (SLA breach at 200%)
+Level 4: Head of Operations / CEO
+```
+
+ Reminder System
+- New Ticket: Immediate notification to assignee
+- First Reminder: At 50% of SLA time
+- Second Reminder: At 75% of SLA time
+- Third Reminder: At 90% of SLA time (marked URGENT)
+- Escalation: At 100% of SLA time
+- Auto-escalate: Every level at 50% intervals beyond SLA
+
+---
+
+ Dashboard & Analytics
+
+ Main Dashboard Widgets
+
+ 1. Overview Metrics (Real-time)
+- Total Open Tickets
+- Tickets Assigned to Me
+- Tickets Created Today
+- SLA Compliance Rate
+- Average Resolution Time
+- Customer Satisfaction Score
+
+ 2. Ticket Status Distribution
+- Pie chart: New, Assigned, In Progress, Resolved, Closed
+- Filter by date range, studio, team
+
+ 3. Priority Breakdown
+- Bar chart: Critical, High, Medium, Low
+- Color-coded alerts for overdue tickets
+
+ 4. Category Analysis
+- Most reported categories this week/month
+- Trending issues (increasing reports)
+- Comparison with previous period
+
+ 5. Team Performance
+- Tickets handled per team
+- Average resolution time per team
+- SLA compliance per team
+- Top performers
+
+ 6. Studio-wise Analysis
+- Tickets per studio
+- Most common issues per studio
+- Studio comparison view
+- Heat map of problem areas
+
+ 7. Time Analysis
+- Tickets created by hour/day/week
+- Peak complaint times
+- Resolution time trends
+- Aging ticket report
+
+ 8. Customer Insights
+- Top complainers (frequency)
+- VIP member tickets
+- Repeat issues per customer
+- Customer satisfaction trends
+
+ Advanced Reports
+
+ 1. Executive Summary Report
+- High-level overview for management
+- Key metrics and trends
+- Critical issues requiring attention
+- Month-over-month comparison
+- Export to PDF with visualizations
+
+ 2. Operational Performance Report
+- Detailed team metrics
+- Individual performance scorecards
+- Resolution time analysis
+- SLA breach analysis
+- Workload distribution
+
+ 3. Studio Performance Report
+- Studio-specific metrics
+- Top issues per studio
+- Staff performance at studio
+- Customer satisfaction per studio
+- Maintenance schedules and compliance
+
+ 4. Category Deep-Dive Report
+- Detailed analysis of specific category
+- Root cause analysis
+- Resolution patterns
+- Preventive action recommendations
+
+ 5. Customer Experience Report
+- Sentiment analysis over time
+- Customer journey mapping
+- Feedback themes
+- Net Promoter Score (NPS) tracking
+
+ 6. Financial Impact Report
+- Cost of issues (refunds, compensation)
+- Resource allocation costs
+- Revenue impact of unresolved issues
+- ROI of preventive measures
+
+ 7. Trend Analysis Report
+- Seasonal patterns
+- Emerging issues
+- Predictive insights
+- Benchmark comparisons
+
+ 8. Custom Reports
+- User-defined parameters
+- Saved report templates
+- Scheduled email delivery
+- API access for external BI tools
+
+---
+
+ User Interface Design
+
+ Ticket Creation Form (Step-by-Step)
+
+Step 1: Basic Information
+- Studio selection (dropdown)
+- Customer information (search existing or add new)
+  - Name
+  - Email
+  - Phone
+  - Membership ID (optional, auto-fill if found)
+
+Step 2: Issue Classification
+- Category (dropdown with icons)
+- Subcategory (dynamic based on category)
+- AI suggestion: "Based on your description, this seems like [Category]"
+
+Step 3: Issue Details
+- Title (auto-suggested based on subcategory)
+- Detailed description (rich text editor)
+- Attachments (drag-and-drop, supports images, PDFs, videos)
+- Dynamic fields based on subcategory
+
+Step 4: Priority & Assignment (Auto-filled, editable)
+- Priority (auto-calculated, can override)
+- Assign to team (auto-selected, can override)
+- Assign to specific person (optional)
+- Due date (auto-calculated based on SLA)
+
+Step 5: Review & Submit
+- Summary of ticket
+- Confirmation of auto-notifications
+- Submit button
+
+ Dashboard Views
+
+ 1. My Tickets View
+- Tickets assigned to logged-in user
+- Quick action buttons: Mark in progress, Add comment, Resolve
+- Filter: Overdue, Due today, Due this week
+- Sort: Priority, Due date, Created date
+
+ 2. Team View
+- All tickets for user's team
+- Team workload visualization
+- Reassign capabilities
+- Team chat/notes section
+
+ 3. All Tickets View (Manager/Admin only)
+- Complete ticket list with advanced filters
+- Bulk actions: Assign, Update priority, Export
+- Global search
+
+ 4. Studio View
+- All tickets for specific studio
+- Studio-specific metrics
+- Quick studio switcher
+
+ 5. Analytics View
+- Interactive dashboards
+- Customizable widgets
+- Date range selectors
+- Export capabilities
+
+ Ticket Detail Page
+
+Header Section
+- Ticket number (prominent)
+- Status badge (color-coded)
+- Priority indicator
+- Created date and time
+- Last updated timestamp
+- SLA countdown timer (color-coded: green, yellow, red)
+
+Customer Information Card
+- Name, email, phone
+- Membership details
+- Ticket history for this customer
+- Customer sentiment score
+
+Issue Details Card
+- Category and subcategory badges
+- Full description
+- Attachments gallery
+- AI-generated tags
+- Related tickets (if any)
+
+Assignment & Status Card
+- Assigned to (with avatar)
+- Assigned team
+- Status dropdown (update status)
+- Priority adjustment
+- Due date with countdown
+
+Activity Timeline
+- All comments (internal and external)
+- Status changes
+- Assignments and reassignments
+- Escalations
+- Resolution notes
+- Timestamp for each activity
+
+Action Panel (Right sidebar)
+- Add Comment (with @mentions)
+- Attach Files
+- Update Status
+- Change Priority
+- Reassign
+- Escalate Manually
+- Link Related Ticket
+- Set Reminder
+- Generate Resolution Template
+- Mark as Resolved
+- Close Ticket
+
+Resolution Section (Visible when resolving)
+- Resolution notes (required)
+- Root cause (dropdown)
+- Preventive actions taken
+- Follow-up required? (checkbox)
+- Customer satisfaction rating (optional)
+
+---
+
+ Notification System
+
+ Notification Types
+
+ 1. Ticket Assignment
+- To: Assignee
+- Content: Ticket number, category, priority, customer name
+- Action: View ticket button
+
+ 2. New Comment/Update
+- To: Assignee, watchers, ticket creator
+- Content: Comment preview, who commented
+- Action: View ticket button
+
+ 3. Status Change
+- To: Assignee, manager, ticket creator
+- Content: Old status → New status
+- Action: View ticket button
+
+ 4. SLA Warning
+- To: Assignee, team lead
+- Content: Time remaining, urgency level
+- Action: View ticket button
+
+ 5. SLA Breach
+- To: Assignee, team lead, manager
+- Content: Breach details, escalation triggered
+- Action: View ticket button (urgent color)
+
+ 6. Escalation
+- To: Next level manager
+- Content: Ticket details, reason for escalation
+- Action: View ticket button
+
+ 7. Ticket Resolved
+- To: Ticket creator, customer (optional)
+- Content: Resolution summary
+- Action: View resolution button
+
+ 8. Customer Feedback Request
+- To: Customer (email)
+- Content: Satisfaction survey, ticket details
+- Action: Rate experience (1-5 stars)
+
+ Notification Channels
+- In-app: Bell icon with badge count
+- Email: Configurable per user
+- SMS: For critical issues only (optional)
+- Slack/Teams Integration: For team channels
+
+ Notification Preferences (User Settings)
+- Enable/disable per notification type
+- Choose notification channels
+- Quiet hours (no notifications during)
+- Digest mode (summary email once per day)
+
+---
+
+ Advanced Features
+
+ 1. Knowledge Base Integration
+- Searchable solution library
+- Common issues and resolutions
+- FAQs for each category
+- Video tutorials for complex issues
+- Auto-suggest solutions while creating ticket
+
+ 2. Workflow Automation
+```javascript
+Example Automations:
+- If ticket category = "Safety" → Set priority = CRITICAL, Notify studio manager
+- If ticket unassigned for > 10 minutes → Assign to team lead
+- If ticket has "refund" in description → Add finance team as watcher
+- If customer is VIP → Increase priority, add manager as watcher
+- If ticket reopened > 2 times → Escalate to department head
+```
+
+ 3. Customer Portal (Optional)
+- Customers can submit tickets directly
+- Track their own tickets
+- View resolution status
+- Rate service quality
+- Access knowledge base
+
+ 4. Mobile App (Progressive Web App)
+- Responsive design works on all devices
+- Push notifications
+- Quick ticket creation with photo upload
+- Voice-to-text for descriptions
+- Offline mode (sync when online)
+
+ 5. Integration Capabilities
+- Momence: Sync customer data, class bookings
+- Stripe/Razorpay: Payment issue tickets with transaction IDs
+- WhatsApp Business API: Send notifications
+- Google Calendar: Schedule follow-ups
+- Slack/Teams: Team notifications
+- Email Services: SendGrid/AWS SES for transactional emails
+
+ 6. Bulk Operations
+- Select multiple tickets
+- Bulk assign to team/person
+- Bulk status update
+- Bulk priority change
+- Bulk export
+- Bulk close with template response
+
+ 7. Custom Fields
+- Admins can add custom fields per category
+- Field types: Text, Number, Date, Dropdown, Checkbox, File upload
+- Conditional fields (show based on previous selection)
+
+ 8. Saved Filters & Views
+- Save frequently used filter combinations
+- Share views with team
+- Set default view per user
+- Quick access to saved filters
+
+ 9. Collaboration Features
+- @mention team members in comments
+- Internal notes (not visible to customer)
+- Ticket watchers (get notified of updates)
+- Linked tickets (related issues)
+- Team chat per ticket
+
+ 10. Audit Trail
+- Complete history of all actions
+- Who changed what and when
+- Compliance reporting
+- Export audit logs
+
+ 11. Customer Satisfaction (CSAT) Tracking
+- Auto-send survey after ticket resolution
+- 1-5 star rating
+- Optional comment field
+- Track CSAT per team, per studio, per category
+- Dashboard widget for CSAT trends
+
+ 12. Smart Templates
+- Pre-written responses for common issues
+- Variable substitution (customer name, ticket number, etc.)
+- Template library per category
+- Quick insert from dropdown
+
+ 13. File Management
+- Supabase Storage for all attachments
+- Image viewer with zoom
+- PDF viewer inline
+- Video player
+- Download all attachments as ZIP
+
+ 14. Email Integration
+- Create ticket from email (support@physique57india.com)
+- Reply to ticket via email (appears as comment)
+- Email threading (keeps conversation together)
+
+ 15. Reporting Scheduler
+- Schedule reports to be emailed daily/weekly/monthly
+- Choose recipients
+- Customize report parameters
+- Export format: PDF, Excel, CSV
+
+ 16. Mobile Responsiveness
+- Fully responsive design for all screen sizes
+- Touch-optimized interface
+- Simplified mobile views
+- Swipe actions on mobile
+
+ 17. Dark Mode
+- User preference setting
+- Auto-switch based on system preference
+- Consistent across all pages
+
+ 18. Multi-language Support (Future)
+- Support for Hindi, English
+- User language preference
+- Auto-translate tickets (optional)
+
+ 19. Performance Monitoring
+- Track team response times
+- Monitor individual performance metrics
+- Gamification: Leaderboards, badges
+- Performance review reports
+
+ 20. Preventive Maintenance Scheduler
+- Schedule recurring maintenance tasks
+- Auto-create tickets for maintenance
+- Track maintenance history
+- Prevent issues before they're reported
+
+---
+
+ Security & Access Control
+
+ Role-Based Access Control (RBAC)
+
+ 1. Admin
+- Full system access
+- Manage users, teams, studios
+- Configure categories, SLAs
+- View all analytics
+- System settings
+
+ 2. Manager
+- View all tickets across studios
+- Reassign tickets
+- Override priority/SLA
+- Access all reports
+- Manage team members
+
+ 3. Team Lead
+- View team tickets
+- Assign within team
+- Access team reports
+- Approve escalations
+
+ 4. Staff
+- Create tickets
+- View assigned tickets
+- Update ticket status
+- Add comments
+- View basic reports
+
+ 5. Viewer
+- Read-only access
+- View tickets (limited)
+- View reports (limited)
+- Cannot create or modify tickets
+
+ Data Security
+- Row-level security (RLS) in Supabase
+- Encrypted data at rest and in transit
+- Secure file uploads with virus scanning
+- API rate limiting
+- GDPR compliance (data export, deletion)
+- Two-factor authentication (2FA)
+- Session management
+- Password policies
+
+---
+
+ Implementation Roadmap
+
+ Phase 1: Foundation (Weeks 1-2)
+- ✅ Supabase project setup
+- ✅ Database schema implementation
+- ✅ User authentication
+- ✅ Basic RBAC
+- ✅ Ticket creation form
+- ✅ Simple dashboard
+
+ Phase 2: Core Features (Weeks 3-4)
+- ✅ Ticket assignment logic
+- ✅ Status management
+- ✅ Comment system
+- ✅ File attachments
+- ✅ Basic notifications
+- ✅ Ticket detail page
+
+ Phase 3: Intelligence (Weeks 5-6)
+- ✅ AI auto-tagging
+- ✅ Priority scoring
+- ✅ Sentiment analysis
+- ✅ Smart routing
+- ✅ Duplicate detection
+
+ Phase 4: Automation (Weeks 7-8)
+- ✅ SLA configuration
+- ✅ Auto-escalation
+- ✅ Reminder system
+- ✅ Workflow automation
+- ✅ Email notifications
+
+ Phase 5: Analytics (Weeks 9-10)
+- ✅ Dashboard widgets
+- ✅ Report generation
+- ✅ Data visualization
+- ✅ Export capabilities
+- ✅ Scheduled reports
+
+ Phase 6: Advanced Features (Weeks 11-12)
+- ✅ Knowledge base
+- ✅ Customer portal
+- ✅ Integrations (Momence, Stripe)
+- ✅ Bulk operations
+- ✅ Mobile optimization
+
+ Phase 7: Polish & Launch (Weeks 13-14)
+- ✅ UI/UX refinement
+- ✅ Performance optimization
+- ✅ User training materials
+- ✅ Documentation
+- ✅ Beta testing
+- ✅ Production deployment
+
+---
+
+ Technical Implementation Details
+
+ Supabase Setup
+
+ 1. Project Configuration
+```javascript
+// supabase.js
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+```
+
+ 2. Row Level Security Policies
+```sql
+-- Users can only view tickets they're authorized for
+CREATE POLICY "Users can view authorized tickets" ON tickets
+FOR SELECT USING (
+  auth.uid() IN (
+    SELECT id FROM users WHERE 
+      role IN ('admin', 'manager') OR
+      id = assigned_to_user_id OR
+      id = reported_by_user_id OR
+      team_id IN (SELECT team_id FROM users WHERE id = auth.uid())
+  )
+);
+
+-- Only authorized users can create tickets
+CREATE POLICY "Authorized users can create tickets" ON tickets
+FOR INSERT WITH CHECK (
+  auth.uid() IN (SELECT id FROM users WHERE is_active = true)
+);
+
+-- Only assigned user or managers can update tickets
+CREATE POLICY "Assigned users and managers can update" ON tickets
+FOR UPDATE USING (
+  auth.uid() IN (
+    SELECT id FROM users WHERE 
+      role IN ('admin', 'manager') OR
+      id = assigned_to_user_id
+  )
+);
+```
+
+ 3. Realtime Subscriptions
+```javascript
+// Subscribe to ticket updates
+const ticketSubscription = supabase
+  .channel('tickets-channel')
+  .on('postgres_changes', 
+    { event: '', schema: 'public', table: 'tickets' },
+    (payload) => {
+      console.log('Ticket update:', payload)
+      // Update UI with new data
+    }
+  )
+  .subscribe()
+```
+
+ 4. Edge Functions for AI Processing
+```javascript
+// supabase/functions/ai-tag-ticket/index.ts
+import Anthropic from "@anthropic-ai/sdk"
+
+Deno.serve(async (req) => {
+  const { description, category, subcategory } = await req.json()
+  
+  const anthropic = new Anthropic({
+    apiKey: Deno.env.get("ANTHROPIC_API_KEY"),
+  })
+  
+  const message = await anthropic.messages.create({
+    model: "claude-sonnet-4-20250514",
+    max_tokens: 1024,
+    messages: [{
+      role: "user",
+      content: `Analyze this customer feedback ticket and provide:
+      1. Suggested tags (comma-separated)
+      2. Sentiment score (-1 to 1)
+      3. Priority suggestion (low/medium/high/critical)
+      4. Key entities mentioned
+      
+      Category: ${category}
+      Subcategory: ${subcategory}
+      Description: ${description}
+      
+      Respond in JSON format.`
+    }]
+  })
+  
+  return new Response(
+    JSON.stringify(message.content),
+    { headers: { "Content-Type": "application/json" } }
+  )
+})
+```
+
+ Frontend Architecture
+
+ 1. Component Structure
+```
+src/
+├── components/
+│   ├── tickets/
+│   │   ├── TicketForm.tsx
+│   │   ├── TicketList.tsx
+│   │   ├── TicketDetail.tsx
+│   │   ├── TicketCard.tsx
+│   │   └── TicketFilters.tsx
+│   ├── dashboard/
+│   │   ├── MetricsCard.tsx
+│   │   ├── ChartWidget.tsx
+│   │   └── ActivityFeed.tsx
+│   ├── common/
+│   │   ├── Header.tsx
+│   │   ├── Sidebar.tsx
+│   │   ├── Notification.tsx
+│   │   └── LoadingSpinner.tsx
+│   └── ui/ (shadcn components)
+├── hooks/
+│   ├── useTickets.ts
+│   ├── useAuth.ts
+│   └── useNotifications.ts
+├── lib/
+│   ├── supabase.ts
+│   ├── api.ts
+│   └── utils.ts
+├── pages/
+│   ├── dashboard.tsx
+│   ├── tickets/
+│   │   ├── index.tsx
+│   │   ├── [id].tsx
+│   │   └── new.tsx
+│   └── analytics.tsx
+└── types/
+    └── ticket.ts
+```
+
+ 2. State Management with React Query
+```javascript
+// hooks/useTickets.ts
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { supabase } from '@/lib/supabase'
+
+export const useTickets = (filters) => {
+  return useQuery({
+    queryKey: ['tickets', filters],
+    queryFn: async () => {
+      let query = supabase
+        .from('tickets')
+        .select(', assigned_to:users(), studio:studios()')
+      
+      if (filters.status) {
+        query = query.eq('status', filters.status)
+      }
+      if (filters.priority) {
+        query = query.eq('priority', filters.priority)
+      }
+      
+      const { data, error } = await query
+      if (error) throw error
+      return data
+    }
+  })
+}
+
+export const useCreateTicket = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async (ticketData) => {
+      const { data, error } = await supabase
+        .from('tickets')
+        .insert(ticketData)
+        .select()
+      
+      if (error) throw error
+      return data
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['tickets'] })
+    }
+  })
+}
+```
+
+ AI Integration Examples
+
+ 1. Auto-Tagging Tickets
+```javascript
+const autoTagTicket = async (description, category, subcategory) => {
+  const { data } = await supabase.functions.invoke('ai-tag-ticket', {
+    body: { description, category, subcategory }
+  })
+  
+  return data.tags
+}
+```
+
+ 2. Smart Priority Calculation
+```javascript
+const calculatePriority = (description, category, customerHistory) => {
+  let score = 0
+  
+  // Keyword analysis
+  const urgentKeywords = ['emergency', 'urgent', 'asap', 'immediately', 'safety', 'theft']
+  const hasUrgentKeyword = urgentKeywords.some(kw => 
+    description.toLowerCase().includes(kw)
+  )
+  if (hasUrgentKeyword) score += 30
+  
+  // Category-based scoring
+  const criticalCategories = ['Safety and Security', 'Theft and Lost Items']
+  if (criticalCategories.includes(category)) score += 40
+  
+  // Customer history
+  if (customerHistory.vipMember) score += 10
+  if (customerHistory.recentComplaints > 3) score += 15
+  
+  // Sentiment
+  if (sentimentScore < -0.5) score += 20
+  
+  // Determine priority
+  if (score >= 70) return 'critical'
+  if (score >= 50) return 'high'
+  if (score >= 30) return 'medium'
+  return 'low'
+}
+```
+
+---
+
+ Performance Optimization
+
+ 1. Database Indexing
+```sql
+-- Index frequently queried columns
+CREATE INDEX idx_tickets_status ON tickets(status);
+CREATE INDEX idx_tickets_priority ON tickets(priority);
+CREATE INDEX idx_tickets_studio ON tickets(studio_id);
+CREATE INDEX idx_tickets_assigned ON tickets(assigned_to_user_id);
+CREATE INDEX idx_tickets_created ON tickets(created_at DESC);
+CREATE INDEX idx_tickets_category ON tickets(category);
+
+-- Composite indexes for common queries
+CREATE INDEX idx_tickets_status_priority ON tickets(status, priority);
+CREATE INDEX idx_tickets_studio_status ON tickets(studio_id, status);
+
+-- Full-text search index
+CREATE INDEX idx_tickets_search ON tickets USING gin(to_tsvector('english', title || ' ' || description));
+```
+
+ 2. Caching Strategy
+- React Query caching for API responses
+- Supabase Realtime for live updates
+- Service Worker for offline support
+- CDN for static assets
+
+ 3. Lazy Loading
+- Virtual scrolling for long ticket lists
+- Pagination (50 tickets per page)
+- Image lazy loading
+- Code splitting per route
+
+ 4. Performance Monitoring
+- Web Vitals tracking
+- Error boundary implementation
+- Sentry for error tracking
+- Analytics for user behavior
+
+---
+
+ Testing Strategy
+
+ 1. Unit Tests
+- Test utility functions
+- Test data transformations
+- Test validation logic
+
+ 2. Integration Tests
+- Test API calls
+- Test Supabase queries
+- Test authentication flow
+
+ 3. E2E Tests
+- Test ticket creation flow
+- Test assignment workflow
+- Test escalation logic
+- Test notification delivery
+
+ 4. Load Testing
+- Simulate 1000+ concurrent users
+- Test database performance
+- Test API response times
+
+---
+
+ Documentation Requirements
+
+ 1. User Documentation
+- Getting started guide
+- Feature walkthroughs (with screenshots)
+- FAQ section
+- Video tutorials
+- Troubleshooting guide
+
+ 2. Admin Documentation
+- System configuration
+- User management
+- Category and SLA setup
+- Integration guides
+- Backup and recovery
+
+ 3. Developer Documentation
+- API documentation
+- Database schema
+- Code architecture
+- Deployment guide
+- Contributing guidelines
+
+---
+
+ Success Metrics
+
+ Key Performance Indicators (KPIs)
+
+1. Response Time: Average time to first response < 2 hours
+2. Resolution Time: Average time to resolution < 24 hours
+3. SLA Compliance: > 95% tickets resolved within SLA
+4. Customer Satisfaction: CSAT score > 4.5/5
+5. First Contact Resolution: > 70% resolved without escalation
+6. Ticket Volume: Track trends over time
+7. Recurring Issues: < 10% reopened tickets
+8. System Uptime: > 99.9% availability
+9. User Adoption: > 90% of staff using system daily
+10. Data Quality: > 95% tickets properly categorized

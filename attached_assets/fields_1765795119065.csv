@@ -1,0 +1,962 @@
+Label,Field Type,Options/Other Details,Sub Category,Category,Unique ID,Description,Is Required,Is Hidden
+Ticket ID,Auto-generated,System generated unique ID,Global,Global,GLB-001,Unique identifier for each ticket,Yes,No
+Date & Time Reported,DateTime,Auto-populated,Global,Global,GLB-002,When the issue was reported to staff,Yes,No
+Date & Time of Incident,DateTime,Manual entry,Global,Global,GLB-003,When the issue actually occurred,Yes,No
+Location,Dropdown,Kwality House Kemps Corner | Kenkre House | South United Football Club | Supreme HQ Bandra | WeWork Prestige Central | WeWork Galaxy | The Studio by Copper + Cloves | Pop-up,Global,Global,GLB-004,Studio location where issue occurred,Yes,No
+Reported By (Staff),Dropdown,Associates list,Global,Global,GLB-005,Staff member logging the ticket,Yes,No
+Client Name,Text,Free text entry,Global,Global,GLB-006,Name of the client reporting issue,Yes,No
+Client Email,Email,Email format,Global,Global,GLB-007,Client's email address,No,No
+Client Phone,Phone,Phone number format,Global,Global,GLB-008,Client's contact number,No,No
+Client Status,Dropdown,Existing Active | Existing Inactive | New Prospect | Trial Client | Guest (Hosted Class),Global,Global,GLB-009,Client's membership status,Yes,No
+Priority,Dropdown,Low (log only) | Medium (48hrs) | High (24hrs) | Critical (immediate),Global,Global,GLB-010,Urgency level of the issue,Yes,No
+Department Routing,Dropdown,Operations | Facilities | Training | Sales | Client Success | Marketing | Finance | Management,Global,Global,GLB-011,Which department should handle this,Yes,No
+Issue Description,Long Text,"Free text area, min 50 characters",Global,Global,GLB-012,Detailed description of the issue,Yes,No
+Action Taken Immediately,Long Text,Free text area,Global,Global,GLB-013,What was done on the spot,No,No
+Client Mood/Sentiment,Dropdown,Calm | Frustrated | Angry | Disappointed | Understanding,Global,Global,GLB-014,Client's emotional state,No,No
+Follow-up Required,Checkbox,Yes/No,Global,Global,GLB-015,Does this need additional follow-up,Yes,No
+Attachments,File Upload,"Images, PDFs, screenshots",Global,Global,GLB-016,Supporting documentation,No,No
+Issue Type,Dropdown,App Crash | Slow Loading | Login Problems | Feature Not Working | UI/UX Confusion | Other,App/Website Issues,Booking & Technology,BT-APP-001,Specific type of technical issue,Yes,No
+Platform,Dropdown,iOS App | Android App | Website (Desktop) | Website (Mobile),App/Website Issues,Booking & Technology,BT-APP-002,Which platform had the issue,Yes,No
+Device/Browser,Text,Free text,App/Website Issues,Booking & Technology,BT-APP-003,Device model or browser used,No,No
+App Version,Text,Auto-detect if possible,App/Website Issues,Booking & Technology,BT-APP-004,Version number of the app,No,Yes
+Error Message,Text,Free text,App/Website Issues,Booking & Technology,BT-APP-005,Exact error message shown,No,No
+Steps to Reproduce,Long Text,Free text area,App/Website Issues,Booking & Technology,BT-APP-006,What the client was trying to do,Yes,No
+Screenshot Available,Checkbox,Yes/No,App/Website Issues,Booking & Technology,BT-APP-007,Did client provide screenshot,No,No
+Workaround Provided,Long Text,Free text,App/Website Issues,Booking & Technology,BT-APP-008,Alternative solution offered,No,No
+Class Attempted,Dropdown,Classes list,Booking Failures,Booking & Technology,BT-BOOK-001,Which class they tried to book,Yes,No
+Instructor,Dropdown,Trainers list,Booking Failures,Booking & Technology,BT-BOOK-002,Instructor for the class,Yes,No
+Class Date & Time,DateTime,Date/time picker,Booking Failures,Booking & Technology,BT-BOOK-003,When was the class,Yes,No
+Failure Type,Dropdown,Unable to Book | Booking Not Confirmed | Double Booking | Booking Disappeared | Other,Booking Failures,Booking & Technology,BT-BOOK-004,Nature of booking failure,Yes,No
+Credits/Package Used,Dropdown,Package list,Booking Failures,Booking & Technology,BT-BOOK-005,What package client tried to use,No,No
+Credits Deducted,Dropdown,Yes | No | Unknown,Booking Failures,Booking & Technology,BT-BOOK-006,Were credits charged despite failure,Yes,No
+Booking Confirmation Received,Dropdown,Yes | No | Partial,Booking Failures,Booking & Technology,BT-BOOK-007,Did they get confirmation email/notification,Yes,No
+Manually Resolved,Dropdown,Yes - Added to Class | Yes - Credits Refunded | No - Still Pending,Booking Failures,Booking & Technology,BT-BOOK-008,How was it resolved on the spot,Yes,No
+Class,Dropdown,Classes list,Waitlist Issues,Booking & Technology,BT-WAIT-001,Which class waitlist,Yes,No
+Instructor,Dropdown,Trainers list,Waitlist Issues,Booking & Technology,BT-WAIT-002,Instructor name,Yes,No
+Class Date & Time,DateTime,Date/time picker,Waitlist Issues,Booking & Technology,BT-WAIT-003,Class date and time,Yes,No
+Issue Type,Dropdown,Not Moving from Waitlist | Waitlist Not Showing | Priority Confusion | Spot Available But Not Notified | Other,Waitlist Issues,Booking & Technology,BT-WAIT-004,Specific waitlist problem,Yes,No
+Waitlist Position,Number,Numeric,Waitlist Issues,Booking & Technology,BT-WAIT-005,Client's position on waitlist,No,No
+Time on Waitlist,Text,Hours/days,Waitlist Issues,Booking & Technology,BT-WAIT-006,How long they've been waiting,No,No
+Spot Opened Up,Dropdown,Yes | No | Unknown,Waitlist Issues,Booking & Technology,BT-WAIT-007,Did spots become available,No,No
+Resolution,Dropdown,Added to Class | Moved to Different Class | Credits Preserved | Still on Waitlist,Waitlist Issues,Booking & Technology,BT-WAIT-008,How was it handled,Yes,No
+Class to Cancel,Dropdown,Classes list,Cancellation Problems,Booking & Technology,BT-CANC-001,Which class they tried to cancel,Yes,No
+Instructor,Dropdown,Trainers list,Cancellation Problems,Booking & Technology,BT-CANC-002,Instructor name,Yes,No
+Class Date & Time,DateTime,Date/time picker,Cancellation Problems,Booking & Technology,BT-CANC-003,Scheduled class time,Yes,No
+Cancellation Attempt Time,DateTime,Date/time picker,Cancellation Problems,Booking & Technology,BT-CANC-004,When they tried to cancel,Yes,No
+Hours Before Class,Number,Auto-calculated if possible,Cancellation Problems,Booking & Technology,BT-CANC-005,Time gap between cancellation attempt and class,Yes,No
+Issue Type,Dropdown,Unable to Cancel via App | Late Cancellation Fee Charged | Cancellation Window Unclear | Credits Not Returned | Other,Cancellation Problems,Booking & Technology,BT-CANC-006,Type of cancellation issue,Yes,No
+Fee Charged,Number,Amount in INR,Cancellation Problems,Booking & Technology,BT-CANC-007,If late fee was charged,No,No
+Credits Returned,Dropdown,Yes | No | Partial | Unknown,Cancellation Problems,Booking & Technology,BT-CANC-008,Were credits/classes restored,Yes,No
+Manual Cancellation Done,Checkbox,Yes/No,Cancellation Problems,Booking & Technology,BT-CANC-009,Did staff cancel manually,Yes,No
+Class,Dropdown,Classes list,Class Check-in,Booking & Technology,BT-CHKIN-001,Which class,Yes,No
+Instructor,Dropdown,Trainers list,Class Check-in,Booking & Technology,BT-CHKIN-002,Instructor name,Yes,No
+Class Date & Time,DateTime,Date/time picker,Class Check-in,Booking & Technology,BT-CHKIN-003,Class date and time,Yes,No
+Issue Type,Dropdown,QR Code Not Working | QR Code Not Scanning | Manual Check-in Delayed | Attendance Not Recorded | Check-in System Down | Other,Class Check-in,Booking & Technology,BT-CHKIN-004,Check-in problem type,Yes,No
+Check-in Method Attempted,Dropdown,QR Code Scan | Manual by Staff | Self Check-in Kiosk | Other,Class Check-in,Booking & Technology,BT-CHKIN-005,How they tried to check in,Yes,No
+Successfully Checked In,Dropdown,Yes - Eventually | No - Attended Without Check-in | No - Did Not Attend,Class Check-in,Booking & Technology,BT-CHKIN-006,Final outcome,Yes,No
+Credits Deducted Correctly,Dropdown,Yes | No | Unknown,Class Check-in,Booking & Technology,BT-CHKIN-007,Was the class correctly charged,Yes,No
+Manual Override Required,Checkbox,Yes/No,Class Check-in,Booking & Technology,BT-CHKIN-008,Did staff need to intervene,Yes,No
+Issue Type,Dropdown,Missing Class Reminder | Missing Cancellation Confirmation | Too Many Notifications | Wrong Information in Notification | Notification Delay | Other,Notifications,Booking & Technology,BT-NOTIF-001,Type of notification issue,Yes,No
+Notification Type,Dropdown,Email | SMS | Push Notification | In-App | All Channels,Notifications,Booking & Technology,BT-NOTIF-002,Which notification channel,Yes,No
+Related Class,Dropdown,Classes list,Notifications,Booking & Technology,BT-NOTIF-003,If related to specific class,No,No
+Expected Notification Time,DateTime,Date/time picker,Notifications,Booking & Technology,BT-NOTIF-004,When notification should have arrived,No,No
+Actual Notification Time,DateTime,Date/time picker,Notifications,Booking & Technology,BT-NOTIF-005,When notification actually arrived (if late),No,No
+Client Notification Preference,Text,Free text,Notifications,Booking & Technology,BT-NOTIF-006,Client's stated preference,No,No
+Preferences Updated,Checkbox,Yes/No,Notifications,Booking & Technology,BT-NOTIF-007,Were settings adjusted,No,No
+Issue Type,Dropdown,Cannot Update Profile | Incorrect Information Displayed | Cannot Upload Photo | Cannot Change Password | Cannot Update Preferences | Other,Profile Management,Booking & Technology,BT-PROF-001,Profile issue type,Yes,No
+Field Affected,Dropdown,Name | Email | Phone | Address | Emergency Contact | Photo | Payment Method | Preferences | Other,Profile Management,Booking & Technology,BT-PROF-002,Which profile field has issue,Yes,No
+Platform,Dropdown,iOS App | Android App | Website (Desktop) | Website (Mobile),Profile Management,Booking & Technology,BT-PROF-003,Where they tried to update,Yes,No
+Information Corrected,Checkbox,Yes/No,Profile Management,Booking & Technology,BT-PROF-004,Was profile manually updated by staff,Yes,No
+Backend Update Required,Checkbox,Yes/No,Profile Management,Booking & Technology,BT-PROF-005,Does this need tech team intervention,No,Yes
+Issue Type,Dropdown,Favorite Instructor Not Showing | Schedule Not Updating | Wrong Studio Display | Missing Classes | Incorrect Times Displayed | Other,Class Visibility,Booking & Technology,BT-VIS-001,Visibility issue type,Yes,No
+Affected Instructor,Dropdown,Trainers list,Class Visibility,Booking & Technology,BT-VIS-002,If specific to instructor,No,No
+Affected Studio,Dropdown,Locations list,Class Visibility,Booking & Technology,BT-VIS-003,If specific to location,No,No
+Affected Date Range,Text,Date range,Class Visibility,Booking & Technology,BT-VIS-004,What dates are not displaying correctly,No,No
+Platform,Dropdown,iOS App | Android App | Website (Desktop) | Website (Mobile),Class Visibility,Booking & Technology,BT-VIS-005,Where they're seeing the issue,Yes,No
+Cache Cleared,Checkbox,Yes/No,Class Visibility,Booking & Technology,BT-VIS-006,Did client try clearing cache/refreshing,No,No
+Issue Replicated by Staff,Checkbox,Yes/No,Class Visibility,Booking & Technology,BT-VIS-007,Can staff see the same problem,No,No
+Transaction Type,Dropdown,New Purchase | Renewal | Upgrade | Additional Credits | Retail Purchase | Other,Payment Gateway,Booking & Technology,BT-PAY-001,What they were trying to pay for,Yes,No
+Package/Product,Dropdown,Packages list + Product Categories,Payment Gateway,Booking & Technology,BT-PAY-002,Specific package or product,Yes,No
+Amount,Number,INR,Payment Gateway,Booking & Technology,BT-PAY-003,Transaction amount,Yes,No
+Payment Method,Dropdown,Credit Card | Debit Card | UPI | Net Banking | Wallet | Other,Payment Gateway,Booking & Technology,BT-PAY-004,Payment method attempted,Yes,No
+Issue Type,Dropdown,Transaction Failed | Amount Deducted But Booking Failed | Payment Gateway Timeout | Card Declined | Multiple Charges | Other,Payment Gateway,Booking & Technology,BT-PAY-005,Type of payment issue,Yes,No
+Transaction ID,Text,Free text,Payment Gateway,Booking & Technology,BT-PAY-006,Payment gateway transaction reference,No,No
+Money Deducted,Dropdown,Yes | No | Unknown,Payment Gateway,Booking & Technology,BT-PAY-007,Was amount charged,Yes,No
+Booking Successful,Dropdown,Yes | No | Partial,Payment Gateway,Booking & Technology,BT-PAY-008,Did booking go through,Yes,No
+Refund Initiated,Checkbox,Yes/No,Payment Gateway,Booking & Technology,BT-PAY-009,Was refund processed,No,No
+Alternative Payment Accepted,Checkbox,Yes/No,Payment Gateway,Booking & Technology,BT-PAY-010,Was alternate payment method used,No,No
+Support Channel Used,Dropdown,Email | Phone | In-App Chat | Social Media DM | Walk-in,Technical Support,Booking & Technology,BT-TECH-001,How client contacted tech support,Yes,No
+Issue Reported to Support,Long Text,Free text,Technical Support,Booking & Technology,BT-TECH-002,What issue they reported,Yes,No
+Response Time,Dropdown,Immediate | Within 1 Hour | Within 24 Hours | 24-48 Hours | No Response Yet | Other,Technical Support,Booking & Technology,BT-TECH-003,How quickly support responded,Yes,No
+Issue Type,Dropdown,No Response | Slow Response | Unresolved | Generic Response | Poor Solution Quality | Other,Technical Support,Booking & Technology,BT-TECH-004,Support quality issue,Yes,No
+Previous Ticket Number,Text,Free text,Technical Support,Booking & Technology,BT-TECH-005,If this is a follow-up,No,No
+Escalation Required,Checkbox,Yes/No,Technical Support,Booking & Technology,BT-TECH-006,Should this go to tech team lead,Yes,No
+Temporary Solution Provided,Long Text,Free text,Technical Support,Booking & Technology,BT-TECH-007,What workaround was offered,No,No
+Staff Member Involved,Dropdown,Associates list,Front Desk Service,Customer Service,CS-DESK-001,Which staff member,No,No
+Issue Type,Dropdown,Rude Behavior | Unhelpful Attitude | Lack of Knowledge | Inattentive | Unprofessional Conduct | Other,Front Desk Service,Customer Service,CS-DESK-002,Nature of service issue,Yes,No
+Specific Incident,Long Text,Free text area,Front Desk Service,Customer Service,CS-DESK-003,What exactly happened,Yes,No
+Client Request/Query,Text,Free text,Front Desk Service,Customer Service,CS-DESK-004,What did client need,Yes,No
+Request Fulfilled,Dropdown,Yes - Immediately | Yes - After Delay | No - Unable to Fulfill | No - Refused,Front Desk Service,Customer Service,CS-DESK-005,Was request handled,Yes,No
+Witness Present,Dropdown,Yes - Staff | Yes - Other Client | No,Front Desk Service,Customer Service,CS-DESK-006,Was anyone else present,No,No
+Apology Given,Checkbox,Yes/No,Front Desk Service,Customer Service,CS-DESK-007,Was client apologized to,No,No
+Escalated to Manager,Checkbox,Yes/No,Front Desk Service,Customer Service,CS-DESK-008,Was manager involved,No,No
+Communication Channel,Dropdown,Email | Phone Call | WhatsApp | Social Media DM | In-Person Follow-up Promised,Response Time,Customer Service,CS-RESP-001,How client was supposed to be contacted,Yes,No
+Initial Contact Date,DateTime,Date/time picker,Response Time,Customer Service,CS-RESP-002,When client first reached out,Yes,No
+Issue Reported,Long Text,Free text,Response Time,Customer Service,CS-RESP-003,What they were contacting about,Yes,No
+Response Received,Dropdown,Yes - Late | No Response Yet | Partial Response,Response Time,Customer Service,CS-RESP-004,Did they get a response,Yes,No
+Actual Response Date,DateTime,Date/time picker,Response Time,Customer Service,CS-RESP-005,When response was received,No,No
+Follow-up Promised,Checkbox,Yes/No,Response Time,Customer Service,CS-RESP-006,Was follow-up commitment made,No,No
+Follow-up Done,Checkbox,Yes/No,Response Time,Customer Service,CS-RESP-007,Was follow-up actually done,No,No
+Staff Responsible,Dropdown,Associates list,Response Time,Customer Service,CS-RESP-008,Who was supposed to respond,No,No
+Original Issue,Long Text,Free text area,Issue Resolution,Customer Service,CS-RESOL-001,What was the original complaint,Yes,No
+Date First Reported,Date,Date picker,Issue Resolution,Customer Service,CS-RESOL-002,When was it first reported,Yes,No
+Issue Type,Dropdown,Still Unresolved | Passed Between Departments | No Clear Owner | Resolution Inadequate | Other,Issue Resolution,Customer Service,CS-RESOL-003,Resolution problem type,Yes,No
+Departments Involved,Multi-select,Operations | Facilities | Training | Sales | Client Success | Marketing | Finance,Issue Resolution,Customer Service,CS-RESOL-004,Which teams have handled this,No,No
+Number of Contacts,Number,Numeric,Issue Resolution,Customer Service,CS-RESOL-005,How many times client has followed up,No,No
+Current Status,Dropdown,Open | In Progress | Waiting on Client | Waiting on Internal Team | Escalated,Issue Resolution,Customer Service,CS-RESOL-006,Where does it stand now,Yes,No
+Resolution Offered,Long Text,Free text,Issue Resolution,Customer Service,CS-RESOL-007,What solution was proposed,No,No
+Client Satisfied with Resolution,Dropdown,Yes | No | Partially | Too Early to Tell,Issue Resolution,Customer Service,CS-RESOL-008,Client's acceptance of resolution,No,No
+Compensation Offered,Text,Free text,Issue Resolution,Customer Service,CS-RESOL-009,Any credits/refund/free class given,No,No
+Issue Type,Dropdown,Poor Communication | Language Barrier | Unclear Information | Conflicting Information | Tone Issues | Other,Communication Quality,Customer Service,CS-COMM-001,Communication problem type,Yes,No
+Communication Channel,Dropdown,In-Person | Phone | Email | WhatsApp | Social Media,Communication Quality,Customer Service,CS-COMM-002,How communication happened,Yes,No
+Staff Member Involved,Dropdown,Associates list,Communication Quality,Customer Service,CS-COMM-003,Who communicated with client,No,No
+Language Issue,Dropdown,English | Hindi | Other | None,Communication Quality,Customer Service,CS-COMM-004,If language was a barrier,No,No
+Topic Discussed,Text,Free text,Communication Quality,Customer Service,CS-COMM-005,What was being discussed,Yes,No
+Conflicting Info Source,Text,Free text,Communication Quality,Customer Service,CS-COMM-006,"If conflicting, who said what",No,No
+Clarification Provided,Checkbox,Yes/No,Communication Quality,Customer Service,CS-COMM-007,Was issue clarified immediately,Yes,No
+Documentation Provided,Checkbox,Yes/No,Communication Quality,Customer Service,CS-COMM-008,Was written clarification given,No,No
+Staff Member,Dropdown,Associates list,Staff Knowledge,Customer Service,CS-KNOW-001,Which staff member,No,No
+Knowledge Gap Area,Dropdown,Class Details | Membership Packages | Billing/Credits | Studio Policies | Instructor Schedules | Special Programs | Other,Staff Knowledge,Customer Service,CS-KNOW-002,What they didn't know,Yes,No
+Client Query,Text,Free text,Staff Knowledge,Customer Service,CS-KNOW-003,What was the client's question,Yes,No
+Incorrect Information Given,Checkbox,Yes/No,Staff Knowledge,Customer Service,CS-KNOW-004,Did staff give wrong info,Yes,No
+Incorrect Info Details,Text,Free text,Staff Knowledge,Customer Service,CS-KNOW-005,What incorrect info was given,No,No
+Correct Info Provided Later,Checkbox,Yes/No,Staff Knowledge,Customer Service,CS-KNOW-006,Was it corrected,No,No
+Client Had to Contact Multiple Staff,Checkbox,Yes/No,Staff Knowledge,Customer Service,CS-KNOW-007,Did client get passed around,No,No
+Issue Type,Dropdown,No One at Desk | Long Wait Time | Understaffed | Staff Busy with Other Tasks | Other,Staff Availability,Customer Service,CS-AVAIL-001,Availability issue type,Yes,No
+Time of Day,Dropdown,Morning (6-10am) | Midday (10am-2pm) | Afternoon (2-6pm) | Evening (6-10pm),Staff Availability,Customer Service,CS-AVAIL-002,When did this occur,Yes,No
+Wait Time,Dropdown,Under 5 min | 5-10 min | 10-15 min | 15+ min,Staff Availability,Customer Service,CS-AVAIL-003,How long client waited,No,No
+Reason for Delay,Text,Free text,Staff Availability,Customer Service,CS-AVAIL-004,Why no staff was available,No,No
+Client Need,Dropdown,Check-in Help | Booking Issue | Question | Purchase | Complaint | Other,Staff Availability,Customer Service,CS-AVAIL-005,What did client need,Yes,No
+Peak Hour,Checkbox,Yes/No,Staff Availability,Customer Service,CS-AVAIL-006,Was this during busy time,No,No
+Eventually Served,Checkbox,Yes/No,Staff Availability,Customer Service,CS-AVAIL-007,Was client helped eventually,Yes,No
+Original Complaint Category,Dropdown,Issue Categories list,Complaint Handling,Customer Service,CS-COMPL-001,What was the complaint about,Yes,No
+Issue Type,Dropdown,Dismissive Attitude | Defensive Response | No Escalation Option | Not Taken Seriously | Other,Complaint Handling,Customer Service,CS-COMPL-002,How complaint was mishandled,Yes,No
+Staff Member Who Received Complaint,Dropdown,Associates list,Complaint Handling,Customer Service,CS-COMPL-003,Who client complained to,No,No
+Client's Expectation,Text,Free text,Complaint Handling,Customer Service,CS-COMPL-004,What did client want,No,No
+Response Given,Long Text,Free text,Complaint Handling,Customer Service,CS-COMPL-005,How staff responded,Yes,No
+Escalation Requested,Checkbox,Yes/No,Complaint Handling,Customer Service,CS-COMPL-006,Did client ask for manager,No,No
+Escalation Allowed,Checkbox,Yes/No,Complaint Handling,Customer Service,CS-COMPL-007,Was escalation permitted,No,No
+Manager Involvement,Dropdown,Yes - Immediately | Yes - After Delay | No,Complaint Handling,Customer Service,CS-COMPL-008,Did manager get involved,No,No
+Phone Number Called,Dropdown,Studio phone numbers,Phone Support,Customer Service,CS-PHONE-001,Which number they called,Yes,No
+Issue Type,Dropdown,No Answer | Long Hold Time | Call Disconnected | No Callback | Wrong Extension | Other,Phone Support,Customer Service,CS-PHONE-002,Phone support issue,Yes,No
+Time of Call,DateTime,Date/time picker,Phone Support,Customer Service,CS-PHONE-003,When they called,Yes,No
+Hold Duration,Dropdown,Under 2 min | 2-5 min | 5-10 min | 10+ min | No Answer,Phone Support,Customer Service,CS-PHONE-004,How long they waited,No,No
+Reason for Call,Text,Free text,Phone Support,Customer Service,CS-PHONE-005,What they were calling about,Yes,No
+Call Attempts,Number,Numeric,Phone Support,Customer Service,CS-PHONE-006,How many times they tried,No,No
+Eventually Connecte,,,,,,,,
+Channel,Dropdown,Email | In-App Chat | WhatsApp | Website Chat,Email/Chat Support,Customer Service,CS-EMAIL-001,Which channel used,Yes,No
+Issue Type,Dropdown,Slow Response | Generic Reply | Issue Not Resolved | Auto-Reply Only | Other,Email/Chat Support,Customer Service,CS-EMAIL-002,Support issue type,Yes,No
+Date Sent,DateTime,Date/time picker,Email/Chat Support,Customer Service,CS-EMAIL-003,When client sent message,Yes,No
+Subject/Topic,Text,Free text,Email/Chat Support,Customer Service,CS-EMAIL-004,What was it about,Yes,No
+Response Time,Dropdown,Under 1 Hour | 1-4 Hours | 4-24 Hours | 24-48 Hours | 48+ Hours | No Response,Email/Chat Support,Customer Service,CS-EMAIL-005,How long until reply,No,No
+Response Quality,Dropdown,Helpful | Generic | Unhelpful | Irrelevant,Email/Chat Support,Customer Service,CS-EMAIL-006,Quality of response received,No,No
+Issue Resolved via Channel,Checkbox,Yes/No,Email/Chat Support,Customer Service,CS-EMAIL-007,Was it solved through email/chat,No,No
+Escalation to Call/In-Person,Checkbox,Yes/No,Email/Chat Support,Customer Service,CS-EMAIL-008,Did it need phone/visit,No,No
+Staff Member,Dropdown,Associates list,Staff Professionalism,Customer Service,CS-PROF-001,Which staff member,No,No
+Issue Type,Dropdown,Gossiping | Using Personal Phone | Eating at Desk | Inappropriate Conversation | Unprofessional Attire | Other,Staff Professionalism,Customer Service,CS-PROF-002,Professional conduct issue,Yes,No
+Incident Details,Long Text,Free text area,Staff Professionalism,Customer Service,CS-PROF-003,What happened,Yes,No
+Client Impact,Dropdown,Overheard by Client | Client Had to Wait | Client Felt Uncomfortable | No Direct Impact,Staff Professionalism,Customer Service,CS-PROF-004,How it affected client,Yes,No
+Witness Present,Dropdown,Yes - Staff | Yes - Other Client | No,Staff Professionalism,Customer Service,CS-PROF-005,Anyone else see this,No,No
+Addressed Immediately,Checkbox,Yes/No,Staff Professionalism,Customer Service,CS-PROF-006,Was staff spoken to on spot,No,No
+Client's First Visit Date,Date,Date picker,Newcomer Experience,Customer Service,CS-NEW-001,When was their first class,Yes,No
+Issue Type,Dropdown,No Orientation | Poor Onboarding | Lack of Guidance | Not Welcomed | Studio Tour Missing | Other,Newcomer Experience,Customer Service,CS-NEW-002,Onboarding issue type,Yes,No
+Staff Who Greeted,Dropdown,Associates list,Newcomer Experience,Customer Service,CS-NEW-003,Who welcomed them,No,No
+Orientation Provided,Checkbox,Yes/No,Newcomer Experience,Customer Service,CS-NEW-004,Did they get facility tour,No,No
+Class Explanation Given,Checkbox,Yes/No,Newcomer Experience,Customer Service,CS-NEW-005,Was class format explained,No,No
+Equipment Demo Provided,Checkbox,Yes/No,Newcomer Experience,Customer Service,CS-NEW-006,Did they learn to use equipment,No,No
+Questions Answered,Checkbox,Yes/No,Newcomer Experience,Customer Service,CS-NEW-007,Were their questions addressed,No,No
+Client's First Class,Dropdown,Classes list,Newcomer Experience,Customer Service,CS-NEW-008,Which class they attended,No,No
+Felt Welcomed,Dropdown,Yes | Somewhat | No,Newcomer Experience,Customer Service,CS-NEW-009,Client's feeling about experience,No,No
+Sales Staff Member,Dropdown,Associates list,Misleading Information,Sales & Marketing,SM-MISL-001,Who did the sales pitch,No,No
+Issue Type,Dropdown,False Promise | Exaggerated Benefits | Hidden Terms | Pressure Tactics | Incorrect Package Info | Other,Misleading Information,Sales & Marketing,SM-MISL-002,Type of misleading info,Yes,No
+What Was Promised,Long Text,Free text area,Misleading Information,Sales & Marketing,SM-MISL-003,What client was told,Yes,No
+What Was Actually True,Long Text,Free text area,Misleading Information,Sales & Marketing,SM-MISL-004,What the reality is,Yes,No
+Package/Product Sold,Dropdown,Packages list,Misleading Information,Sales & Marketing,SM-MISL-005,What package was purchased,Yes,No
+Sale Date,Date,Date picker,Misleading Information,Sales & Marketing,SM-MISL-006,When purchase was made,Yes,No
+Written Documentation,Dropdown,Yes - Contract/Email | No - Verbal Only,Misleading Information,Sales & Marketing,SM-MISL-007,Was anything in writing,No,No
+Client Seeking,Dropdown,Refund | Package Change | Clarification | Complaint Only,Misleading Information,Sales & Marketing,SM-MISL-008,What does client want,Yes,No
+Resolution Offered,Long Text,Free text,Misleading Information,Sales & Marketing,SM-MISL-009,How was it resolved,No,No
+Sales Staff Member,Dropdown,Associates list,Aggressive Selling,Sales & Marketing,SM-AGG-001,Who contacted client,No,No
+Issue Type,Dropdown,Excessive Follow-ups | Pressure to Upgrade | Unwanted Sales Calls | Sales During Class Time | Hard Sell Tactics | Other,Aggressive Selling,Sales & Marketing,SM-AGG-002,Type of aggressive selling,Yes,No
+Contact Method,Multi-select,Phone Calls | WhatsApp | Email | In-Person | SMS,Aggressive Selling,Sales & Marketing,SM-AGG-003,How client was contacted,Yes,No
+Frequency,Dropdown,Daily | Multiple Times Daily | Weekly | After Each Class | Other,Aggressive Selling,Sales & Marketing,SM-AGG-004,How often contacted,No,No
+Product/Package Pushed,Dropdown,Packages list,Aggressive Selling,Sales & Marketing,SM-AGG-005,What they were selling,No,No
+Client Status,Dropdown,Existing Active | Existing Inactive | Trial Client | New Prospect,Aggressive Selling,Sales & Marketing,SM-AGG-006,Client's membership status,Yes,No
+Client Requested to Stop,Checkbox,Yes/No,Aggressive Selling,Sales & Marketing,SM-AGG-007,Did client ask them to stop,No,No
+Contact Continued After Request,Checkbox,Yes/No,Aggressive Selling,Sales & Marketing,SM-AGG-008,Did follow-ups continue anyway,No,No
+Client Added to Do Not Contact,Checkbox,Yes/No,Aggressive Selling,Sales & Marketing,SM-AGG-009,Was preference updated,No,No
+Trial Class Date,Date,Date picker,Trial Class Experience,Sales & Marketing,SM-TRIAL-001,When was trial class,Yes,No
+Class Attended,Dropdown,Classes list,Trial Class Experience,Sales & Marketing,SM-TRIAL-002,Which class,Yes,No
+Instructor,Dropdown,Trainers list,Trial Class Experience,Sales & Marketing,SM-TRIAL-003,Who taught,Yes,No
+Issue Type,Dropdown,Poor Experience | No Introduction | Rushed Enrollment | Hard Sell After Class | No Follow-up | Other,Trial Class Experience,Sales & Marketing,SM-TRIAL-004,Trial experience issue,Yes,No
+Pre-Class Orientation,Checkbox,Yes/No,Trial Class Experience,Sales & Marketing,SM-TRIAL-005,Was orientation given,No,No
+Met with Sales After,Checkbox,Yes/No,Trial Class Experience,Sales & Marketing,SM-TRIAL-006,Did they meet sales staff,No,No
+Pressure to Purchase,Dropdown,No Pressure | Mild | Moderate | High Pressure,Trial Class Experience,Sales & Marketing,SM-TRIAL-007,Level of sales pressure,No,No
+Purchased Package,Checkbox,Yes/No,Trial Class Experience,Sales & Marketing,SM-TRIAL-008,Did they buy membership,No,No
+Would Recommend Trial,Dropdown,Yes | Maybe | No,Trial Class Experience,Sales & Marketing,SM-TRIAL-009,Would they recommend to others,No,No
+Issue Type,Dropdown,Too Many Emails | Too Many SMS | Spam Messages | Irrelevant Offers | Duplicate Messages | Other,Communication Overload,Sales & Marketing,SM-OVER-001,Type of overload,Yes,No
+Communication Channel,Multi-select,Email | SMS | WhatsApp | Push Notifications,Communication Overload,Sales & Marketing,SM-OVER-002,Which channels,Yes,No
+Frequency,Dropdown,Multiple Times Daily | Daily | Several Times Weekly | Weekly,Communication Overload,Sales & Marketing,SM-OVER-003,How often receiving messages,No,No
+Content Type,Multi-select,Promotional Offers | Class Reminders | New Classes | Events | General Updates | Other,Communication Overload,Sales & Marketing,SM-OVER-004,What kind of messages,No,No
+Relevance,Dropdown,All Irrelevant | Mostly Irrelevant | Some Relevant | Mostly Relevant,Communication Overload,Sales & Marketing,SM-OVER-005,How relevant to client,No,No
+Unsubscribe Attempted,Checkbox,Yes/No,Communication Overload,Sales & Marketing,SM-OVER-006,Did they try to unsubscribe,No,No
+Unsubscribe Successful,Checkbox,Yes/No,Communication Overload,Sales & Marketing,SM-OVER-007,Did unsubscribe work,No,No
+Preferences Updated,Checkbox,Yes/No,Communication Overload,Sales & Marketing,SM-OVER-008,Were communication settings changed,Yes,No
+Platform,Dropdown,Instagram | Facebook | Twitter/X | LinkedIn | YouTube | Other,Social Media,Sales & Marketing,SM-SOC-001,Which social platform,Yes,No
+Issue Type,Dropdown,Inaccurate Information | Unresponsive to DMs | Poor Engagement | Outdated Information | Misleading Posts | Other,Social Media,Sales & Marketing,SM-SOC-002,Social media issue type,Yes,No
+Specific Post/Content,Text,Post URL or description,Social Media,Sales & Marketing,SM-SOC-003,Link or details of content,No,No
+Inaccuracy Details,Long Text,Free text,Social Media,Sales & Marketing,SM-SOC-004,What information was wrong,No,No
+Client Contacted Via DM,Checkbox,Yes/No,Social Media,Sales & Marketing,SM-SOC-005,Did they send direct message,No,No
+DM Response Time,Dropdown,Under 1 Hour | 1-24 Hours | 24-48 Hours | No Response,Social Media,Sales & Marketing,SM-SOC-006,How long until reply,No,No
+Issue Resolved Via Social,Checkbox,Yes/No,Social Media,Sales & Marketing,SM-SOC-007,Was it handled on social media,No,No
+Directed to Other Channel,Checkbox,Yes/No,Social Media,Sales & Marketing,SM-SOC-008,Were they asked to call/email,No,No
+Issue Type,Dropdown,Guest Pass Not Working | Referral Benefit Not Credited | Restrictions Not Mentioned | Pass Expired Early | Other,Guest Passes/Referrals,Sales & Marketing,SM-GUEST-001,Guest pass/referral issue,Yes,No
+Referral Type,Dropdown,Guest Pass | Friend Referral | Corporate Partnership | Influencer/Ambassador | Other,Guest Passes/Referrals,Sales & Marketing,SM-GUEST-002,Type of referral program,Yes,No
+Pass/Code Provided,Text,Free text,Guest Passes/Referrals,Sales & Marketing,SM-GUEST-003,Code or pass number,No,No
+Referred Client Name,Text,Free text,Guest Passes/Referrals,Sales & Marketing,SM-GUEST-004,Who was referred (if applicable),No,No
+Referring Client,Text,Free text,Guest Passes/Referrals,Sales & Marketing,SM-GUEST-005,Who gave the referral,No,No
+Benefit Expected,Text,Free text,Guest Passes/Referrals,Sales & Marketing,SM-GUEST-006,What benefit was promised,No,No
+Benefit Received,Dropdown,Yes | No | Partial,Guest Passes/Referrals,Sales & Marketing,SM-GUEST-007,Was benefit given,Yes,No
+Terms Clearly Communicated,Dropdown,Yes | No | Unclear,Guest Passes/Referrals,Sales & Marketing,SM-GUEST-008,Were restrictions explained,No,No
+Resolution,Long Text,Free text,Guest Passes/Referrals,Sales & Marketing,SM-GUEST-009,How was it resolved,No,No
+Event Name,Text,Free text,Events & Workshops,Sales & Marketing,SM-EVENT-001,Name of event/workshop,Yes,No
+Event Date,Date,Date picker,Events & Workshops,Sales & Marketing,SM-EVENT-002,Scheduled date,Yes,No
+Event Location,Dropdown,Locations list,Events & Workshops,Sales & Marketing,SM-EVENT-003,Where it was held,Yes,No
+Issue Type,Dropdown,Poor Organization | Event Cancelled | Misleading Details | Registration Issues | Overcrowded | Other,Events & Workshops,Sales & Marketing,SM-EVENT-004,Event issue type,Yes,No
+Client Registered,Checkbox,Yes/No,Events & Workshops,Sales & Marketing,SM-EVENT-005,Did they sign up,Yes,No
+Registration Fee Paid,Number,Amount in INR,Events & Workshops,Sales & Marketing,SM-EVENT-006,"If paid, how much",No,No
+Notice Period for Cancellation,Text,Hours/days,Events & Workshops,Sales & Marketing,SM-EVENT-007,How much notice for cancellation,No,No
+Refund Offered,Checkbox,Yes/No,Events & Workshops,Sales & Marketing,SM-EVENT-008,Was refund provided,No,No
+Alternative Offered,Long Text,Free text,Events & Workshops,Sales & Marketing,SM-EVENT-009,What alternative was given,No,No
+Event Details Mismatch,Long Text,Free text,Events & Workshops,Sales & Marketing,SM-EVENT-010,What was different from advertised,No,No
+Issue Type,Dropdown,Inconsistent Messaging | Tone Mismatch | Cultural Insensitivity | Inappropriate Content | Confusing Branding | Other,Brand Communication,Sales & Marketing,SM-BRAND-001,Brand communication issue,Yes,No
+Communication Channel,Dropdown,Social Media | Email | Website | In-Studio Signage | Print Material | Other,Brand Communication,Sales & Marketing,SM-BRAND-002,Where issue was seen,Yes,No
+Specific Content,Text,Description or link,Brand Communication,Sales & Marketing,SM-BRAND-003,What content was problematic,No,No
+Issue Details,Long Text,Free text area,Brand Communication,Sales & Marketing,SM-BRAND-004,Explain the issue,Yes,No
+Cultural/Sensitivity Concern,Checkbox,Yes/No,Brand Communication,Sales & Marketing,SM-BRAND-005,Is this a sensitivity issue,No,No
+Client Reaction,Dropdown,Offended | Confused | Disappointed | Concerned | Other,Brand Communication,Sales & Marketing,SM-BRAND-006,How client felt,No,No
+Flagged to Marketing Team,Checkbox,Yes/No,Brand Communication,Sales & Marketing,SM-BRAND-007,Was marketing team notified,Yes,No
+Issue Type,Dropdown,Inadequate Sanitization | No Mask Enforcement | Poor Surface Cleaning | Unclean Equipment | Other,Hygiene Protocols,Health & Safety,HS-HYG-001,Hygiene issue type,Yes,No
+Area Affected,Multi-select,Studio Floor | Equipment | Changing Room | Washroom | Reception | Common Areas | Other,Hygiene Protocols,Health & Safety,HS-HYG-002,Where was hygiene issue,Yes,No
+Specific Equipment,Text,Free text,Hygiene Protocols,Health & Safety,HS-HYG-003,Which equipment if applicable,No,No
+Class Time,DateTime,Date/time picker,Hygiene Protocols,Health & Safety,HS-HYG-004,When was this observed,Yes,No
+Observed By,Dropdown,Client | Staff | Instructor,Hygiene Protocols,Health & Safety,HS-HYG-005,Who noticed the issue,Yes,No
+Sanitization Frequency,Dropdown,Not Done | Insufficient | Not After Each Class | Other,Hygiene Protocols,Health & Safety,HS-HYG-006,Issue with cleaning schedule,No,No
+Immediate Action Taken,Long Text,Free text,Hygiene Protocols,Health & Safety,HS-HYG-007,What was done immediately,Yes,No
+Staff Notified,Checkbox,Yes/No,Hygiene Protocols,Health & Safety,HS-HYG-008,Was cleaning staff informed,Yes,No
+Photo Evidence,Checkbox,Yes/No,Hygiene Protocols,Health & Safety,HS-HYG-009,Was photo taken,No,No
+Injured Person,Text,Client name,Injury During Class,Health & Safety,HS-INJ-001,Who was injured,Yes,No
+Injured Person Contact,Phone,Phone number,Injury During Class,Health & Safety,HS-INJ-002,Contact number,Yes,No
+Class,Dropdown,Classes list,Injury During Class,Health & Safety,HS-INJ-003,Which class,Yes,No
+Instructor,Dropdown,Trainers list,Injury During Class,Health & Safety,HS-INJ-004,Instructor teaching,Yes,No
+Class Date & Time,DateTime,Date/time picker,Injury During Class,Health & Safety,HS-INJ-005,When injury occurred,Yes,No
+Injury Type,Dropdown,Muscle Strain | Sprain | Fall | Equipment-Related | Collision with Another Client | Overexertion | Other,Injury During Class,Health & Safety,HS-INJ-006,Type of injury,Yes,No
+Body Part Affected,Dropdown,Head | Neck | Shoulder | Arm | Hand | Back | Hip | Leg | Knee | Ankle | Foot | Other,Injury During Class,Health & Safety,HS-INJ-007,Where on body,Yes,No
+Injury Severity,Dropdown,Minor (continued class) | Moderate (stopped class) | Serious (medical attention needed) | Critical (emergency services),Injury During Class,Health & Safety,HS-INJ-008,How severe,Yes,No
+Cause of Injury,Long Text,Free text area,Injury During Class,Health & Safety,HS-INJ-009,What caused the injury,Yes,No
+Pre-existing Condition,Checkbox,Yes/No,Injury During Class,Health & Safety,HS-INJ-010,Did client have prior injury,No,No
+Pre-existing Condition Details,Text,Free text,Injury During Class,Health & Safety,HS-INJ-011,Details of prior condition,No,No
+First Aid Administered,Checkbox,Yes/No,Injury During Class,Health & Safety,HS-INJ-012,Was first aid given,Yes,No
+First Aid Details,Long Text,Free text,Injury During Class,Health & Safety,HS-INJ-013,What first aid was provided,No,No
+Medical Professional Called,Checkbox,Yes/No,Injury During Class,Health & Safety,HS-INJ-014,Was doctor/ambulance called,Yes,No
+Incident Report Filed,Checkbox,Yes/No,Injury During Class,Health & Safety,HS-INJ-015,Was formal report created,Yes,No
+Witness Present,Multi-select,Instructor | Other Clients | Staff | None,Injury During Class,Health & Safety,HS-INJ-016,Who witnessed,No,No
+Witness Details,Text,Names if available,Injury During Class,Health & Safety,HS-INJ-017,Witness information,No,No
+Client Continued Class,Checkbox,Yes/No,Injury During Class,Health & Safety,HS-INJ-018,Did they finish class,No,No
+Follow-up Required,Checkbox,Yes/No,Injury During Class,Health & Safety,HS-INJ-019,Does client need follow-up,Yes,No
+Management Notified,Checkbox,Yes/No,Injury During Class,Health & Safety,HS-INJ-020,Was management informed,Yes,No
+Issue Type,Dropdown,No Fire Exit Signs | Missing First Aid Kit | No Emergency Protocol | Blocked Emergency Exit | No Fire Extinguisher | Other,Emergency Preparedness,Health & Safety,HS-EMER-001,Emergency prep issue,Yes,No
+Specific Location,Text,Free text,Emergency Preparedness,Health & Safety,HS-EMER-002,Where in the studio,Yes,No
+Safety Equipment Missing,Multi-select,First Aid Kit | Fire Extinguisher | Emergency Exit Signs | AED | Emergency Contact List | Other,Emergency Preparedness,Health & Safety,HS-EMER-003,What is missing,No,No
+Observed By,Dropdown,Client | Staff | Instructor | Inspector,Emergency Preparedness,Health & Safety,HS-EMER-004,Who noticed this,Yes,No
+Safety Risk Level,Dropdown,Low | Medium | High | Critical,Emergency Preparedness,Health & Safety,HS-EMER-005,How serious is the risk,Yes,No
+Immediate Correction Possible,Checkbox,Yes/No,Emergency Preparedness,Health & Safety,HS-EMER-006,Can this be fixed immediately,No,No
+Action Taken,Long Text,Free text,Emergency Preparedness,Health & Safety,HS-EMER-007,What was done,Yes,No
+Facilities Team Notified,Checkbox,Yes/No,Emergency Preparedness,Health & Safety,HS-EMER-008,Was facilities team informed,Yes,No
+Compliance Issue,Checkbox,Yes/No,Emergency Preparedness,Health & Safety,HS-EMER-009,Is this a legal/code violation,No,No
+Issue Type,Dropdown,Not Following Guidelines | No Temperature Checks | Overcrowding Beyond Capacity | No Social Distancing | Other,COVID/Health Protocols,Health & Safety,HS-COVID-001,Health protocol issue,Yes,No
+Current Protocol in Place,Dropdown,Temperature Checks | Capacity Limits | Mask Requirements | Social Distancing | Enhanced Cleaning | Other,COVID/Health Protocols,Health & Safety,HS-COVID-002,What protocols should be followed,Yes,No
+Protocol Not Followed,Multi-select,Same as above options,COVID/Health Protocols,Health & Safety,HS-COVID-003,Which protocols were violated,Yes,No
+Class,Dropdown,Classes list,COVID/Health Protocols,Health & Safety,HS-COVID-004,Which class if applicable,No,No
+Class Date & Time,DateTime,Date/time picker,COVID/Health Protocols,Health & Safety,HS-COVID-005,When observed,Yes,No
+Number of People Present,Number,Numeric,COVID/Health Protocols,Health & Safety,HS-COVID-006,How many in studio,No,No
+Maximum Capacity,Number,Numeric,COVID/Health Protocols,Health & Safety,HS-COVID-007,What's the limit,No,No
+Staff Responsible,Dropdown,Associates list,COVID/Health Protocols,Health & Safety,HS-COVID-008,Who should have enforced,No,No
+Client Concern Level,Dropdown,Low | Medium | High | Refused to Attend,COVID/Health Protocols,Health & Safety,HS-COVID-009,How concerned was client,No,No
+Corrective Action,Long Text,Free text,COVID/Health Protocols,Health & Safety,HS-COVID-010,What was done,Yes,No
+Issue Type,Dropdown,Medical Form Not Collected | Disclosed Condition Ignored | No Medical Waiver | Staff Unaware of Condition | Other,Medical Disclosure,Health & Safety,HS-MED-001,Medical disclosure issue,Yes,No
+Client Name,Text,Free text,Medical Disclosure,Health & Safety,HS-MED-002,Which client,Yes,No
+Medical Condition,Text,General description only,Medical Disclosure,Health & Safety,HS-MED-003,What condition (general terms),No,No
+Condition Disclosed,Dropdown,Yes - In Writing | Yes - Verbally | No,Medical Disclosure,Health & Safety,HS-MED-004,Was condition disclosed,Yes,No
+Date Disclosed,Date,Date picker,Medical Disclosure,Health & Safety,HS-MED-005,When was it disclosed,No,No
+Disclosed To,Dropdown,Associates + Trainers list,Medical Disclosure,Health & Safety,HS-MED-006,Who was told,No,No
+Information in System,Checkbox,Yes/No,Medical Disclosure,Health & Safety,HS-MED-007,Is it in client profile,Yes,No
+Instructor Informed,Checkbox,Yes/No,Medical Disclosure,Health & Safety,HS-MED-008,Does instructor know,No,No
+Modifications Offered,Checkbox,Yes/No,Medical Disclosure,Health & Safety,HS-MED-009,Were alternatives provided,No,No
+Incident Occurred,Checkbox,Yes/No,Medical Disclosure,Health & Safety,HS-MED-010,Did this lead to an incident,Yes,No
+Action Required,Long Text,Free text,Medical Disclosure,Health & Safety,HS-MED-011,What needs to happen,Yes,No
+Equipment Type,Dropdown,Weights | Resistance Bands | Mat | Barre | Ball | Reformer | Other,Equipment Safety,Health & Safety,HS-EQUIP-001,What equipment,Yes,No
+Issue Type,Dropdown,Unsafe/Damaged | No Safety Check | Sharp Edges | Unstable | Broken | Worn Out | Other,Equipment Safety,Health & Safety,HS-EQUIP-002,Safety issue type,Yes,No
+Equipment ID/Description,Text,Free text,Equipment Safety,Health & Safety,HS-EQUIP-003,Specific equipment identifier,No,No
+Observed During,Dropdown,Before Class | During Class |,,,,,,
+Issue Type,Dropdown,Poor Ventilation | Strong Odors | Chemical Smell | Stuffy Environment | Dust | Other,Air Quality,Health & Safety,HS-AIR-001,Air quality issue type,Yes,No
+Area Affected,Multi-select,Studio Floor | Changing Room | Washroom | Reception | Entire Facility,Air Quality,Health & Safety,HS-AIR-002,Where is the issue,Yes,No
+Odor Source,Dropdown,Cleaning Products | Mold/Mildew | Sewage | Sweat/Body Odor | Unknown | Other,Air Quality,Health & Safety,HS-AIR-003,What's causing the smell,No,No
+Observed During,Dropdown,Morning Classes | Afternoon Classes | Evening Classes | All Day,Air Quality,Health & Safety,HS-AIR-004,When is it noticeable,Yes,No
+Class,Dropdown,Classes list,Air Quality,Health & Safety,HS-AIR-005,Specific class if applicable,No,No
+Class Date & Time,DateTime,Date/time picker,Air Quality,Health & Safety,HS-AIR-006,When observed,Yes,No
+Temperature,Dropdown,Too Hot | Too Cold | Normal,Air Quality,Health & Safety,HS-AIR-007,Temperature at the time,No,No
+AC/Ventilation On,Checkbox,Yes/No,Air Quality,Health & Safety,HS-AIR-008,Was system running,No,No
+Client Health Impact,Dropdown,None | Mild Discomfort | Breathing Difficulty | Headache | Nausea | Had to Leave,Air Quality,Health & Safety,HS-AIR-009,How it affected client,No,No
+Multiple Clients Affected,Checkbox,Yes/No,Air Quality,Health & Safety,HS-AIR-010,Did others complain too,No,No
+Immediate Action Taken,Long Text,Free text,Air Quality,Health & Safety,HS-AIR-011,What was done,Yes,No
+Facilities Team Notified,Checkbox,Yes/No,Air Quality,Health & Safety,HS-AIR-012,Was maintenance informed,Yes,No
+Ticket ID,Auto-generated,System generated unique identifier,N/A,Global,GLB-001,Unique ticket reference number,Yes,No
+Date & Time of Incident,DateTime,Date and time picker,N/A,Global,GLB-002,When the issue occurred,Yes,No
+Date & Time of Report,DateTime,Auto-populated timestamp,N/A,Global,GLB-003,When ticket was created,Yes,Yes
+Reported By,Text,Staff member name (auto-filled),N/A,Global,GLB-004,Name of team member creating ticket,Yes,No
+Associate Handling,Dropdown,Akshay Rane | Vahishta Fitter | Zaheer Agarbattiwala | Zahur Shaikh | Nadiya Shaikh | Admin Admin | Shipra Bhika | Imran Shaikh | Tahira Sayyed | Manisha Rathod | Sheetal Kataria | Priyanka Abnave | Api Serou | Prathap Kp | Pavanthika | Santhosh Kumar,N/A,Global,GLB-005,Associate who initially handled the issue,Yes,No
+Client Name,Text,Free text field,N/A,Global,GLB-006,Full name of the client,Yes,No
+Client Phone,Text,10-digit mobile number,N/A,Global,GLB-007,Client contact number,Yes,No
+Client Email,Email,Valid email format,N/A,Global,GLB-008,Client email address,Yes,No
+Client Status,Dropdown,Existing Active | Existing Inactive | New Prospect | Trial Client | Guest (Hosted Class),N/A,Global,GLB-009,Current status of the client,Yes,No
+Location,Dropdown,Kwality House Kemps Corner | Kenkre House | South United Football Club | Supreme HQ Bandra | WeWork Prestige Central | WeWork Galaxy | The Studio by Copper + Cloves | Pop-up,N/A,Global,GLB-010,Studio location where issue occurred,Yes,No
+Priority Level,Dropdown,Low (log only) | Medium (48hrs) | High (24hrs) | Critical (immediate),N/A,Global,GLB-011,Urgency of issue resolution,Yes,No
+Department Routing,Dropdown,Operations | Facilities | Training | Sales | Client Success | Marketing | Finance | Management,N/A,Global,GLB-012,Department responsible for resolution,Yes,No
+Issue Status,Dropdown,Open | In Progress | Pending Client | Resolved | Closed,N/A,Global,GLB-013,Current status of the ticket,Yes,No
+Client Sentiment,Dropdown,Very Upset | Frustrated | Neutral | Satisfied | Delighted,N/A,Global,GLB-014,Client's emotional state during interaction,Yes,No
+Follow-up Required,Radio,Yes | No,N/A,Global,GLB-015,Does this issue need follow-up contact?,Yes,No
+Follow-up Date,Date,Date picker (conditional on above),N/A,Global,GLB-016,When to follow up with client,No,No
+Resolution Notes,Long Text,Free text area,N/A,Global,GLB-017,Actions taken and resolution provided,No,No
+Attachments,File Upload,"Images, screenshots, documents",N/A,Global,GLB-018,Supporting evidence or documentation,No,No
+Issue Type,Dropdown,App Crash | Slow Loading | Login Failed | Feature Not Working | UI Display Error | Session Timeout | Other,App/Website Issues,Booking & Technology,BT-001,Specific technical problem encountered,Yes,No
+Platform,Dropdown,iOS App | Android App | Website (Desktop) | Website (Mobile),App/Website Issues,Booking & Technology,BT-002,Where the issue occurred,Yes,No
+Device/Browser,Text,"e.g., iPhone 12, Chrome, Safari",App/Website Issues,Booking & Technology,BT-003,Device or browser being used,No,No
+App Version,Text,Version number if applicable,App/Website Issues,Booking & Technology,BT-004,Current app version,No,No
+Error Message,Text,Exact error message displayed,App/Website Issues,Booking & Technology,BT-005,Any error text shown to user,No,No
+Steps to Reproduce,Long Text,Detailed sequence of actions,App/Website Issues,Booking & Technology,BT-006,How to recreate the issue,Yes,No
+Workaround Provided,Text,Temporary solution offered to client,App/Website Issues,Booking & Technology,BT-007,How issue was temporarily resolved,No,No
+Client Able to Complete Action,Radio,Yes | No,App/Website Issues,Booking & Technology,BT-008,Whether client completed intended task,Yes,No
+Booking Failure Type,Dropdown,Cannot Select Class | Booking Not Confirmed | Double Booking Occurred | Booking Disappeared | Wrong Class Booked | Other,Booking Failures,Booking & Technology,BT-009,Type of booking failure,Yes,No
+Class Attempted,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab,Booking Failures,Booking & Technology,BT-010,Which class client tried to book,Yes,No
+Class Date & Time,DateTime,Date and time of class,Booking Failures,Booking & Technology,BT-011,Scheduled class date/time,Yes,No
+Trainer,Dropdown,Anisha Shah | Atulan Purohit | Karanvir Bhatia | Mrigakshi Jaiswal | Reshma Sharma | Karan Bhatia | Pushyank Nahar | Shruti Kulkarni | Janhavi Jain | Rohan Dahima | Kajol Kanchan | Vivaran Dhasmana | Upasna Paranjpe | Richard D'Costa | Pranjali Jain | Saniya Jaiswal | Shruti Suresh | Cauveri Vikrant | Poojitha Bhaskar | Nishanth Raj | Siddhartha Kusuma | Simonelle De Vitre | Kabir Varma | Simran Dutt | Veena Narasimhan | Anmol Sharma | Bret Saldanha | Raunak Khemuka | Chaitanya Nahar | Sovena Shetty,Booking Failures,Booking & Technology,BT-012,Instructor for the class,Yes,No
+Client Package Type,Dropdown,Barre 1 month Unlimited | Studio 2 Week Unlimited | Studio Single Class | Session | Private Class | Studio 8 Class Package | Studio 10 Class Package | Money Credits | Studio Private Class | Retail | Studio 4 Class Package | Studio 1 Month Unlimited | Studio 3 Month Unlimited | Studio Annual Unlimited | Studio Newcomers 2 For 1 | Studio 12 Class Package | Studio 10 Single Class Package | Studio 30 Single Class Package | Studio 20 Single Class Package | Barre 6 month Unlimited | Studio 6 Month Unlimited | Barre 2 week Unlimited | Studio 3 Month Unlimited - Monthly | Gift Card | Newcomer 8 Class Package | Studio 6 Week Unlimited,Booking Failures,Booking & Technology,BT-013,Client's current membership/package,Yes,No
+Classes Remaining,Number,Number of classes left in package,Booking Failures,Booking & Technology,BT-014,Available class credits,Yes,No
+Booking Manually Completed,Radio,Yes | No,Booking Failures,Booking & Technology,BT-015,Whether staff manually booked client,Yes,No
+System Error Code,Text,Any system error code displayed,Booking Failures,Booking & Technology,BT-016,Technical error reference,No,No
+Waitlist Issue Type,Dropdown,Not Moving Up | Didn't Get Notified of Opening | Waitlist Not Available | Spot Given to Someone Else | Waitlist Position Incorrect | Other,Waitlist Issues,Booking & Technology,BT-017,Specific waitlist problem,Yes,No
+Class Details,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab,Waitlist Issues,Booking & Technology,BT-018,Class on waitlist,Yes,No
+Class Date & Time,DateTime,Date and time of class,Waitlist Issues,Booking & Technology,BT-019,Scheduled class date/time,Yes,No
+Trainer,Dropdown,Anisha Shah | Atulan Purohit | Karanvir Bhatia | Mrigakshi Jaiswal | Reshma Sharma | Karan Bhatia | Pushyank Nahar | Shruti Kulkarni | Janhavi Jain | Rohan Dahima | Kajol Kanchan | Vivaran Dhasmana | Upasna Paranjpe | Richard D'Costa | Pranjali Jain | Saniya Jaiswal | Shruti Suresh | Cauveri Vikrant | Poojitha Bhaskar | Nishanth Raj | Siddhartha Kusuma | Simonelle De Vitre | Kabir Varma | Simran Dutt | Veena Narasimhan | Anmol Sharma | Bret Saldanha | Raunak Khemuka | Chaitanya Nahar | Sovena Shetty,Waitlist Issues,Booking & Technology,BT-020,Instructor for the class,Yes,No
+Waitlist Position,Number,Client's position on waitlist,Waitlist Issues,Booking & Technology,BT-021,Where client was in queue,Yes,No
+When Joined Waitlist,DateTime,When client added to waitlist,Waitlist Issues,Booking & Technology,BT-022,Timestamp of joining waitlist,Yes,No
+Spot Became Available,Radio,Yes | No | Unknown,Waitlist Issues,Booking & Technology,BT-023,Whether a spot actually opened,Yes,No
+Client Received Notification,Radio,Yes | No,Waitlist Issues,Booking & Technology,BT-024,If notification was sent/received,Yes,No
+Manual Override Done,Radio,Yes | No,Waitlist Issues,Booking & Technology,BT-025,Whether staff manually added client,Yes,No
+Cancellation Issue Type,Dropdown,Cannot Cancel in App | Late Cancel Charge Disputed | Cancel Window Confusion | Cancellation Not Processed | Wrong Class Cancelled | No Show Marked Incorrectly | Other,Cancellation Problems,Booking & Technology,BT-026,Type of cancellation issue,Yes,No
+Class Details,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab,Cancellation Problems,Booking & Technology,BT-027,Class to be cancelled,Yes,No
+Class Date & Time,DateTime,Date and time of class,Cancellation Problems,Booking & Technology,BT-028,Scheduled class date/time,Yes,No
+Cancellation Attempted When,DateTime,When client tried to cancel,Cancellation Problems,Booking & Technology,BT-029,Timestamp of cancellation attempt,Yes,No
+Hours Before Class,Number,Calculate from above timestamps,Cancellation Problems,Booking & Technology,BT-030,Time gap before class start,Yes,Yes
+Late Cancel Fee Applied,Radio,Yes | No,Cancellation Problems,Booking & Technology,BT-031,Whether penalty was charged,Yes,No
+Late Cancel Fee Amount,Number,Fee charged if applicable,Cancellation Problems,Booking & Technology,BT-032,Amount of penalty,No,No
+Fee Waiver Requested,Radio,Yes | No,Cancellation Problems,Booking & Technology,BT-033,Client asking for fee reversal,Yes,No
+Fee Waiver Reason,Text,Client's explanation,Cancellation Problems,Booking & Technology,BT-034,Justification for waiver,No,No
+Fee Waiver Approved,Radio,Yes | No | Pending,Cancellation Problems,Booking & Technology,BT-035,Decision on waiver request,No,No
+Cancellation Completed,Radio,Yes - System | Yes - Manual | No,Cancellation Problems,Booking & Technology,BT-036,How cancellation was processed,Yes,No
+Check-in Issue Type,Dropdown,QR Code Not Working | Manual Check-in Delay | Not Marked Present | Marked Absent Despite Attendance | Check-in Terminal Down | Other,Class Check-in,Booking & Technology,BT-037,Type of check-in problem,Yes,No
+Class Details,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab,Class Check-in,Booking & Technology,BT-038,Class attended,Yes,No
+Class Date & Time,DateTime,Date and time of class,Class Check-in,Booking & Technology,BT-039,When class occurred,Yes,No
+Trainer,Dropdown,Anisha Shah | Atulan Purohit | Karanvir Bhatia | Mrigakshi Jaiswal | Reshma Sharma | Karan Bhatia | Pushyank Nahar | Shruti Kulkarni | Janhavi Jain | Rohan Dahima | Kajol Kanchan | Vivaran Dhasmana | Upasna Paranjpe | Richard D'Costa | Pranjali Jain | Saniya Jaiswal | Shruti Suresh | Cauveri Vikrant | Poojitha Bhaskar | Nishanth Raj | Siddhartha Kusuma | Simonelle De Vitre | Kabir Varma | Simran Dutt | Veena Narasimhan | Anmol Sharma | Bret Saldanha | Raunak Khemuka | Chaitanya Nahar | Sovena Shetty,Class Check-in,Booking & Technology,BT-040,Instructor for the class,Yes,No
+Check-in Method Attempted,Dropdown,QR Code Scan | Manual Entry | Front Desk | Self-Service Kiosk,Class Check-in,Booking & Technology,BT-041,How client tried to check in,Yes,No
+Client Actually Attended,Radio,Yes | No,Class Check-in,Booking & Technology,BT-042,Confirm physical attendance,Yes,No
+Attendance Corrected,Radio,Yes | No | Not Needed,Class Check-in,Booking & Technology,BT-043,Whether record was fixed,Yes,No
+Class Credit Deducted,Radio,Yes | No | Incorrectly,Class Check-in,Booking & Technology,BT-044,Whether class was charged,Yes,No
+Credit Correction Needed,Radio,Yes | No,Class Check-in,Booking & Technology,BT-045,If credit needs adjustment,Yes,No
+Notification Issue Type,Dropdown,Missing Class Reminder | No Cancellation Alert | Too Many Notifications | Wrong Information in Notification | Notification Delay | Cannot Disable Notifications | Other,Notifications,Booking & Technology,BT-046,Type of notification issue,Yes,No
+Notification Channel,Dropdown,Push Notification | Email | SMS | WhatsApp | In-App,Notifications,Booking & Technology,BT-047,How notification was/should be sent,Yes,No
+Expected Notification Type,Dropdown,Class Reminder | Booking Confirmation | Cancellation Confirmation | Waitlist Update | Class Change Alert | Payment Receipt | Promotional | Other,Notifications,Booking & Technology,BT-048,What notification was expected,Yes,No
+Related Class/Booking,Text,Class name and date if applicable,Notifications,Booking & Technology,BT-049,Associated booking details,No,No
+Notification Received,Radio,Yes | No,Notifications,Booking & Technology,BT-050,Whether client got any notification,Yes,No
+Notification Timing,Dropdown,On Time | Late | Too Early | Never Received,Notifications,Booking & Technology,BT-051,When notification arrived,Yes,No
+Client Preference Updated,Radio,Yes | No | N/A,Notifications,Booking & Technology,BT-052,Whether settings were adjusted,Yes,No
+Profile Issue Type,Dropdown,Cannot Update Phone | Cannot Update Email | Cannot Change Password | Profile Photo Issue | Emergency Contact Issue | Preferences Not Saving | Incorrect Information Displayed | Other,Profile Management,Booking & Technology,BT-053,Type of profile issue,Yes,No
+Field Affected,Dropdown,Name | Phone Number | Email | Password | Date of Birth | Emergency Contact | Medical Information | Profile Photo | Communication Preferences | Multiple Fields | Other,Profile Management,Booking & Technology,BT-054,Which profile field has issue,Yes,No
+Attempted Update,Text,What client tried to change,Profile Management,Booking & Technology,BT-055,Details of attempted change,Yes,No
+Error Encountered,Text,Error message or behavior,Profile Management,Booking & Technology,BT-056,What went wrong,No,No
+Update Completed Manually,Radio,Yes | No,Profile Management,Booking & Technology,BT-057,Whether staff updated it,Yes,No
+Data Accuracy Verified,Radio,Yes | No,Profile Management,Booking & Technology,BT-058,Profile information confirmed correct,Yes,No
+Visibility Issue Type,Dropdown,Favorite Instructor Not Showing | Schedule Not Updating | Wrong Studio Displayed | Classes Missing from Schedule | Filter Not Working | Past Classes Still Showing | Other,Class Visibility,Booking & Technology,BT-059,Type of visibility issue,Yes,No
+Affected View,Dropdown,All Classes | Favorite Instructors | Specific Location | Specific Class Type | Schedule Calendar | Search Results,Class Visibility,Booking & Technology,BT-060,Where issue appears,Yes,No
+Expected to See,Text,What should be displayed,Class Visibility,Booking & Technology,BT-061,What client expected to view,Yes,No
+Actually Seeing,Text,What is currently displayed,Class Visibility,Booking & Technology,BT-062,Current incorrect display,Yes,No
+Date Range Affected,Text,Which dates are problematic,Class Visibility,Booking & Technology,BT-063,Timeline of visibility issue,No,No
+Filter Settings Used,Text,Any filters client applied,Class Visibility,Booking & Technology,BT-064,Active filter configuration,No,No
+Classes Actually Available,Radio,Yes | No | Unclear,Class Visibility,Booking & Technology,BT-065,Whether classes exist in system,Yes,No
+Payment Issue Type,Dropdown,Transaction Failed | Amount Deducted But Booking Failed | Duplicate Charge | Payment Method Rejected | Gateway Timeout | Wrong Amount Charged | Refund Not Processed | Other,Payment Gateway,Booking & Technology,BT-066,Type of payment issue,Yes,No
+Product Type,Dropdown,Memberships | Sessions/Single Classes | Privates | Class Packages | Credits | Retail | Gift Cards | Others,Payment Gateway,Booking & Technology,BT-067,What was being purchased,Yes,No
+Package/Product,Dropdown,Barre 1 month Unlimited | Studio 2 Week Unlimited | Studio Single Class | Session | Private Class | Studio 8 Class Package | Studio 10 Class Package | Money Credits | Studio Private Class | Retail | Studio 4 Class Package | Studio 1 Month Unlimited | Studio 3 Month Unlimited | Studio Annual Unlimited | Studio Newcomers 2 For 1 | Studio 12 Class Package | Studio 10 Single Class Package | Studio 30 Single Class Package | Studio 20 Single Class Package | Barre 6 month Unlimited | Studio 6 Month Unlimited | Barre 2 week Unlimited | Studio 3 Month Unlimited - Monthly | Gift Card | Newcomer 8 Class Package | Studio 6 Week Unlimited,Payment Gateway,Booking & Technology,BT-068,Specific package purchased,Yes,No
+Expected Amount,Number,Correct charge amount,Payment Gateway,Booking & Technology,BT-069,What should have been charged,Yes,No
+Amount Charged,Number,Actual amount deducted,Payment Gateway,Booking & Technology,BT-070,What was actually charged,Yes,No
+Payment Method,Dropdown,Credit Card | Debit Card | UPI | Net Banking | Wallet | Cash | Other,Payment Gateway,Booking & Technology,BT-071,How payment was attempted,Yes,No
+Transaction ID,Text,Bank/gateway transaction reference,Payment Gateway,Booking & Technology,BT-072,Payment reference number,No,No
+Transaction Date & Time,DateTime,When payment was attempted,Payment Gateway,Booking & Technology,BT-073,Timestamp of transaction,Yes,No
+Purchase Completed,Radio,Yes | No,Payment Gateway,Booking & Technology,BT-074,Whether purchase went through,Yes,No
+Refund Required,Radio,Yes | No,Payment Gateway,Booking & Technology,BT-075,If money needs to be returned,Yes,No
+Refund Amount,Number,Amount to be refunded,Payment Gateway,Booking & Technology,BT-076,Refund value,No,No
+Refund Processed,Radio,Yes | No | Pending,Payment Gateway,Booking & Technology,BT-077,Status of refund,No,No
+Support Issue Type,Dropdown,No Response to Tech Query | Issue Still Unresolved | Passed Between Departments | Long Resolution Time | No Follow-up | Other,Technical Support,Booking & Technology,BT-078,Type of support issue,Yes,No
+Original Issue,Text,What technical problem started this,Technical Support,Booking & Technology,BT-079,Initial technical complaint,Yes,No
+Previous Ticket Number,Text,If previous ticket exists,Technical Support,Booking & Technology,BT-080,Reference to earlier ticket,No,No
+How Long Pending,Number,Days since first reported,Technical Support,Booking & Technology,BT-081,Duration of unresolved issue,Yes,No
+Support Channels Used,Multi-select,Phone | Email | Chat | In-Person | Social Media,Technical Support,Booking & Technology,BT-082,Where client sought help,Yes,No
+Number of Contacts Made,Number,How many times client reached out,Technical Support,Booking & Technology,BT-083,Contact attempts count,Yes,No
+Departments Involved,Multi-select,Operations | Facilities | Training | Sales | Client Success | Marketing | Finance | Management,Technical Support,Booking & Technology,BT-084,Teams that handled the issue,Yes,No
+Current Status of Original Issue,Dropdown,Still Unresolved | Partially Resolved | Now Resolved | Unknown,Technical Support,Booking & Technology,BT-085,State of original problem,Yes,No
+Service Issue Type,Dropdown,Rude Behavior | Unhelpful Attitude | Lack of Product Knowledge | Inattentive/Distracted | Unprofessional Appearance | Not Greeting Clients | Other,Front Desk Service,Customer Service,CS-001,Type of service issue,Yes,No
+Specific Associate,Dropdown,Akshay Rane | Vahishta Fitter | Zaheer Agarbattiwala | Zahur Shaikh | Nadiya Shaikh | Admin Admin | Shipra Bhika | Imran Shaikh | Tahira Sayyed | Manisha Rathod | Sheetal Kataria | Priyanka Abnave | Api Serou | Prathap Kp | Pavanthika | Santhosh Kumar | Prefer Not to Name,Front Desk Service,Customer Service,CS-002,Associate involved (if known),Yes,No
+Incident Description,Long Text,Detailed account of interaction,Front Desk Service,Customer Service,CS-003,What happened during interaction,Yes,No
+Witness Present,Radio,Yes | No,Front Desk Service,Customer Service,CS-004,Were others present,No,No
+Client Request,Text,What client was trying to accomplish,Front Desk Service,Customer Service,CS-005,Purpose of client interaction,Yes,No
+Request Fulfilled,Radio,Yes | No | Partially,Front Desk Service,Customer Service,CS-006,Whether client got what they needed,Yes,No
+Immediate Action Taken,Text,How situation was handled on spot,Front Desk Service,Customer Service,CS-007,Real-time resolution attempt,Yes,No
+Manager Informed,Radio,Yes | No,Front Desk Service,Customer Service,CS-008,Whether escalated immediately,Yes,No
+Response Issue Type,Dropdown,Delayed Email Response | Delayed Phone Callback | No Response Received | Automated Response Only | No Follow-up | Other,Response Time,Customer Service,CS-009,Type of response delay,Yes,No
+Communication Channel,Dropdown,Email | Phone Call | WhatsApp | SMS | Social Media DM | In-App Chat,Response Time,Customer Service,CS-010,How client contacted us,Yes,No
+Initial Contact Date,DateTime,When client first reached out,Response Time,Customer Service,CS-011,Timestamp of first contact,Yes,No
+Response Received Date,DateTime,When response was given (if any),Response Time,Customer Service,CS-012,Timestamp of our response,,
+Resolution Issue Type,Dropdown,Issue Still Unresolved | Passed Between Departments | No Accountability Taken | Conflicting Solutions Given | Resolution Not Implemented | Other,Issue Resolution,Customer Service,CS-017,Type of resolution problem,Yes,No
+Original Issue Category,Dropdown,Booking & Technology | Customer Service | Sales & Marketing | Health & Safety | Billing/Financial | Class/Instructor | Facility | Other,Issue Resolution,Customer Service,CS-018,Category of original complaint,Yes,No
+Original Issue Description,Long Text,Details of the initial problem,Issue Resolution,Customer Service,CS-019,What was the original complaint,Yes,No
+First Reported Date,Date,When issue was first raised,Issue Resolution,Customer Service,CS-020,Initial complaint date,Yes,No
+Days Since First Report,Number,Calculate from above,Issue Resolution,Customer Service,CS-021,How long issue has been open,Yes,Yes
+Departments Contacted,Multi-select,Operations | Facilities | Training | Sales | Client Success | Marketing | Finance | Management,Issue Resolution,Customer Service,CS-022,Which teams were involved,Yes,No
+Number of Escalations,Number,How many times elevated,Issue Resolution,Customer Service,CS-023,Escalation count,Yes,No
+Promised Resolution Date,Date,If timeline was committed,Issue Resolution,Customer Service,CS-024,When resolution was promised,No,No
+Current Status,Dropdown,Still Open | Partially Resolved | Resolved But Client Unhappy | Unresolved After Multiple Attempts,Issue Resolution,Customer Service,CS-025,Present state of issue,Yes,No
+Resolution Blockers,Text,What's preventing resolution,Issue Resolution,Customer Service,CS-026,Obstacles to solving issue,No,No
+Communication Issue Type,Dropdown,Poor/Unclear Communication | Language Barrier | Incorrect Information Given | Conflicting Information | Information Not Conveyed | Miscommunication | Other,Communication Quality,Customer Service,CS-027,Type of communication problem,Yes,No
+Communication Channel,Dropdown,In-Person | Phone | Email | WhatsApp | SMS | Social Media | In-App,Communication Quality,Customer Service,CS-028,Mode of communication,Yes,No
+Information Topic,Text,What was being communicated about,Communication Quality,Customer Service,CS-029,Subject matter discussed,Yes,No
+What Was Communicated,Long Text,What client was told/sent,Communication Quality,Customer Service,CS-030,Content of communication,Yes,No
+What Should Have Been Said,Long Text,Correct information,Communication Quality,Customer Service,CS-031,Accurate information,Yes,No
+Impact on Client,Dropdown,No Action Taken | Wrong Action Taken | Financial Loss | Missed Class | Booking Error | Trust Impacted | Other,Communication Quality,Customer Service,CS-032,Consequence of miscommunication,Yes,No
+Multiple Associates Gave Different Info,Radio,Yes | No | N/A,Communication Quality,Customer Service,CS-033,Conflicting information from team,Yes,No
+Correction Communicated,Radio,Yes | No,Communication Quality,Customer Service,CS-034,Whether client was informed of correct info,Yes,No
+Knowledge Gap Type,Dropdown,Class Information Lacking | Membership Details Unknown | Unable to Guide on Packages | Incorrect Policy Information | Doesn't Know System Process | Product Details Wrong | Other,Staff Knowledge,Customer Service,CS-035,Type of knowledge gap,Yes,No
+Topic Client Asked About,Text,What information client needed,Staff Knowledge,Customer Service,CS-036,Subject of inquiry,Yes,No
+Information Given,Text,What staff member said/provided,Staff Knowledge,Customer Service,CS-037,Response provided,Yes,No
+Correct Information,Text,What should have been said,Staff Knowledge,Customer Service,CS-038,Accurate information,Yes,No
+Associate Involved,Dropdown,Akshay Rane | Vahishta Fitter | Zaheer Agarbattiwala | Zahur Shaikh | Nadiya Shaikh | Admin Admin | Shipra Bhika | Imran Shaikh | Tahira Sayyed | Manisha Rathod | Sheetal Kataria | Priyanka Abnave | Api Serou | Prathap Kp | Pavanthika | Santhosh Kumar | Multiple Staff | Prefer Not to Name,Staff Knowledge,Customer Service,CS-039,Who provided information,Yes,No
+Staff Admitted Uncertainty,Radio,Yes | No,Staff Knowledge,Customer Service,CS-040,Whether staff acknowledged not knowing,No,No
+Offered to Find Out,Radio,Yes | No,Staff Knowledge,Customer Service,CS-041,Whether staff offered to get info,No,No
+Client Got Correct Info Eventually,Radio,Yes | No,Staff Knowledge,Customer Service,CS-042,Whether issue was rectified,Yes,No
+Availability Issue Type,Dropdown,No One at Desk | Long Wait Time | Understaffed During Peak Hours | Staff Took Too Long | Had to Search for Staff | Staff on Personal Call/Break | Other,Staff Availability,Customer Service,CS-043,Type of availability issue,Yes,No
+Time of Day,Dropdown,Early Morning (6-9 AM) | Morning (9-12 PM) | Afternoon (12-5 PM) | Evening (5-8 PM) | Night (8-10 PM),Staff Availability,Customer Service,CS-044,When issue occurred,Yes,No
+Day of Week,Dropdown,Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday,Staff Availability,Customer Service,CS-045,Which day,Yes,No
+Wait Time,Number,Minutes client waited,Staff Availability,Customer Service,CS-046,Duration of wait,Yes,No
+Number of Clients Waiting,Number,Others waiting at same time,Staff Availability,Customer Service,CS-047,Queue length,No,No
+Staff Present,Number,How many staff were visible,Staff Availability,Customer Service,CS-048,Staff count,No,No
+Client Requirement,Text,What client needed help with,Staff Availability,Customer Service,CS-049,Purpose of seeking assistance,Yes,No
+Eventually Assisted,Radio,Yes | No,Staff Availability,Customer Service,CS-050,Whether client got help,Yes,No
+Client Left Without Assistance,Radio,Yes | No,Staff Availability,Customer Service,CS-051,Whether client gave up waiting,Yes,No
+Complaint Handling Issue,Dropdown,Dismissive Attitude | Defensive Response | No Apology Given | Not Taken Seriously | No Escalation Option Provided | Blamed Client | No Solution Offered | Other,Complaint Handling,Customer Service,CS-052,How complaint was poorly handled,Yes,No
+Original Complaint Category,Dropdown,Booking & Technology | Customer Service | Sales & Marketing | Health & Safety | Billing/Financial | Class/Instructor | Facility | Other,Complaint Handling,Customer Service,CS-053,What was being complained about,Yes,No
+Original Complaint Summary,Long Text,Brief description of original issue,Complaint Handling,Customer Service,CS-054,The initial complaint,Yes,No
+Who Received Complaint,Dropdown,Front Desk Staff | Manager | Email Support | Phone Support | Social Media Team | Trainer | Other,Complaint Handling,Customer Service,CS-055,Who client complained to,Yes,No
+Associate Name,Dropdown,Akshay Rane | Vahishta Fitter | Zaheer Agarbattiwala | Zahur Shaikh | Nadiya Shaikh | Admin Admin | Shipra Bhika | Imran Shaikh | Tahira Sayyed | Manisha Rathod | Sheetal Kataria | Priyanka Abnave | Api Serou | Prathap Kp | Pavanthika | Santhosh Kumar | Prefer Not to Name,Complaint Handling,Customer Service,CS-056,Specific person (if known),No,No
+Response Given,Long Text,What was said to client,Complaint Handling,Customer Service,CS-057,Staff response to complaint,Yes,No
+Client Felt Heard,Radio,Yes | No,Complaint Handling,Customer Service,CS-058,Whether client felt acknowledged,Yes,No
+Solution Offered,Radio,Yes | No,Complaint Handling,Customer Service,CS-059,Whether resolution was provided,Yes,No
+Escalation Requested,Radio,Yes | No,Complaint Handling,Customer Service,CS-060,Client asked for manager/higher authority,Yes,No
+Escalation Provided,Radio,Yes | No | N/A,Complaint Handling,Customer Service,CS-061,Whether escalation happened,No,No
+Phone Support Issue Type,Dropdown,Phone Unreachable | Long Hold Time | Call Disconnected | No Callback Received | Transferred Multiple Times | IVR Issues | Wrong Department | Other,Phone Support,Customer Service,CS-062,Type of phone support issue,Yes,No
+Phone Number Called,Text,Which studio/support number,Phone Support,Customer Service,CS-063,Number dialed,Yes,No
+Number of Attempts,Number,How many times client called,Phone Support,Customer Service,CS-064,Call attempts,Yes,No
+Call Connected,Radio,Yes | No,Phone Support,Customer Service,CS-065,Whether call went through,Yes,No
+Hold Time,Number,Minutes on hold,Phone Support,Customer Service,CS-066,Wait duration,No,No
+Call Disconnected,Radio,Yes | No,Phone Support,Customer Service,CS-067,Whether call dropped,No,No
+Callback Promised,Radio,Yes | No,Phone Support,Customer Service,CS-068,Staff said they'd call back,No,No
+Callback Received,Radio,Yes | No | N/A,Phone Support,Customer Service,CS-069,Whether callback happened,No,No
+Issue Resolved on Call,Radio,Yes | No | N/A,Phone Support,Customer Service,CS-070,Whether problem was solved,No,No
+Support Channel,Dropdown,Email | In-App Chat | WhatsApp Chat | Website Chat,Email/Chat Support,Customer Service,CS-071,Which channel was used,Yes,No
+Support Issue Type,Dropdown,Very Slow Response | Generic/Template Replies | Issue Not Resolved | No Follow-up | Transferred to Another Channel | Auto-Response Only | Other,Email/Chat Support,Customer Service,CS-072,Type of support issue,Yes,No
+Initial Message Date,DateTime,When client first messaged,Email/Chat Support,Customer Service,CS-073,First contact timestamp,Yes,No
+Response Received Date,DateTime,When we replied,Email/Chat Support,Customer Service,CS-074,Our response timestamp,No,No
+Hours to First Response,Number,Calculate from above,Email/Chat Support,Customer Service,CS-075,Time to respond,Yes,Yes
+Query Topic,Text,What client asked about,Email/Chat Support,Customer Service,CS-076,Subject of message,Yes,No
+Number of Exchanges,Number,Back and forth count,Email/Chat Support,Customer Service,CS-077,Message thread length,Yes,No
+Issue Resolved,Radio,Yes | No | Partially,Email/Chat Support,Customer Service,CS-078,Whether query was answered,Yes,No
+Response Quality,Dropdown,Helpful & Complete | Generic/Unhelpful | Wrong Information | Didn't Address Query | N/A,Email/Chat Support,Customer Service,CS-079,Quality of support received,Yes,No
+Professionalism Issue Type,Dropdown,Staff Gossiping | Using Personal Phone | Eating at Desk | Inappropriate Conversations | Unprofessional Attire | Not Focused on Clients | Other,Staff Professionalism,Customer Service,CS-080,Type of unprofessional behavior,Yes,No
+Behavior Description,Long Text,Detailed account of what was observed,Staff Professionalism,Customer Service,CS-081,What happened,Yes,No
+Associate Involved,Dropdown,Akshay Rane | Vahishta Fitter | Zaheer Agarbattiwala | Zahur Shaikh | Nadiya Shaikh | Admin Admin | Shipra Bhika | Imran Shaikh | Tahira Sayyed | Manisha Rathod | Sheetal Kataria | Priyanka Abnave | Api Serou | Prathap Kp | Pavanthika | Santhosh Kumar | Multiple Staff | Prefer Not to Name,Staff Professionalism,Customer Service,CS-082,Who was involved,Yes,No
+Client Directly Impacted,Radio,Yes | No,Staff Professionalism,Customer Service,CS-083,Whether behavior affected client,Yes,No
+Impact Description,Text,How client was affected,Staff Professionalism,Customer Service,CS-084,Nature of impact,No,No
+Others Present,Radio,Yes | No,Staff Professionalism,Customer Service,CS-085,Were other clients there,No,No
+Client Spoke to Staff About It,Radio,Yes | No,Staff Professionalism,Customer Service,CS-086,Whether client addressed it,No,No
+Staff Response,Text,How staff reacted if confronted,Staff Professionalism,Customer Service,CS-087,Staff reaction,No,No
+Newcomer Issue Type,Dropdown,No Orientation Provided | Poor Onboarding | Lack of Guidance | Not Welcomed | Studio Tour Not Given | Equipment Explanation Missing | First Class Experience Poor | Other,Newcomer Experience,Customer Service,CS-088,Type of newcomer issue,Yes,No
+Client's First Visit,Radio,Yes | No,Newcomer Experience,Customer Service,CS-089,Was this their very first time,Yes,No
+Trial Class,Radio,Yes | No,Newcomer Experience,Customer Service,CS-090,Was it a trial/intro class,Yes,No
+Class Attended,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab,Newcomer Experience,Customer Service,CS-091,First class type,Yes,No
+Trainer,Dropdown,Anisha Shah | Atulan Purohit | Karanvir Bhatia | Mrigakshi Jaiswal | Reshma Sharma | Karan Bhatia | Pushyank Nahar | Shruti Kulkarni | Janhavi Jain | Rohan Dahima | Kajol Kanchan | Vivaran Dhasmana | Upasna Paranjpe | Richard D'Costa | Pranjali Jain | Saniya Jaiswal | Shruti Suresh | Cauveri Vikrant | Poojitha Bhaskar | Nishanth Raj | Siddhartha Kusuma | Simonelle De Vitre | Kabir Varma | Simran Dutt | Veena Narasimhan | Anmol Sharma | Bret Saldanha | Raunak Khemuka | Chaitanya Nahar | Sovena Shetty,Newcomer Experience,Customer Service,CS-092,Instructor for first class,Yes,No
+Orientation Provided,Radio,Yes - Adequate | Yes - Rushed | No,Newcomer Experience,Customer Service,CS-093,Whether orientation given,Yes,No
+Studio Tour Given,Radio,Yes | No,Newcomer Experience,Customer Service,CS-094,Whether shown around,Yes,No
+Equipment Explained,Radio,Yes | No,Newcomer Experience,Customer Service,CS-095,Props/equipment demo given,Yes,No
+Staff Welcoming,Radio,Very Welcoming | Somewhat | Not Welcoming,Newcomer Experience,Customer Service,CS-096,How welcoming staff was,Yes,No
+What Was Missing,Long Text,Specific gaps in onboarding,Newcomer Experience,Customer Service,CS-097,Details of poor experience,Yes,No
+Likely to Return,Dropdown,Definitely Yes | Probably Yes | Unsure | Probably No | Definitely No,Newcomer Experience,Customer Service,CS-098,Client's stated intention,Yes,No
+Misleading Info Type,Dropdown,False Promises About Results | Exaggerated Package Benefits | Pressure Tactics Used | Hidden Terms Not Disclosed | Pricing Misinformation | Contract Terms Misrepresented | Other,Misleading Information,Sales & Marketing,SM-001,Type of misleading information,Yes,No
+Information Source,Dropdown,Sales Call | Email Campaign | Social Media Ad | Website | In-Person Sales Pitch | WhatsApp Message | Referral Partner | Other,Misleading Information,Sales & Marketing,SM-002,Where information came from,Yes,No
+Sales Associate,Dropdown,Akshay Rane | Vahishta Fitter | Zaheer Agarbattiwala | Zahur Shaikh | Nadiya Shaikh | Admin Admin | Shipra Bhika | Imran Shaikh | Tahira Sayyed | Manisha Rathod | Sheetal Kataria | Priyanka Abnave | Api Serou | Prathap Kp | Pavanthika | Santhosh Kumar | Not Applicable | Unknown,Misleading Information,Sales & Marketing,SM-003,Who provided information,No,No
+What Was Claimed,Long Text,Specific claims made,Misleading Information,Sales & Marketing,SM-004,The misleading statement,Yes,No
+Actual Reality,Long Text,What is actually true,Misleading Information,Sales & Marketing,SM-005,Correct information,Yes,No
+Product/Package Involved,Dropdown,Barre 1 month Unlimited | Studio 2 Week Unlimited | Studio Single Class | Session | Private Class | Studio 8 Class Package | Studio 10 Class Package | Money Credits | Studio Private Class | Retail | Studio 4 Class Package | Studio 1 Month Unlimited | Studio 3 Month Unlimited | Studio Annual Unlimited | Studio Newcomers 2 For 1 | Studio 12 Class Package | Studio 10 Single Class Package | Studio 30 Single Class Package | Studio 20 Single Class Package | Barre 6 month Unlimited | Studio 6 Month Unlimited | Barre 2 week Unlimited | Studio 3 Month Unlimited - Monthly | Gift Card | Newcomer 8 Class Package | Studio 6 Week Unlimited | General,Misleading Information,Sales & Marketing,SM-006,What was being sold,Yes,No
+Client Made Purchase,Radio,Yes | No,Misleading Information,Sales & Marketing,SM-007,Whether client bought it,Yes,No
+Purchase Amount,Number,"If purchased, the value",Misleading Information,Sales & Marketing,SM-008,Transaction value,No,No
+Refund Requested,Radio,Yes | No | N/A,Misleading Information,Sales & Marketing,SM-009,Client wants money back,No,No
+Client Expectation,Text,What client expected to get,Misleading Information,Sales & Marketing,SM-010,Client's understanding,Yes,No
+Aggressive Tactic Type,Dropdown,Excessive Follow-ups | Pressure to Upgrade | Unwanted Sales Calls | Hard Sell During Trial | Multiple Calls Per Day | Guilt Tactics | Time Pressure (limited offer) | Other,Aggressive Selling,Sales & Marketing,SM-011,Type of aggressive approach,Yes,No
+Contact Method,Multi-select,Phone Calls | WhatsApp Messages | Emails | SMS | In-Person | Social Media DM,Aggressive Selling,Sales & Marketing,SM-012,How client was contacted,Yes,No
+Frequency of Contact,Dropdown,Multiple Times Daily | Daily | Every Few Days | Weekly | One-Time But Intense,Aggressive Selling,Sales & Marketing,SM-013,How often contacted,Yes,No
+Total Contact Attempts,Number,Number of times reached out,Aggressive Selling,Sales & Marketing,SM-014,Contact count,Yes,No
+Sales Associate,Dropdown,Akshay Rane | Vahishta Fitter | Zaheer Agarbattiwala | Zahur Shaikh | Nadiya Shaikh | Admin Admin | Shipra Bhika | Imran Shaikh | Tahira Sayyed | Manisha Rathod | Sheetal Kataria | Priyanka Abnave | Api Serou | Prathap Kp | Pavanthika | Santhosh Kumar | Multiple People | Unknown,Aggressive Selling,Sales & Marketing,SM-015,Who was selling,No,No
+What Was Being Sold,Dropdown,Barre 1 month Unlimited | Studio 2 Week Unlimited | Studio Single Class | Session | Private Class | Studio 8 Class Package | Studio 10 Class Package | Money Credits | Studio Private Class | Retail | Studio 4 Class Package | Studio 1 Month Unlimited | Studio 3 Month Unlimited | Studio Annual Unlimited | Studio Newcomers 2 For 1 | Studio 12 Class Package | Studio 10 Single Class Package | Studio 30 Single Class Package | Studio 20 Single Class Package | Barre 6 month Unlimited | Studio 6 Month Unlimited | Barre 2 week Unlimited | Studio 3 Month Unlimited - Monthly | Gift Card | Newcomer 8 Class Package | Studio 6 Week Unlimited,Aggressive Selling,Sales & Marketing,SM-016,Product being pushed,Yes,No
+Client Expressed Not Interested,Radio,Yes - Once | Yes - Multiple Times | No,Aggressive Selling,Sales & Marketing,SM-017,Whether client declined,Yes,No
+Contact Continued After Decline,Radio,Yes | No | N/A,Aggressive Selling,Sales & Marketing,SM-018,Selling continued despite no,No,No
+Client Made Purchase,Radio,Yes - Under Pressure | Yes - Willingly | No,Aggressive Selling,Sales & Marketing,SM-019,Purchase outcome,Yes,No
+Client Wants to Be Removed from List,Radio,Yes | No,Aggressive Selling,Sales & Marketing,SM-020,Opt-out requested,Yes,No
+Trial Issue Type,Dropdown,Poor Trial Experience | No Proper Introduction | Rushed Enrollment | High Pressure Sale After Class | Not Told It Was Trial | Trial Restrictions Not Explained | Other,Trial Class Experience,Sales & Marketing,SM-021,Type of trial issue,Yes,No
+Trial Package,Dropdown,Studio 2 Week Unlimited | Studio Newcomers 2 For 1 | Newcomer 8 Class Package | Studio Single Class | Other Trial Offer,Trial Class Experience,Sales & Marketing,SM-022,Which trial offer,Yes,No
+Class Attended,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab,Trial Class Experience,Sales & Marketing,SM-023,Trial class type,Yes,No
+Class Date,Date,When trial class occurred,Trial Class Experience,Sales & Marketing,SM-024,Date of trial,Yes,No
+Trainer,Dropdown,Anisha Shah | Atulan Purohit | Karanvir Bhatia | Mrigakshi Jaiswal | Reshma Sharma | Karan Bhatia | Pushyank Nahar | Shruti Kulkarni | Janhavi Jain | Rohan Dahima | Kajol Kanchan | Vivaran Dhasmana | Upasna Paranjpe | Richard D'Costa | Pranjali Jain | Saniya Jaiswal | Shruti Suresh | Cauveri Vikrant | Poojitha Bhaskar | Nishanth Raj | Siddhartha Kusuma | Simonelle De Vitre | Kabir Varma | Simran Dutt | Veena Narasimhan | Anmol Sharma | Bret Saldanha | Raunak Khemuka | Chaitanya Nahar | Sovena Shetty,Trial Class Experience,Sales & Marketing,SM-025,Instructor,Yes,No
+Pre-Class Introduction,Radio,Yes - Adequate | Yes - Brief | No,Trial Class Experience,Sales & Marketing,SM-026,Was intro provided,Yes,No
+Instructor Attention During Class,Dropdown,Excellent | Good | Minimal | None,Trial Class Experience,Sales & Marketing,SM-027,Instructor support level,Yes,No
+Sales Pitch Timing,Dropdown,Before Class | Immediately After Class | Later Same Day | Follow-up Call/Message | No Pitch | Other,Trial Class Experience,Sales & Marketing,SM-028,When sales approach happened,Yes,No
+Sales Approach Comfort Level,Dropdown,Comfortable | Slightly Pressured | Very Pressured | Not Applicable,Trial Class Experience,Sales & Marketing,SM-029,How client felt about sales,Yes,No
+Purchased Membership,Radio,Yes | No,Trial Class Experience,Sales & Marketing,SM-030,Conversion outcome,Yes,No
+Likely to Return,Dropdown,Definitely Yes | Probably Yes | Unsure | Probably No | Definitely No,Trial Class Experience,Sales & Marketing,SM-031,Return likelihood,Yes,No
+Overload Type,Dropdown,Too Many Emails | Too Many SMS | Too Many WhatsApp Messages | Spam/Irrelevant Content | Same Message Multiple Channels | Daily Promotional Messages | Other,Communication Overload,Sales & Marketing,SM-032,Type of communication excess,Yes,No
+Communication Channels,Multi-select,Email | SMS | WhatsApp | Phone Calls | Push Notifications | Social Media,Communication Overload,Sales & Marketing,SM-033,Which channels used,Yes,No
+Frequency,Dropdown,Multiple Times Daily | Daily | 3-4 Times Per Week | Weekly | Occasional But Inappropriate,Communication Overload,Sales & Marketing,SM-034,How often contacted,Yes,No
+Content Type,Multi-select,Class Promotions | Membership Offers | Event Invites | General Updates | Workshops | Retail Offers | Unrelated Content,Communication Overload,Sales & Marketing,SM-035,What messages were about,Yes,No
+Client Preference,Dropdown,Wants Less Frequent | Wants Only Relevant Content | Wants Specific Topics Only | Wants to Unsubscribe Completely,Communication Overload,Sales & Marketing,SM-036,What client wants,Yes,No
+Client,,,,,,,,
+Social Media Issue Type,Dropdown,Inaccurate Information Posted | Unresponsive to DMs | Poor Engagement | Misleading Content | Inappropriate Content | Wrong Class Timings Shown | Unanswered Comments | Other,Social Media,Sales & Marketing,SM-039,Type of social media issue,Yes,No
+Platform,Dropdown,Instagram | Facebook | Twitter/X | LinkedIn | YouTube | Other,Social Media,Sales & Marketing,SM-040,Which platform,Yes,No
+Issue Description,Long Text,Details of social media problem,Social Media,Sales & Marketing,SM-041,What happened,Yes,No
+Post/Content URL,Text,Link to specific post if applicable,Social Media,Sales & Marketing,SM-042,Reference link,No,No
+Client Action Taken,Dropdown,Sent DM | Commented | Tried to Contact Via Post | Filled Form on Page | Clicked Link/Ad | Other,Social Media,Sales & Marketing,SM-043,How client engaged,Yes,No
+Response Received,Radio,Yes - Timely | Yes - Delayed | No,Social Media,Sales & Marketing,SM-044,Whether client got response,Yes,No
+Hours Until Response,Number,"If response received, time taken",Social Media,Sales & Marketing,SM-045,Response time,No,No
+Issue Impact,Dropdown,Couldn't Book Class | Wrong Information Received | Missed Opportunity | Trust Impacted | Reputation Concern | Other,Social Media,Sales & Marketing,SM-046,Effect of issue,Yes,No
+Content Corrected,Radio,Yes | No | N/A,Social Media,Sales & Marketing,SM-047,Whether post was fixed,No,No
+Issue Type,Dropdown,Guest Pass Not Working | Referral Benefit Not Credited | Restrictions Not Mentioned | Referral Link Broken | Guest Pass Expired Early | Credit Amount Wrong | Other,Guest Passes/Referrals,Sales & Marketing,SM-048,Type of referral/guest pass issue,Yes,No
+Program Type,Dropdown,Guest Pass | Referral Reward | Friend Referral | Corporate Partnership | Promotional Pass | Other,Guest Passes/Referrals,Sales & Marketing,SM-049,Which program,Yes,No
+Referring Client Name,Text,Who gave the referral (if applicable),Guest Passes/Referrals,Sales & Marketing,SM-050,Referrer name,No,No
+Referred Client Name,Text,Who received the pass/referral,Guest Passes/Referrals,Sales & Marketing,SM-051,Referee name,Yes,No
+Pass/Code Used,Text,Specific pass number or code,Guest Passes/Referrals,Sales & Marketing,SM-052,Reference code,No,No
+Expected Benefit,Text,What was promised,Guest Passes/Referrals,Sales & Marketing,SM-053,Expected reward,Yes,No
+Actual Outcome,Text,What actually happened,Guest Passes/Referrals,Sales & Marketing,SM-054,Actual result,Yes,No
+Pass Redeemed Successfully,Radio,Yes | No,Guest Passes/Referrals,Sales & Marketing,SM-055,Whether pass worked,Yes,No
+Credit/Benefit Applied,Radio,Yes | No | Partially,Guest Passes/Referrals,Sales & Marketing,SM-056,Whether reward given,Yes,No
+Expected Credit Amount,Number,Value promised,Guest Passes/Referrals,Sales & Marketing,SM-057,Expected value,No,No
+Actual Credit Amount,Number,Value received,Guest Passes/Referrals,Sales & Marketing,SM-058,Actual value,No,No
+Issue Resolved,Radio,Yes | No | Pending,Guest Passes/Referrals,Sales & Marketing,SM-059,Resolution status,Yes,No
+Event Issue Type,Dropdown,Poor Organization | Event Cancelled | Misleading Event Details | Registration Issues | Overcrowded | Inadequate Facilities | Trainer/Speaker Issue | Not as Advertised | Other,Events & Workshops,Sales & Marketing,SM-060,Type of event issue,Yes,No
+Event Name,Text,Name of event/workshop,Events & Workshops,Sales & Marketing,SM-061,Event title,Yes,No
+Event Date,Date,When event occurred/was scheduled,Events & Workshops,Sales & Marketing,SM-062,Event date,Yes,No
+Event Type,Dropdown,Workshop | Masterclass | Special Event | Pop-up Class | Community Event | Wellness Seminar | Other,Events & Workshops,Sales & Marketing,SM-063,Category of event,Yes,No
+Trainer/Speaker,Text,Who was leading/speaking,Events & Workshops,Sales & Marketing,SM-064,Event leader,No,No
+Registration Method,Dropdown,Website | App | Phone | Email | In-Person | Social Media,Events & Workshops,Sales & Marketing,SM-065,How client registered,Yes,No
+Registration Successful,Radio,Yes | No,Events & Workshops,Sales & Marketing,SM-066,Whether booking worked,Yes,No
+Event Fee,Number,Cost of event,Events & Workshops,Sales & Marketing,SM-067,Event price,No,No
+Event Occurred,Radio,Yes - As Scheduled | Yes - Modified | No - Cancelled | No - Postponed,Events & Workshops,Sales & Marketing,SM-068,Whether event happened,Yes,No
+Cancellation Notice Given,Radio,Yes - Adequate Time | Yes - Short Notice | No,Events & Workshops,Sales & Marketing,SM-069,"If cancelled, notice period",No,No
+Event Issue Description,Long Text,Details of what went wrong,Events & Workshops,Sales & Marketing,SM-070,Problem specifics,Yes,No
+Refund Requested,Radio,Yes | No,Events & Workshops,Sales & Marketing,SM-071,Client wants refund,No,No
+Refund Processed,Radio,Yes | No | Pending | N/A,Events & Workshops,Sales & Marketing,SM-072,Refund status,No,No
+Communication Issue Type,Dropdown,Inconsistent Messaging | Tone Mismatch | Cultural Insensitivity | Confusing Brand Voice | Conflicting Information Across Channels | Inappropriate Content | Other,Brand Communication,Sales & Marketing,SM-073,Type of communication issue,Yes,No
+Communication Channel,Multi-select,Website | Social Media | Email | SMS | In-Studio Signage | Print Materials | App | Other,Brand Communication,Sales & Marketing,SM-074,Where issue appeared,Yes,No
+Issue Description,Long Text,Details of communication problem,Brand Communication,Sales & Marketing,SM-075,What was problematic,Yes,No
+Specific Content,Text,Quote or reference if applicable,Brand Communication,Sales & Marketing,SM-076,Specific messaging,No,No
+Client Perception,Dropdown,Offensive | Confusing | Misleading | Inappropriate | Doesn't Match Brand | Other,Brand Communication,Sales & Marketing,SM-077,How client perceived it,Yes,No
+Impact on Client,Text,How it affected the client,Brand Communication,Sales & Marketing,SM-078,Client reaction,Yes,No
+Content Removed/Changed,Radio,Yes | No | Not Applicable,Brand Communication,Sales & Marketing,SM-079,Whether corrected,No,No
+Hygiene Issue Type,Dropdown,Inadequate Sanitization | No Mask Enforcement | Surface Cleaning Poor | Dirty Equipment | Restroom Hygiene | Water Fountain Issues | Shower/Change Room Cleanliness | Other,Hygiene Protocols,Health & Safety,HS-001,Type of hygiene concern,Yes,No
+Area Affected,Multi-select,Studio Floor | Equipment | Restrooms | Showers | Change Rooms | Front Desk | Waiting Area | Water Stations | Props Storage | All Areas,Hygiene Protocols,Health & Safety,HS-002,Where issue observed,Yes,No
+Specific Observation,Long Text,Details of hygiene issue,Hygiene Protocols,Health & Safety,HS-003,What was observed,Yes,No
+Time of Observation,Dropdown,Before Class | During Class | After Class | Between Classes | Off-Peak Hours,Hygiene Protocols,Health & Safety,HS-004,When observed,Yes,No
+Class Attended,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab | N/A,Hygiene Protocols,Health & Safety,HS-005,Associated class if any,No,No
+Cleaning Staff Visible,Radio,Yes | No,Hygiene Protocols,Health & Safety,HS-006,Whether cleaning happening,Yes,No
+Sanitization Supplies Available,Radio,Yes | No | Limited,Hygiene Protocols,Health & Safety,HS-007,Hand sanitizer/wipes present,Yes,No
+Issue Reported to Staff,Radio,Yes | No,Hygiene Protocols,Health & Safety,HS-008,Whether client informed staff,Yes,No
+Immediate Action Taken,Text,What staff did on the spot,Hygiene Protocols,Health & Safety,HS-009,Staff response,No,No
+Photo Evidence,Radio,Yes - Attached | No,Hygiene Protocols,Health & Safety,HS-010,Whether photos provided,No,No
+Injury Type,Dropdown,Muscle Strain | Joint Pain | Fall/Slip | Equipment Related | Overexertion | Existing Condition Aggravated | Other,Injury During Class,Health & Safety,HS-011,Type of injury,Yes,No
+Injury Severity,Dropdown,Minor - No Medical Attention | Moderate - First Aid Given | Serious - Medical Attention Sought | Severe - Emergency Services Called,Injury During Class,Health & Safety,HS-012,How serious,Yes,No
+Body Part Affected,Text,Which body part injured,Injury During Class,Health & Safety,HS-013,Location of injury,Yes,No
+Class Type,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab,Injury During Class,Health & Safety,HS-014,Which class,Yes,No
+Class Date & Time,DateTime,When injury occurred,Injury During Class,Health & Safety,HS-015,Injury timestamp,Yes,No
+Trainer,Dropdown,Anisha Shah | Atulan Purohit | Karanvir Bhatia | Mrigakshi Jaiswal | Reshma Sharma | Karan Bhatia | Pushyank Nahar | Shruti Kulkarni | Janhavi Jain | Rohan Dahima | Kajol Kanchan | Vivaran Dhasmana | Upasna Paranjpe | Richard D'Costa | Pranjali Jain | Saniya Jaiswal | Shruti Suresh | Cauveri Vikrant | Poojitha Bhaskar | Nishanth Raj | Siddhartha Kusuma | Simonelle De Vitre | Kabir Varma | Simran Dutt | Veena Narasimhan | Anmol Sharma | Bret Saldanha | Raunak Khemuka | Chaitanya Nahar | Sovena Shetty,Injury During Class,Health & Safety,HS-016,Instructor,Yes,No
+How Injury Occurred,Long Text,Detailed description of incident,Injury During Class,Health & Safety,HS-017,Incident details,Yes,No
+Modification Offered,Radio,Yes - Before Injury | Yes - After Injury | No,Injury During Class,Health & Safety,HS-018,Whether trainer gave modifications,Yes,No
+First Aid Provided,Radio,Yes - Adequate | Yes - Inadequate | No,Injury During Class,Health & Safety,HS-019,Whether first aid given,Yes,No
+First Aid Kit Available,Radio,Yes | No | Don't Know,Injury During Class,Health & Safety,HS-020,First aid supplies present,Yes,No
+Medical Professional Consulted,Radio,Yes - Immediately | Yes - Later | No,Injury During Class,Health & Safety,HS-021,Whether doctor seen,Yes,No
+Incident Report Completed,Radio,Yes | No,Injury During Class,Health & Safety,HS-022,Whether formal report made,Yes,No
+Client Has Pre-existing Condition,Radio,Yes - Disclosed | Yes - Not Disclosed | No,Injury During Class,Health & Safety,HS-023,Medical history relevant,Yes,No
+Pre-existing Condition Details,Text,"If yes, what condition",Injury During Class,Health & Safety,HS-024,Medical condition,No,No
+Witness Present,Radio,Yes | No,Injury During Class,Health & Safety,HS-025,Others saw incident,No,No
+Witness Name,Text,Name if willing to provide,Injury During Class,Health & Safety,HS-026,Witness identity,No,No
+Emergency Prep Issue Type,Dropdown,Fire Exits Not Marked | Fire Extinguisher Missing/Expired | First Aid Kit Missing | No Emergency Protocols Visible | Emergency Lighting Not Working | Blocked Emergency Exit | No AED Available | Other,Emergency Preparedness,Health & Safety,HS-027,Type of preparedness issue,Yes,No
+Specific Issue,Long Text,Details of safety concern,Emergency Preparedness,Health & Safety,HS-028,What is missing/wrong,Yes,No
+Location in Studio,Text,Where in the facility,Emergency Preparedness,Health & Safety,HS-029,Specific location,Yes,No
+Safety Equipment Affected,Multi-select,Fire Extinguisher | First Aid Kit | AED | Emergency Exits | Emergency Lighting | Evacuation Map | Fire Alarm | Other,Emergency Preparedness,Health & Safety,HS-030,Which safety items,Yes,No
+Immediate Risk,Dropdown,Critical - High Risk | Moderate - Should Be Addressed Soon | Low - Precautionary,Emergency Preparedness,Health & Safety,HS-031,Level of urgency,Yes,No
+Staff Aware of Issue,Radio,Yes | No,Emergency Preparedness,Health & Safety,HS-032,Whether team knows,Yes,No
+Client Concern,Text,Why client is reporting this,Emergency Preparedness,Health & Safety,HS-033,Client's safety concern,Yes,No
+Photo Evidence,Radio,Yes - Attached | No,Emergency Preparedness,Health & Safety,HS-034,Supporting images,No,No
+Protocol Issue Type,Dropdown,Not Following Current Guidelines | No Temperature Checks | Overcrowding | Social Distancing Not Maintained | Mask Policy Not Enforced | Sick Person Allowed In | Other,COVID/Health Protocols,Health & Safety,HS-035,Type of protocol violation,Yes,No
+Current Health Guidelines Applicable,Text,What protocols should be in place,COVID/Health Protocols,Health & Safety,HS-036,Expected protocols,Yes,No
+Observed Violation,Long Text,What was not being followed,COVID/Health Protocols,Health & Safety,HS-037,Specific violation details,Yes,No
+Class Attended,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab | N/A,COVID/Health Protocols,Health & Safety,HS-038,Associated class,No,No
+Number of People in Class,Number,Headcount,COVID/Health Protocols,Health & Safety,HS-039,Class size,Yes,No
+Studio Capacity Limit,Number,What should be maximum,COVID/Health Protocols,Health & Safety,HS-040,Capacity limit,Yes,No
+Staff Enforcing Protocols,Radio,Yes - Strictly | Yes - Loosely | No,COVID/Health Protocols,Health & Safety,HS-041,Whether staff monitoring,Yes,No
+Client Raised Concern with Staff,Radio,Yes | No,COVID/Health Protocols,Health & Safety,HS-042,Whether reported on-site,Yes,No
+Staff Response,Text,What staff said/did,COVID/Health Protocols,Health & Safety,HS-043,Staff action taken,No,No
+Disclosure Issue Type,Dropdown,Not Asked for Medical History | Health Form Not Collected | Disclosed Condition Ignored | No Follow-up on Medical Info | Trainer Not Informed of Condition | Medical Info Lost/Not in System | Other,Medical Disclosure,Health & Safety,HS-044,Type of disclosure issue,Yes,No
+Medical Information Status,Dropdown,Never Collected | Collected But Not Reviewed | Collected But Not Shared with Trainer | Incomplete Form | Other,Medical Disclosure,Health & Safety,HS-045,Status of medical info,Yes,No
+Client Has Medical Condition,Radio,Yes | No,Medical Disclosure,Health & Safety,HS-046,Whether client has condition,Yes,No
+Condition Type,Dropdown,Cardiovascular | Respiratory | Musculoskeletal | Pregnancy/Post-Partum | Neurological | Chronic Pain | Injury Recovery | Other | Prefer Not to Specify,Medical Disclosure,Health & Safety,HS-047,Category of condition,No,No
+Condition Disclosed to Studio,Radio,Yes - Verbally | Yes - In Writing | No,Medical Disclosure,Health & Safety,HS-048,Whether studio informed,Yes,No
+When Disclosed,Date,When information was shared,Medical Disclosure,Health & Safety,HS-049,Disclosure date,No,No
+Trainer Awareness,Radio,Yes - Confirmed | Should Be But Unsure | No,Medical Disclosure,Health & Safety,HS-050,Whether trainer knew,Yes,No
+Modifications Offered,Radio,Yes | No | Not Applicable,Medical Disclosure,Health & Safety,HS-051,Whether accommodations made,Yes,No
+Safety Concern,Text,Why this is a problem,Medical Disclosure,Health & Safety,HS-052,Risk assessment,Yes,No
+Incident Occurred,Radio,Yes | No - Precautionary Report,Medical Disclosure,Health & Safety,HS-053,Whether something happened,Yes,No
+Incident Details,Long Text,"If yes, what happened",Medical Disclosure,Health & Safety,HS-054,Incident description,No,No
+Equipment Issue Type,Dropdown,Unsafe/Damaged Equipment | No Safety Checks Visible | Sharp Edges | Unstable Props | Equipment Malfunction | Worn Out Equipment | Improper Storage | Other,Equipment Safety,Health & Safety,HS-055,Type of equipment issue,Yes,No
+Equipment Type,Dropdown,Free Weights | Resistance Bands | Exercise Balls | Barre | Reformer | Bikes | Mats | Foam Rollers | Other Props | Multiple Items,Equipment Safety,Health & Safety,HS-056,Which equipment,Yes,No
+Specific Equipment Details,Text,"Brand, color, location description",Equipment Safety,Health & Safety,HS-057,Equipment identification,Yes,No
+Safety Concern Description,Long Text,Details of danger,Equipment Safety,Health & Safety,HS-058,What makes it unsafe,Yes,No
+Injury Occurred,Radio,Yes | No - Precautionary,Equipment Safety,Health & Safety,HS-059,Whether someone got hurt,Yes,No
+Injury Details,Text,"If yes, describe injury",Equipment Safety,Health & Safety,HS-060,Injury information,No,No
+Equipment In Use,Radio,Yes - During Class | No - Discovered Before Use,Equipment Safety,Health & Safety,HS-061,Whether being used,Yes,No
+Reported to Trainer/Staff,Radio,Yes | No,Equipment Safety,Health & Safety,HS-062,Whether staff informed,Yes,No
+Equipment Removed from Use,Radio,Yes | No | Don't Know,Equipment Safety,Health & Safety,HS-063,Whether taken out of service,Yes,No
+Photo Evidence,Radio,Yes - Attached | No,Equipment Safety,Health & Safety,HS-064,Supporting images,No,No
+Air Quality Issue Type,Dropdown,Poor Ventilation | Strong Odors | Chemical Smells | Stuffy Environment | Mold/Mildew Smell | Cleaning Product Smell | Humidity Issues | Temperature Control Issues | Other,Air Quality,Health & Safety,HS-065,Type of air quality issue,Yes,No
+Specific Concern,Long Text,Details of air quality problem,Air Quality,Health & Safety,HS-066,Description of issue,Yes,No
+Area Affected,Multi-select,Studio Floor | Change Rooms | Showers | Restrooms | Waiting Area | Entire Facility,Air Quality,Health & Safety,HS-067,Where issue present,Yes,No
+When Noticed,Dropdown,Upon Entry | During Class | After Class | Throughout Visit,Air Quality,Health & Safety,HS-068,When detected,Yes,No
+Class Attended,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab | N/A,Air Quality,Health & Safety,HS-069,Associated class,No,No
+Temperature Issue,Dropdown,Too Hot | Too Cold | Fluctuating | Not Applicable,Air Quality,Health & Safety,HS-070,Temperature comfort,Yes,No
+Health Impact,Dropdown,No Impact | Mild Discomfort | Breathing Difficulty | Headache | Nausea | Had to Leave Class | Other,Air Quality,Health & Safety,HS-071,Effect on client,Yes,No
+Ventilation System Operating,Radio,Yes | No | Unclear,Air Quality,Health & Safety,HS-072,Whether AC/ventilation on,Yes,No
+Windows/Doors Open,Radio,Yes | No | N/A,Air Quality,Health & Safety,HS-073,Natural ventilation,No,No
+Reported to Staff,Radio,Yes | No,Air Quality,Health & Safety,HS-074,Whether staff informed,Yes,No
+Staff Response,Text,What action staff took,Air Quality,Health & Safety,HS-075,Staff action,No,No
+Issue Persistent,Radio,First Time Noticed | Recurring Issue | Ongoing Problem,Air Quality,Health & Safety,HS-076,Frequency of issue,Yes,No
+Assigned To,Dropdown,Akshay Rane | Vahishta Fitter | Zaheer Agarbattiwala | Zahur Shaikh | Nadiya Shaikh | Admin Admin | Shipra Bhika | Imran Shaikh | Tahira Sayyed | Manisha Rathod | Sheetal Kataria | Priyanka Abnave | Api Serou | Prathap Kp | Pavanthika | Santhosh Kumar,Global,Global,GLB_012,Associate assigned to resolve,No,No
+Status,Dropdown,New | In Progress | Pending Information | Resolved | Closed,Global,Global,GLB_013,Current ticket status,Yes,No
+Resolution Notes,Long Text,Free text area,Global,Global,GLB_014,Actions taken and resolution details,No,Yes
+Hygiene Issue Type,Multi-select Checkbox,Inadequate surface cleaning | Equipment not sanitized | Bathrooms/showers uncleaned | Cleaning supplies depleted | Visible dirt/grime | Unpleasant odors | Other,Hygiene Protocols,Health & Safety,HS_HYG_001,Specific hygiene concerns observed,Yes,No
+Area Affected,Multi-select Checkbox,Studio floor | Bathrooms | Showers | Changing rooms | Reception | Equipment storage | Props/equipment | Other,Hygiene Protocols,Health & Safety,HS_HYG_002,Which areas have hygiene issues,Yes,No
+Class Time/Session,Text,"e.g., ""7 :00 AM Barre 57"" or ""Between 2-3 PM""",Hygiene Protocols,Health & Safety,HS_HYG_003,When was the issue observed,No,No
+Photographic Evidence,File Upload,Photo attachment,Hygiene Protocols,Health & Safety,HS_HYG_004,Visual documentation of issue,No,No
+Client Complaint Received,Radio Button,Yes / No,Hygiene Protocols,Health & Safety,HS_HYG_005,Did a client report this directly?,Yes,No
+Immediate Action Taken,Long Text,Free text description,Hygiene Protocols,Health & Safety,HS_HYG_006,What was done immediately to address,No,No
+Cleaning Staff on Duty,Text,Name of cleaner/associate,Hygiene Protocols,Health & Safety,HS_HYG_007,Who was responsible for cleaning at time,No,No
+Injury Type,Dropdown,Muscle strain | Joint pain | Fall/slip | Equipment-related | Dizziness/fainting | Other,Injury During Class,Health & Safety,HS_INJ_001,Type of injury sustained,Yes,No
+Body Part Affected,Multi-select Checkbox,Head | Neck | Shoulder | Back | Hip | Knee | Ankle | Wrist | Other,Injury During Class,Health & Safety,HS_INJ_002,Which body part was injured,Yes,No
+Class Type,Dropdown,Studio Barre 57 | Studio Foundations | Studio Barre 57 Express | Studio Cardio Barre | Studio FIT | Studio Mat 57 | Studio SWEAT In 30 | Studio Amped Up! | Studio Back Body Blaze | Studio Cardio Barre Plus | Studio Cardio Barre Express | Studio HIIT | Studio Back Body Blaze Express | Studio Recovery | Studio Hosted Class | Studio Trainer's Choice | Studio Pre/Post Natal | Studio Mat 57 Express | Studio PowerCycle Express | Studio PowerCycle | Studio Strength Lab (Pull) | Studio Strength Lab (Full Body) | Studio Strength Lab (Push) | Studio Strength Lab,Injury During Class,Health & Safety,HS_INJ_003,Which class was in session,Yes,No
+Trainer Name,Dropdown,Anisha Shah | Atulan Purohit | Karanvir Bhatia | Mrigakshi Jaiswal | Reshma Sharma | Karan Bhatia | Pushyank Nahar | Shruti Kulkarni | Janhavi Jain | Rohan Dahima | Kajol Kanchan | Vivaran Dhasmana | Upasna Paranjpe | Richard D'Costa | Pranjali Jain | Saniya Jaiswal | Shruti Suresh | Cauveri Vikrant | Poojitha Bhaskar | Nishanth Raj | Siddhartha Kusuma | Simonelle De Vitre | Kabir Varma | Simran Dutt | Veena Narasimhan | Anmol Sharma | Bret Saldanha | Raunak Khemuka | Chaitanya Nahar | Sovena Shetty,Injury During Class,Health & Safety,HS_INJ_004,Instructor leading the class,Yes,No
+Time into Class,Text,"e.g., ""15 minutes"" or ""During warm-up""",Injury During Class,Health & Safety,HS_INJ_005,When during class did injury occur,No,No
+First Aid Provided,Radio Button,Yes / No,Injury During Class,Health & Safety,HS_INJ_006,Was first aid administered,Yes,No
+First Aid Details,Long Text,Free text description,Injury During Class,Health & Safety,HS_INJ_007,What first aid was provided,No,No
+Medical Attention Required,Radio Button,Yes / No / Client Declined,Injury During Class,Health & Safety,HS_INJ_008,Did client need/seek medical help,Yes,No
+Incident Report Completed,Radio Button,Yes / No,Injury During Class,Health & Safety,HS_INJ_009,Was formal incident report filed,Yes,No
+Client Had Disclosed Medical Condition,Radio Button,Yes / No / Unknown,Injury During Class,Health & Safety,HS_INJ_010,Did client have known health issues,Yes,No
+Medical Condition Details,Text,Brief description if known,Injury During Class,Health & Safety,HS_INJ_011,What condition was disclosed,No,No
+Trainer Aware of Condition,Radio Button,Yes / No / N/A,Injury During Class,Health & Safety,HS_INJ_012,Was trainer informed before class,No,No
+Contributing Factors,Multi-select Checkbox,Equipment malfunction | Floor surface | Overcrowding | Inadequate modification offered | Client error | Other,Injury During Class,Health & Safety,HS_INJ_013,What may have contributed to injury,No,No
+Witness Present,Radio Button,Yes / No,Injury During Class,Health & Safety,HS_INJ_014,Were there witnesses,No,No
+Witness Names,Text,Names of witnesses,Injury During Class,Health & Safety,HS_INJ_015,Who witnessed the incident,No,No
+Emergency Preparedness Issue,Multi-select Checkbox,Fire exits blocked/unmarked | Emergency lighting not functional | First aid kit missing/depleted | Fire extinguisher missing/expired | No emergency protocol displayed | Emergency contact numbers not posted | AED not available/not maintained | Other,Emergency Preparedness,Health & Safety,HS_EMP_001,What emergency preparedness gap exists,Yes,No
+Specific Location of Issue,Text,"e.g., ""Near studio 2 entrance""",Emergency Preparedness,Health & Safety,HS_EMP_002,Where exactly is the issue,Yes,No
+Photographic Evidence,File Upload,Photo attachment,Emergency Preparedness,Health & Safety,HS_EMP_003,Visual documentation,No,No
+Risk Level Assessment,Dropdown,Low - Minor gap | Medium - Notable concern | High - Serious safety risk | Critical - Immediate hazard,Emergency Preparedness,Health & Safety,HS_EMP_004,Staff assessment of risk severity,Yes,No
+Immediate Action Taken,Long Text,Free text description,Emergency Preparedness,Health & Safety,HS_EMP_005,What was done to mitigate immediately,No,No
+Regulatory Compliance Issue,Radio Button,Yes / No / Unsure,Emergency Preparedness,Health & Safety,HS_EMP_006,Does this violate safety regulations,No,No
+Protocol Violation Type,Multi-select Checkbox,No temperature checks conducted | Overcrowding beyond capacity | Inadequate spacing between clients | Mask policy not enforced | Symptomatic person allowed entry | Contact tracing information not collected | Other,COVID/Health Protocols,Health & Safety,HS_COV_001,Which protocols were not followed,Yes,No
+Class/Session Affected,Dropdown,"All class types listed above + ""Multiple classes"" + ""General studio operations""",COVID/Health Protocols,Health & Safety,HS_COV_002,Which class had protocol issues,No,No
+Number of People Present,Number,Numeric value,COVID/Health Protocols,Health & Safety,HS_COV_003,How many people were in space,No,No
+Studio Capacity Limit,Number,Max allowed per guidelines,COVID/Health Protocols,Health & Safety,HS_COV_004,What is the capacity limit,No,No
+Immediate Action Taken,Long Text,Free text description,COVID/Health Protocols,Health & Safety,HS_COV_005,Steps taken to address violation,Yes,No
+Staff Member Responsible,Text,Name,COVID/Health Protocols,Health & Safety,HS_COV_006,Who was managing check-in/protocols,No,No
+Disclosure Issue Type,Multi-select Checkbox,Client medical form not collected | Medical condition disclosed but ignored by trainer | No system to flag medical conditions | Medical information not accessible to trainer | Client condition discovered during class | Other,Medical Disclosure,Health & Safety,HS_MED_001,What medical disclosure issue occurred,Yes,No
+Medical Condition Involved,Text,Brief description (keep confidential),Medical Disclosure,Health & Safety,HS_MED_002,What condition was relevant,No,No
+Trainer Name,Dropdown,All trainers listed above,Medical Disclosure,Health & Safety,HS_MED_003,Trainer involved (if applicable),No,No
+When Was Condition Disclosed,Dropdown,Before first class | During check-in | During class | After incident | Never disclosed,Medical Disclosure,Health & Safety,HS_MED_004,When did client share information,Yes,No
+Was Information Documented,Radio Button,Yes / No / Unsure,Medical Disclosure,Health & Safety,HS_MED_005,Is it in client's record,Yes,No
+Trainer Had Access to Information,Radio Button,Yes / No / Unsure / N/A,Medical Disclosure,Health & Safety,HS_MED_006,Could trainer see medical notes,No,No
+Impact on Client,Dropdown,No impact | Minor discomfort | Injury/health incident | Client complaint | Other,Medical Disclosure,Health & Safety,HS_MED_007,What was the consequence,Yes,No
+System Improvement Needed,Long Text,Free text suggestions,Medical Disclosure,Health & Safety,HS_MED_008,What process changes are needed,No,No
+Equipment Type,Multi-select Checkbox,Barres | Mats | Weights | Resistance bands | Balls | Blocks | Straps | Benches | Cycles | Other,Equipment Safety,Health & Safety,HS_EQP_001,Which equipment has safety issues,Yes,No
+Safety Issue,Multi-select Checkbox,Broken/damaged | Sharp edges | Unstable/wobbly | Worn out | Missing parts | Improper assembly | Poor maintenance | Other,Equipment Safety,Health & Safety,HS_EQP_002,What is the safety concern,Yes,No
+Equipment ID/Number,Text,If equipment is labeled,Equipment Safety,Health & Safety,HS_EQP_003,Identifier for specific equipment,No,No
+Photographic Evidence,File Upload,Photo attachment,Equipment Safety,Health & Safety,HS_EQP_004,Visual documentation of issue,No,No
+Has This Caused Injury,Radio Button,Yes / No / Near miss,Equipment Safety,Health & Safety,HS_EQP_005,Did someone get hurt,Yes,No
+Equipment Removed from Use,Radio Button,Yes / No,Equipment Safety,Health & Safety,HS_EQP_006,Was it taken out of circulation,Yes,No
+Last Safety Check Date,Date,When was equipment last inspected,Equipment Safety,Health & Safety,HS_EQP_007,Date of last safety inspection,No,No
+Immediate Action Taken,Long Text,Free text description,Equipment Safety,Health & Safety,HS_EQP_008,What was done immediately,Yes,No
+Air Quality Issue,Multi-select Checkbox,Poor ventilation | Stuffy/stale air | Strong chemical smells | Cleaning product odors | Mold/mildew smell | Excessive humidity | Temperature too hot/cold | Other,Air Quality,Health & Safety,HS_AIR_001,What air quality issue exists,Yes,No
+Area Affected,Multi-select Checkbox,Main studio | Second studio | Bathrooms | Changing rooms | Reception | Entire facility | Other,Air Quality,Health & Safety,HS_AIR_002,Where is air quality poor,Yes,No
+Time of Day,Text,"e.g., ""Morning classes"" or ""All day""",Air Quality,Health & Safety,HS_AIR_003,When is issue most noticeable,No,No
+Client Complaints Received,Radio Button,Yes / No,Air Quality,Health & Safety,HS_AIR_004,Have clients reported this,Yes,No
+Number of Complaints,Number,How many clients mentioned it,Air Quality,Health & Safety,HS_AIR_005,Volume of complaints,No,No
+HVAC System Status,Dropdown,Working normally | Not working | Partially working | Unknown,Air Quality,Health & Safety,HS_AIR_006,Status of ventilation system,Yes,No
+Temperature Reading,Number,In degrees Celsius,Air Quality,Health & Safety,HS_AIR_007,Actual temperature if relevant,No,No
+Health Impact Observed,Multi-select Checkbox,None | Difficulty breathing | Headaches | Nausea | Eye irritation | Skin irritation | Other,Air Quality,Health & Safety,HS_AIR_008,Physical symptoms reported,No,No
+Immediate Action Taken,Long Text,Free text description,Air Quality,Health & Safety,HS_AIR_009,Steps taken to improve air quality,No,No
+Clique Behavior Observed,Multi-select Checkbox,Regular members excluding new clients | Reserved spots/areas | Unwelcoming body language | Private conversations excluding others | Trainer showing favoritism | Group monopolizing equipment | Other,Clique Behavior,Community & Culture,CC_CLQ_001,What exclusionary behavior occurred,Yes,No
+Location/Time of Observation,Text,"e.g., ""7 AM classes at Kemps Corner""",Clique Behavior,Community & Culture,CC_CLQ_002,When/where did this happen,Yes,No
+Trainer Name (if applicable),Dropdown,"All trainers + ""Not applicable""",Clique Behavior,Community & Culture,CC_CLQ_003,Was trainer involved or aware,No,No
+Specific Members Involved,Text,Names if known (confidential),Clique Behavior,Community & Culture,CC_CLQ_004,Who exhibited clique behavior,No,No
+Client Who Felt Excluded,Text,Name of affected client,Clique Behavior,Community & Culture,CC_CLQ_005,Who reported feeling unwelcome,No,No
+New Client Impact,Radio Button,Yes - new client affected / No - general observation,Clique Behavior,Community & Culture,CC_CLQ_006,Did this impact a new member,Yes,No
+Observed Behavior Details,Long Text,Free text description of incident,Clique Behavior,Community & Culture,CC_CLQ_007,Detailed description of what happened,Yes,No
+Action Taken at Time,Long Text,Free text description,Clique Behavior,Community & Culture,CC_CLQ_008,What was done to address immediately,No,No
+Type of Discrimination,Multi-select Checkbox,Body type/size | Fitness level | Age | Gender | Appearance | Ability/disability | Socioeconomic status | Other,Discrimination,Community & Culture,CC_DIS_001,Basis of discriminatory behavior,Yes,No
+Source of Discrimination,Radio Button,Trainer | Staff member | Other client | Multiple sources,Discrimination,Community & Culture,CC_DIS_002,Who exhibited discriminatory behavior,Yes,No
+Trainer/Staff Name,Dropdown,"All trainers + all associates + ""Other client""",Discrimination,Community & Culture,CC_DIS_003,Name of person involved,No,No
+Specific Incident Description,Long Text,Free text - detailed account,Discrimination,Community & Culture,CC_DIS_004,What exactly happened,Yes,No
+Verbal or Non-Verbal,Multi-select Checkbox,Verbal comments | Body language | Exclusionary actions | Differential treatment | Other,Discrimination,Community & Culture,CC_DIS_005,How was discrimination expressed,Yes,No
+Witness Present,Radio Button,Yes / No,Discrimination,Community & Culture,CC_DIS_006,Were there witnesses,Yes,No
+Witness Names,Text,Names of witnesses,Discrimination,Community & Culture,CC_DIS_007,Who else observed this,No,No
+Client Impact,Dropdown,Client upset but continuing | Client considering leaving | Client left immediately | Client requested refund | Other,Discrimination,Community & Culture,CC_DIS_008,How did this affect the client,Yes,No
+Immediate Action Taken,Long Text,Free text description,Discrimination,Community & Culture,CC_DIS_009,What was done immediately,Yes,No
+Follow-up Required,Radio Button,Yes / No,Discrimination,Community & Culture,CC_DIS_010,Does this need escalation,Yes,No
+Disruptive Behavior Type,Multi-select Checkbox,Loud talking during class | Phone usage during class | Late arrival disruption | Early departure disruption | Arguing with staff | Inappropriate conduct | Equipment hogging | Not following studio rules | Other,Member Behavior,Community & Culture,CC_MEM_001,What disruptive behavior occurred,Yes,No
+Member Name,Text,Name of disruptive member,Member Behavior,Community & Culture,CC_MEM_002,Who exhibited the behavior,Yes,No
+Member Phone/Email,Text,Contact information,Member Behavior,Community & Culture,CC_MEM_003,Member contact details,No,No
+Class Type,Dropdown,All class types,Member Behavior,Community & Culture,CC_MEM_004,Which class was affected,No,No
+Trainer Name,Dropdown,All trainers,Member Behavior,Community & Culture,CC_MEM_005,Trainer who was present,No,No
+Frequency of Behavior,Dropdown,First time | Occasional (2-3 times) | Frequent (repeated issue) | Ongoing pattern,Member Behavior,Community & Culture,CC_MEM_006,Is this a recurring problem,Yes,No
+Other Clients Impacted,Radio Button,Yes / No,Member Behavior,Community & Culture,CC_MEM_007,Did this disturb other members,Yes,No
+Incident Description,Long Text,Free text detailed account,Member Behavior,Community & Culture,CC_MEM_008,Full description of what happened,Yes,No
+Trainer Addressed Behavior,Radio Button,Yes / No / Trainer not aware,Member Behavior,Community & Culture,CC_MEM_009,Did trainer intervene,Yes,No
+Member Response,Dropdown,Apologetic/cooperative | Defensive | Refused to comply | Argumentative | Left class | Other,Member Behavior,Community & Culture,CC_MEM_010,How did member react when addressed,No,No
+Warning Issued,Radio Button,Yes / No,Member Behavior,Community & Culture,CC_MEM_011,Was member given formal warning,No,No
+Inclusivity Concern,Multi-select Checkbox,Not welcoming to beginners | Lack of body positivity | Judgmental atmosphere | Language/terminology issues | Lack of modifications offered | Assumptions about abilities | Lack of diverse representation | Other,Inclusivity Issues,Community & Culture,CC_INC_001,What inclusivity issue was observed,Yes,No
+Source of Issue,Radio Button,Trainer behavior | Staff behavior | Studio messaging/materials | Other clients | General environment | Multiple sources,Inclusivity Issues,Community & Culture,CC_INC_002,Where does issue originate,Yes,No
+Trainer Name (if applicable),Dropdown,"All trainers + ""Not applicable""",Inclusivity Issues,Community & Culture,CC_INC_003,Trainer involved if relevant,No,No
+Specific Incident/Observation,Long Text,Free text detailed description,Inclusivity Issues,Community & Culture,CC_INC_004,What specifically happened,Yes,No
+Client Affected,Text,Name of client who felt excluded,Inclusivity Issues,Community & Culture,CC_INC_005,Who experienced this issue,No,No
+Client Feedback Verbatim,Long Text,Direct quote from client if available,Inclusivity Issues,Community & Culture,CC_INC_006,What did client say,No,No
+Impact on Client,Dropdown,Minor discomfort | Client upset | Client considering leaving | Client left/requested refund | Other,Inclusivity Issues,Community & Culture,CC_INC_007,Severity of impact,Yes,No
+Pattern or Isolated,Radio Button,Isolated incident | Pattern observed | Multiple reports received,Inclusivity Issues,Community & Culture,CC_INC_008,Is this a one-time or recurring issue,Yes,No
+Event Name,Text,Name of community event,Community Events,Community & Culture,CC_EVT_001,Which event had issues,Yes,No
+Event Date,Date,Date of event,Community Events,Community & Culture,CC_EVT_002,When was the event,Yes,No
+Issue Type,Multi-select Checkbox,Poor organization | Low attendance | Lack of engagement | Technical problems | Venue issues | Poor communication | Event not inclusive | Not aligned with brand | Other,Community Events,Community & Culture,CC_EVT_003,What went wrong,Yes,No
+Attendance,Number,How many people attended,Community Events,Community & Culture,CC_EVT_004,Actual turnout,No,No
+Expected Attendance,Number,Projected attendance,Community Events,Community & Culture,CC_EVT_005,How many were expected,No,No
+Detailed Description,Long Text,Free text account of issues,Community Events,Community & Culture,CC_EVT_006,Full description of problems,Yes,No
+Client Feedback Received,Radio Button,Yes / No,Community Events,Community & Culture,CC_EVT_007,Did clients complain,Yes,No
+Feedback Summary,Long Text,Summary of client feedback,Community Events,Community & Culture,CC_EVT_008,What did clients say,No,No
+Organizer/Responsible Party,Text,Name of staff member who organized,Community Events,Community & Culture,CC_EVT_009,Who was in charge,No,No
+Cultural Issue Type,Multi-select Checkbox,Toxic environment | Comparison culture | Lack of support | Competitive rather than collaborative | Pressure to purchase/upgrade | Emphasis on appearance over wellness | Body shaming language | Other,Studio Culture,Community & Culture,CC_CUL_001,What cultural problem exists,Yes,No
+Where Issue Manifests,Multi-select Checkbox,In classes | Social media | Front desk interactions | Marketing materials | Trainer communications | Member interactions | Studio-wide | Other,Studio Culture,Community & Culture,CC_CUL_002,Where is this issue observed,Yes,No
+Trainer/Staff Contributing,Text,Names if specific people contribute,Studio Culture,Community & Culture,CC_CUL_003,Are specific staff perpetuating this,No,No
+Specific Examples/Incidents,Long Text,Detailed description with examples,Studio Culture,Community & Culture,CC_CUL_004,What are concrete examples,Yes,No
+Client Feedback/Complaints,Long Text,Summary of client concerns,Studio Culture,Community & Culture,CC_CUL_005,What have clients said,No,No
+Number of Clients Affected,Dropdown,Single client | Few clients (2-5) | Multiple clients (6-10) | Many clients (10+) | Widespread concern,Studio Culture,Community & Culture,CC_CUL_006,How widespread is the concern,Yes,No
+Impact on Business,Dropdown,No visible impact | Clients expressing concern | Clients reducing visits | Clients leaving | Negative reviews/word of mouth | Other,Studio Culture,Community & Culture,CC_CUL_007,Business implications,Yes,No
+Duration of Issue,Dropdown,New concern | Noticed in past month | Ongoing for several months | Long-term pattern,Studio Culture,Community & Culture,CC_CUL_008,How long has this existed,Yes,No
+Product Name/Type,Text,Name and type of product,Product Quality,Retail & Merchandise,RM_QUA_001,Which product has quality issues,Yes,No
+Product Category,Dropdown,Apparel | Accessories | Equipment | Supplements/Wellness | Gift items | Other,Product Quality,Retail & Merchandise,RM_QUA_002,Type of product,Yes,No
+Quality Issue,Multi-select Checkbox,Defective/broken | Poor material quality | Sizing issues | Color/design defect | Stitching/construction problems | Not as described | Damaged in transit | Other,Product Quality,Retail & Merchandise,RM_QUA_003,What is wrong with,,
+Product Requested,Text,Name of product,Product Availability,Retail & Merchandise,RM_AVL_001,What product is unavailable,Yes,No
+Product Category,Dropdown,Apparel | Accessories | Equipment | Supplements/Wellness | Gift items | Other,Product Availability,Retail & Merchandise,RM_AVL_002,Type of product,Yes,No
+Availability Issue,Multi-select Checkbox,Out of stock | Size unavailable | Color/variant unavailable | Limited selection | Discontinued | Never stocked | Other,Product Availability,Retail & Merchandise,RM_AVL_003,Why is product unavailable,Yes,No
+Size/Variant Needed,Text,"Specific size, color, or variant",Product Availability,Retail & Merchandise,RM_AVL_004,What specifically is needed,No,No
+Client Wait Time,Dropdown,Willing to wait | Wants notification when available | Needs immediately | Already waited too long | Other,Product Availability,Retail & Merchandise,RM_AVL_005,Client's urgency,No,No
+Frequency of Request,Dropdown,First time asking | Asked before | Multiple clients requesting | High demand item,Product Availability,Retail & Merchandise,RM_AVL_006,How often is this requested,Yes,No
+Alternative Offered,Radio Button,Yes / No,Product Availability,Retail & Merchandise,RM_AVL_007,Was alternative suggested,Yes,No
+Alternative Accepted,Radio Button,Yes / No / N/A,Product Availability,Retail & Merchandise,RM_AVL_008,Did client accept alternative,No,No
+Stock Request Submitted,Radio Button,Yes / No,Product Availability,Retail & Merchandise,RM_AVL_009,Was restock request made,No,No
+Product/Service Name,Text,What is being questioned,Pricing,Retail & Merchandise,RM_PRC_001,Product or service with pricing issue,Yes,No
+Pricing Issue,Multi-select Checkbox,Too expensive | No value for money | Price increased without notice | Hidden charges/fees | Price different than displayed | Competitor pricing lower | Other,Pricing,Retail & Merchandise,RM_PRC_002,What is the pricing concern,Yes,No
+Listed Price,Number,Price shown/advertised,Pricing,Retail & Merchandise,RM_PRC_003,What was the advertised price,No,No
+Charged Price,Number,Actual price charged,Pricing,Retail & Merchandise,RM_PRC_004,What client was charged,No,No
+Discrepancy Details,Long Text,Explanation of price difference,Pricing,Retail & Merchandise,RM_PRC_005,Why prices don't match,No,No
+Client Expectation,Long Text,What client thought price would be,Pricing,Retail & Merchandise,RM_PRC_006,Client's pricing expectation,Yes,No
+Competitor Comparison,Text,Pricing at other studios if mentioned,Pricing,Retail & Merchandise,RM_PRC_007,Competitor pricing reference,No,No
+Resolution Offered,Long Text,What was offered to resolve,Pricing,Retail & Merchandise,RM_PRC_008,How was issue addressed,No,No
+Client Satisfied with Resolution,Radio Button,Yes / No / Partially,Pricing,Retail & Merchandise,RM_PRC_009,Was client happy with outcome,No,No
+Product Name,Text,Name of product to return/exchange,Return/Exchange,Retail & Merchandise,RM_RET_001,What product is being returned,Yes,No
+Purchase Date,Date,When was product purchased,Return/Exchange,Retail & Merchandise,RM_RET_002,Original purchase date,Yes,No
+Receipt Available,Radio Button,Yes / No,Return/Exchange,Retail & Merchandise,RM_RET_003,Does client have receipt,Yes,No
+Receipt/Invoice Number,Text,Transaction reference,Return/Exchange,Retail & Merchandise,RM_RET_004,Receipt identifier,No,No
+Reason for Return,Multi-select Checkbox,Defective product | Wrong size | Wrong item | Changed mind | Quality issues | Not as expected | Gift return | Other,Return/Exchange,Retail & Merchandise,RM_RET_005,Why is product being returned,Yes,No
+Product Condition,Dropdown,Unused with tags | Unused without tags | Gently used | Heavily used | Damaged,Return/Exchange,Retail & Merchandise,RM_RET_006,State of product,Yes,No
+Client Request Type,Radio Button,Refund | Exchange | Store credit,Return/Exchange,Retail & Merchandise,RM_RET_007,What does client want,Yes,No
+Policy Issue,Multi-select Checkbox,Outside return window | No receipt | Item used | Final sale item | Policy not clearly communicated | Policy too restrictive | Other,Return/Exchange,Retail & Merchandise,RM_RET_008,What's preventing return/exchange,No,No
+Days Since Purchase,Number,Auto-calculated or manual entry,Return/Exchange,Retail & Merchandise,RM_RET_009,How long ago was purchase,Yes,No
+Exception Requested,Radio Button,Yes / No,Return/Exchange,Retail & Merchandise,RM_RET_010,Is client asking to override policy,Yes,No
+Manager Approval,Radio Button,Approved / Denied / Pending,Return/Exchange,Retail & Merchandise,RM_RET_011,Has manager authorized exception,No,No
+Resolution Provided,Long Text,What was offered/completed,Return/Exchange,Retail & Merchandise,RM_RET_012,How was this resolved,No,No
+Staff Member Name,Dropdown,All associates,Staff Knowledge,Retail & Merchandise,RM_STF_001,Which staff member lacked knowledge,No,No
+Knowledge Gap Type,Multi-select Checkbox,Product features | Sizing information | Pricing/promotions | Product availability | Return/exchange policy | Product care instructions | Wrong information given | Unable to answer questions | Other,Staff Knowledge,Retail & Merchandise,RM_STF_002,What information was missing,Yes,No
+Product/Topic,Text,What product or topic,Staff Knowledge,Retail & Merchandise,RM_STF_003,What was the question about,Yes,No
+Client Experience Impact,Dropdown,Minor inconvenience | Delayed purchase | Wrong purchase made | Client frustrated | Lost sale | Other,Staff Knowledge,Retail & Merchandise,RM_STF_004,How did this affect client,Yes,No
+Incorrect Information Given,Long Text,What wrong info was provided,Staff Knowledge,Retail & Merchandise,RM_STF_005,Details of misinformation,No,No
+Correct Information,Long Text,What should have been communicated,Staff Knowledge,Retail & Merchandise,RM_STF_006,What was the correct answer,No,No
+Training Need Identified,Long Text,What training would help,Staff Knowledge,Retail & Merchandise,RM_STF_007,What does staff need to learn,Yes,No
+Issue Corrected,Radio Button,Yes / No,Staff Knowledge,Retail & Merchandise,RM_STF_008,Was client given correct info later,Yes,No
+Workshop Name,Text,Name of workshop,Workshop Quality,Special Programs,SP_WRK_001,Which workshop had issues,Yes,No
+Workshop Date,Date,Date of workshop,Workshop Quality,Special Programs,SP_WRK_002,When was workshop held,Yes,No
+Instructor Name,Dropdown,"All trainers + ""External instructor""",Workshop Quality,Special Programs,SP_WRK_003,Who led the workshop,Yes,No
+Quality Issue,Multi-select Checkbox,Poor instruction quality | Disorganized/poorly structured | Overcrowded | Not worth the fee | Content not as advertised | Too basic/advanced | Insufficient time | Poor venue setup | Other,Workshop Quality,Special Programs,SP_WRK_004,What was problematic,Yes,No
+Number of Participants,Number,How many attended,Workshop Quality,Special Programs,SP_WRK_005,Workshop attendance,No,No
+Workshop Fee,Number,Cost per person,Workshop Quality,Special Programs,SP_WRK_006,Price charged,No,No
+Client Feedback Summary,Long Text,Summary of participant feedback,Workshop Quality,Special Programs,SP_WRK_007,What did attendees say,Yes,No
+Number of Complaints,Number,How many people complained,Workshop Quality,Special Programs,SP_WRK_008,Volume of negative feedback,Yes,No
+Refund Requested,Radio Button,Yes / No,Workshop Quality,Special Programs,SP_WRK_009,Did anyone ask for money back,Yes,No
+Number Requesting Refund,Number,How many want refunds,Workshop Quality,Special Programs,SP_WRK_010,Volume of refund requests,No,No
+Specific Incident Description,Long Text,Detailed account of issues,Workshop Quality,Special Programs,SP_WRK_011,Full description of problems,Yes,No
+Issue Type,Multi-select Checkbox,Instructor unavailability | Last-minute cancellation | Scheduling conflicts | Pricing disputes | Session quality issues | Instructor unprepared | Not customized to client needs | Other,Private Sessions,Special Programs,SP_PRV_001,What private session issue occurred,Yes,No
+Trainer Name,Dropdown,All trainers,Private Sessions,Special Programs,SP_PRV_002,Which trainer was involved,Yes,No
+Session Date/Time,DateTime,Scheduled or occurred session time,Private Sessions,Special Programs,SP_PRV_003,When was session scheduled/held,Yes,No
+Client Name,Text,Client who booked session,Private Sessions,Special Programs,SP_PRV_004,Who booked the private,Yes,No
+Session Type,Dropdown,Single private | Semi-private (2 clients) | Small group private | Package series | Other,Private Sessions,Special Programs,SP_PRV_005,Type of private session,Yes,No
+Cancellation Notice,Dropdown,No notice | Less than 24hrs | 24-48hrs | More than 48hrs | N/A,Private Sessions,Special Programs,SP_PRV_006,How much notice was given,No,No
+Who Cancelled,Radio Button,Client | Trainer | Studio | N/A,Private Sessions,Special Programs,SP_PRV_007,Who initiated cancellation,No,No
+Cancellation Reason,Long Text,Explanation for cancellation,Private Sessions,Special Programs,SP_PRV_008,Why was session cancelled,No,No
+Session Price,Number,Cost of session,Private Sessions,Special Programs,SP_PRV_009,What was charged,No,No
+Refund/Credit Issued,Radio Button,Full refund | Partial refund | Credit issued | No compensation | N/A,Private Sessions,Special Programs,SP_PRV_010,How was client compensated,No,No
+Detailed Incident Description,Long Text,Full account of issue,Private Sessions,Special Programs,SP_PRV_011,Complete description,Yes,No
+Rescheduling Attempted,Radio Button,Yes / No / N/A,Private Sessions,Special Programs,SP_PRV_012,Was rescheduling offered,No,No
+Client Satisfaction,Dropdown,Satisfied with resolution | Partially satisfied | Unsatisfied | Very upset | Other,Private Sessions,Special Programs,SP_PRV_013,Client's satisfaction level,Yes,No
+Company Name,Text,Corporate client name,Corporate Programs,Special Programs,SP_CRP_001,Which company is this for,Yes,No
+Program Type,Dropdown,Ongoing weekly classes | One-time workshop | Wellness challenge | Series package | Event | Other,Corporate Programs,Special Programs,SP_CRP_002,Type of corporate program,Yes,No
+Issue Type,Multi-select Checkbox,Poor coordination | Communication gaps | Unsuitable timing | Wrong location | Lack of customization | Pricing disputes | Low attendance | Content not appropriate | Other,Corporate Programs,Special Programs,SP_CRP_003,What went wrong,Yes,No
+Program Date(s),Text,Date or date range,Corporate Programs,Special Programs,SP_CRP_004,When did program occur,Yes,No
+Trainer Name,Dropdown,All trainers,Corporate Programs,Special Programs,SP_CRP_005,Which trainer was involved,No,No
+Number of Participants Expected,Number,Projected attendance,Corporate Programs,Special Programs,SP_CRP_006,Expected participant count,No,No
+Actual Participation,Number,Actual attendance,Corporate Programs,Special Programs,SP_CRP_007,How many actually attended,No,No
+Corporate Contact Name,Text,Company point person,Corporate Programs,Special Programs,SP_CRP_008,Who is company contact,No,No
+Corporate Contact Email,Email,Email address,Corporate Programs,Special Programs,SP_CRP_009,Contact email,No,No
+Detailed Issue Description,Long Text,Full account of problems,Corporate Programs,Special Programs,SP_CRP_010,Complete description,Yes,No
+Company Feedback,Long Text,What company representative said,Corporate Programs,Special Programs,SP_CRP_011,Corporate client's feedback,No,No
+Contract at Risk,Radio Button,Yes / No / Unknown,Corporate Programs,Special Programs,SP_CRP_012,Is relationship in jeopardy,Yes,No
+Program Type,Multi-select Checkbox,Prenatal | Postnatal | Seniors | Injury recovery/rehabilitation | Adaptive fitness | Other special needs,Special Needs Programs,Special Programs,SP_SPC_001,Which special needs program,Yes,No
+Issue Type,Multi-select Checkbox,Program not offered | Limited availability | Inadequate modifications | Instructor not trained | Unsafe practices | Not accommodating enough | Lack of specialized equipment | Other,Special Needs Programs,Special Programs,SP_SPC_002,What is the issue,Yes,No
+Trainer Name,Dropdown,All trainers,Special Needs Programs,Special Programs,SP_SPC_003,Trainer involved,No,No
+Client Specific Need,Long Text,What accommodation is needed,Special Needs Programs,Special Programs,SP_SPC_004,Client's specific requirements,Yes,No
+Modification Requested,Long Text,What modification was needed,Special Needs Programs,Special Programs,SP_SPC_005,What did client ask for,No,No
+Modification Provided,Radio Button,Yes - adequate | Yes - inadequate | No | N/A,Special Needs Programs,Special Programs,SP_SPC_006,Was modification offered,No,No
+Trainer Certification/Training,Radio Button,Trainer is certified | Trainer not certified | Unknown,Special Needs Programs,Special Programs,SP_SPC_007,Does trainer have relevant training,No,No
+Safety Concern,Radio Button,Yes / No,Special Needs Programs,Special Programs,SP_SPC_008,Was there a safety issue,Yes,No
+Safety Concern Details,Long Text,Description of safety issue,Special Needs Programs,Special Programs,SP_SPC_009,What was unsafe,No,No
+Detailed Incident Description,Long Text,Full account of issue,Special Needs Programs,Special Programs,SP_SPC_010,Complete description,Yes,No
+Program Demand Assessment,Dropdown,Single request | Occasional requests | Frequent requests | High demand | Unknown,Special Needs Programs,Special Programs,SP_SPC_011,How often is this requested,Yes,No
+Challenge/Competition Name,Text,Name of event,Challenges & Competitions,Special Programs,SP_CHL_001,Which challenge had issues,Yes,No
+Challenge Date Range,Text,Start and end dates,Challenges & Competitions,Special Programs,SP_CHL_002,When did challenge run,Yes,No
+Issue Type,Multi-select Checkbox,Poor organization | Unfair rules | Rules not clear | Tracking issues | Communication problems | Prizes not delivered | Wrong winners announced | Lack of engagement | Other,Challenges & Competitions,Special Programs,SP_CHL_003,What went wrong,Yes,No
+Number of Participants,Number,How many joined,Challenges & Competitions,Special Programs,SP_CHL_004,Total participants,No,No
+Specific Incident Description,Long Text,Detailed account of issue,Challenges & Competitions,Special Programs,SP_CHL_005,Full description of problems,Yes,No
+Participant Complaints,Number,How many complained,Challenges & Competitions,Special Programs,SP_CHL_006,Volume of complaints,No,No
+Prize/Reward Issue,Radio Button,Yes / No / N/A,Challenges & Competitions,Special Programs,SP_CHL_007,Was there a prize problem,Yes,No
+Prize Details,Long Text,What prize was promised/not delivered,Challenges & Competitions,Special Programs,SP_CHL_008,Prize specifics,No,No
+Rules Clarity,Dropdown,Very clear | Somewhat clear | Unclear | Contradictory | Changed mid-challenge,Challenges & Competitions,Special Programs,SP_CHL_009,How clear were rules,No,No
+Staff Member Responsible,Text,Who organized/managed,Challenges & Competitions,Special Programs,SP_CHL_010,Who was in charge,No,No
+Resolution Required,Long Text,What needs to be done,Challenges & Competitions,Special Programs,SP_CHL_011,How to fix this,Yes,No
+Noise Source,Multi-select Checkbox,Other studio classes | External construction | Street noise | Building maintenance | HVAC system | Music too loud | Equipment noise | Other studio/business in building | Other,Noise Disturbance,Miscellaneous,MS_NOI_001,Where is noise coming from,Yes,No
+Noise Level Impact,Dropdown,Minor distraction | Moderate disruption | Unable to hear instructor | Class had to pause | Class cancelled,Noise Disturbance,Miscellaneous,MS_NOI_002,Severity of disruption,Yes,No
+Time of Occurrence,Text,"e.g., ""10 AM class"" or ""All day""",Noise Disturbance,Miscellaneous,MS_NOI_003,When does noise occur,Yes,No
+Frequency,Dropdown,One-time | Occasional | Daily | Ongoing issue,Noise Disturbance,Miscellaneous,MS_NOI_004,How often does this happen,Yes,No
+Class Affected,Dropdown,All class types,Noise Disturbance,Miscellaneous,MS_NOI_005,Which class was disrupted,No,No
+Trainer Name,Dropdown,All trainers,Noise Disturbance,Miscellaneous,MS_NOI_006,Trainer who reported/experienced,No,No
+Client Complaints,Radio Button,Yes / No,Noise Disturbance,Miscellaneous,MS_NOI_007,Did clients complain,Yes,No
+Number of Complaints,Number,How many clients complained,Noise Disturbance,Miscellaneous,MS_NOI_008,Volume of complaints,No,No
+Immediate Action Taken,Long Text,What was done at the time,Noise Disturbance,Miscellaneous,MS_NOI_009,Steps taken immediately,No,No
+Building Management Notified,Radio Button,Yes / No / N/A,Noise Disturbance,Miscellaneous,MS_NOI_010,Was landlord/building informed,No,No
+Policy Type,Dropdown,Cancellation policy | Booking policy | Pricing | Membership terms | Class packages | Retail | Studio rules | Other,Policy Changes,Miscellaneous,MS_POL_001,Which policy changed,Yes,No
+Policy Change Description,Long Text,What changed,Policy Changes,Miscellaneous,MS_POL_002,Details of new policy,Yes,No
+Effective Date,Date,When did policy take effect,Policy Changes,Miscellaneous,MS_POL_003,Implementation date,Yes,No
+Communication Issue,Multi-select Checkbox,Not communicated at all | Communicated too late | Insufficient notice | Unclear communication | Only communicated to some clients | Staff not informed | Other,Policy Changes,Miscellaneous,MS_POL_004,What was the communication problem,Yes,No
+Client Impact,Multi-select Checkbox,Financial impact | Scheduling disruption | Confusion | Frustration | Changed plans based on old policy | Client considering leaving | Other,Policy Changes,Miscellaneous,MS_POL_005,How did this affect clients,Yes,No
+Number of Clients Affected,Dropdown,Single client | Few clients (2-5) | Multiple clients (6-10) | Many clients (10+) | All clients,Policy Changes,Miscellaneous,MS_POL_006,How many were impacted,Yes,No
+Client Feedback Summary,Long Text,What clients are saying,Policy Changes,Miscellaneous,MS_POL_007,Summary of client reactions,Yes,No
+Policy Fairness Concern,Radio Button,Yes / No,Policy Changes,Miscellaneous,MS_POL_008,Is policy itself unfair,Yes,No
+Fairness Concern Details,Long Text,Why policy seems unfair,Policy Changes,Miscellaneous,MS_POL_009,Explanation of fairness issue,No,No
+Exception Requests,Number,How many asking for exceptions,Policy Changes,Miscellaneous,MS_POL_010,Volume of exception requests,No,No
+Guest Name,Text,Name of non-member,Guest Experience,Miscellaneous,MS_GST_001,Who was the guest,Yes,No
+Guest Type,Dropdown,Hosted class guest | Trial/newcomer | Drop-in | Brought by member | Corporate/event guest | Other,Guest Experience,Miscellaneous,MS_GST_002,Type of guest,Yes,No
+Hosting Member,Text,Name of member who brought guest,Guest Experience,Miscellaneous,MS_GST_003,Which member hosted (if applicable),No,No
+Issue Type,Multi-select Checkbox,Unwelcoming treatment | Complicated check-in process | Unclear policies | Different pricing than expected | Not given proper orientation | Felt rushed | Felt judged | Other,Guest Experience,Miscellaneous,MS_GST_004,What was problematic,Yes,No
+Staff Member Involved,Dropdown,All associates,Guest Experience,Miscellaneous,MS_GST_005,Who interacted with guest,No,No
+Trainer Name,Dropdown,All trainers,Guest Experience,Miscellaneous,MS_GST_006,Which trainer led class,No,No
+Guest Feedback,Long Text,What guest said,Guest Experience,Miscellaneous,MS_GST_007,Guest's comments,Yes,No
+Likelihood to Return,Dropdown,Will definitely return | Might return | Unlikely to return | Definitely not returning | Unknown,Guest Experience,Miscellaneous,MS_GST_008,Will they come back,No,No
+Likelihood to Purchase Membership,Dropdown,Interested | Considering | Not interested | Already purchased | Unknown,Guest Experience,Miscellaneous,MS_GST_009,Conversion likelihood,No,No
+Detailed Incident Description,Long Text,Full account of experience,Guest Experience,Miscellaneous,MS_GST_010,Complete description,Yes,No
+Issue Type,Radio Button,Item lost | Item found | Item claimed | System issue,Lost & Found,Miscellaneous,MS_LST_001,Type of lost & found issue,Yes,No
+Item Description,Long Text,Detailed description of item,Lost & Found,Miscellaneous,MS_LST_002,What is the item,Yes,No
+Item Category,Dropdown,Clothing | Jewelry | Phone/electronics | Keys | Wallet/purse | Water bottle | Workout equipment | Other,Lost & Found,Miscellaneous,MS_LST_003,Type of item,Yes,No
+Date Lost/Found,Date,When item was lost or found,Lost & Found,Miscellaneous,MS_LST_004,Date of loss/discovery,Yes,No
+Location in Studio,Text,Where item was lost/found,Lost & Found,Miscellaneous,MS_LST_005,Specific location,No,No
+Client Name,Text,Person who lost item,Lost & Found,Miscellaneous,MS_LST_006,Owner of item,No,No
+Client Contact,Text,Phone or email,Lost & Found,Miscellaneous,MS_LST_007,How to reach client,No,No
+Lost & Found System Issue,Multi-select Checkbox,No system in place | Items not logged | Items misplaced | No notification sent | Unable to find logged item | Items donated too quickly | Other,Lost & Found,Miscellaneous,MS_LST_008,What system problem exists,No,No
+Item Value,Dropdown,Low value (<₹1000) | Medium value (₹1000-5000) | High value (>₹5000),Lost & Found,Miscellaneous,MS_LST_009,Approximate value,No,No
+Action Taken,Long Text,What was done,Lost & Found,Miscellaneous,MS_LST_010,Steps taken to resolve,Yes,No
+Item Status,Dropdown,Still searching | Found and returned | Found awaiting claim | Not found | Donated/disposed | Other,Lost & Found,Miscellaneous,MS_LST_011,Current status of item,Yes,No
+Issue Type,Multi-select Checkbox,Unqualified advice given | Conflicting information from different staff | Pushy supplement sales | Medical advice given inappropriately | Dietary restrictions ignored | Unsafe recommendations | Other,Nutrition/Wellness Advice,Miscellaneous,MS_NUT_001,What nutrition/wellness issue occurred,Yes,No
+Staff Member/Trainer,Dropdown,All trainers + all associates,Nutrition/Wellness Advice,Miscellaneous,MS_NUT_002,Who gave the advice,Yes,No
+Topic of Advice,Multi-select Checkbox,Supplements | Diet/meal plans | Weight loss | Medical condition | Injury recovery | Performance enhancement | General wellness | Other,Nutrition/Wellness Advice,Miscellaneous,MS_NUT_003,What was advice about,Yes,No
+Advice Given,Long Text,What was said,Nutrition/Wellness Advice,Miscellaneous,MS_NUT_004,Details of advice provided,Yes,No
+Credentials/Qualification,Text,Does person have relevant credentials,Nutrition/Wellness Advice,Miscellaneous,MS_NUT_005,Advisor's qualifications,No,No
+Client Impact,Multi-select Checkbox,No impact | Client confused | Client followed bad advice | Client experienced negative effects | Client complained | Other,Nutrition/Wellness Advice,Miscellaneous,MS_NUT_006,How did this affect client,Yes,No
+Sales Pressure,Radio Button,Yes / No / N/A,Nutrition/Wellness Advice,Miscellaneous,MS_NUT_007,Was there pressure to buy products,Yes,No
+Product Being Sold,Text,Name of supplement/product,Nutrition,,,,,
+Issue Type,Multi-select Checkbox,Credits not transferring | Package not valid at all locations | Different policies across studios | Booking confusion | Inconsistent pricing | Different class offerings | Technology/system issues | Staff gave conflicting info | Other,Multi-location Issues,Miscellaneous,MS_MLT_001,What multi-location problem exists,Yes,No
+Locations Involved,Multi-select Checkbox,All locations from standard list,Multi-location Issues,Miscellaneous,MS_MLT_002,Which studios are involved,Yes,No
+Package/Product Type,Dropdown,All package types from standard list,Multi-location Issues,Miscellaneous,MS_MLT_003,What package/product,Yes,No
+Detailed Issue Description,Long Text,Full explanation of problem,Multi-location Issues,Miscellaneous,MS_MLT_004,Complete description,Yes,No
+Client Expectation,Long Text,What client thought would happen,Multi-location Issues,Miscellaneous,MS_MLT_005,Client's understanding,Yes,No
+Actual Result,Long Text,What actually happened,Multi-location Issues,Miscellaneous,MS_MLT_006,Reality vs expectation,Yes,No
+Communication Source,Dropdown,Website | App | Staff member at location 1 | Staff member at location 2 | Email | Phone call | Other,Multi-location Issues,Miscellaneous,MS_MLT_007,Where did client get info,No,No
+Technology/System Issue,Radio Button,Yes / No,Multi-location Issues,Miscellaneous,MS_MLT_008,Is this a tech problem,Yes,No
+System Details,Long Text,Technical details of system issue,Multi-location Issues,Miscellaneous,MS_MLT_009,Tech problem specifics,No,No
+Client Impact,Dropdown,Unable to book class | Lost credits | Financial loss | Scheduling disruption | Frustration only | Other,Multi-location Issues,Miscellaneous,MS_MLT_010,How was client affected,Yes,No
+Resolution Required,Long Text,What needs to happen,Multi-location Issues,Miscellaneous,MS_MLT_011,How to fix this,Yes,No
+Feedback System Issue,Multi-select Checkbox,No way to provide feedback | Feedback form not working | Feedback not acknowledged | No response received | Response took too long | Dismissive response | Retaliation for negative feedback | Fear of retaliation | Other,Feedback System,Miscellaneous,MS_FDB_001,What feedback system problem exists,Yes,No
+Feedback Channel Used,Multi-select Checkbox,In-person to staff | Email | Phone | Survey | Social media | Third-party review site | This ticketing system | Other,Feedback System,Miscellaneous,MS_FDB_002,How did client try to give feedback,Yes,No
+Original Feedback Topic,Dropdown,Trainer | Class experience | Facilities | Billing | Customer service | Product/retail | Policy | Other,Feedback System,Miscellaneous,MS_FDB_003,What was feedback about,Yes,No
+Original Feedback Date,Date,When was feedback given,Feedback System,Miscellaneous,MS_FDB_004,When did client provide feedback,No,No
+Response Received,Radio Button,Yes / No,Feedback System,Miscellaneous,MS_FDB_005,Was feedback acknowledged,Yes,No
+Days Until Response,Number,How long client waited,Feedback System,Miscellaneous,MS_FDB_006,Response time,No,No
+Quality of Response,Dropdown,Helpful and professional | Acknowledged but unhelpful | Dismissive | Defensive | No response | N/A,Feedback System,Miscellaneous,MS_FDB_007,How was feedback handled,No,No
+Retaliation Concern,Radio Button,Yes - suspected | Yes - confirmed | No | N/A,Feedback System,Miscellaneous,MS_FDB_008,Was there retaliation,Yes,No
+Retaliation Details,Long Text,Description of retaliatory behavior,Feedback System,Miscellaneous,MS_FDB_009,What happened,No,No
+Staff Member Involved,Dropdown,All staff and trainers,Feedback System,Miscellaneous,MS_FDB_010,Who handled feedback poorly,No,No
+Client Current Status,Dropdown,Still active and satisfied | Active but frustrated | Considering leaving | Already left | Other,Feedback System,Miscellaneous,MS_FDB_011,How has this affected relationship,Yes,No
+Detailed Description,Long Text,Full account of feedback experience,Feedback System,Miscellaneous,MS_FDB_012,Complete description,Yes,No
+Improvement Suggestion,Long Text,How to improve feedback system,Feedback System,Miscellaneous,MS_FDB_013,What would make this better,No,No
